@@ -1,29 +1,23 @@
-# README #
+Flappy Bird è un videogioco a scorrimento continuo che utilizza una grafica molto semplice in stile anni ottanta, che ricalca quella di Super Mario Bros. 
+L'obiettivo è quello di totalizzare il punteggio più alto possibile (il giocatore guadagna un punto per ogni coppia di tubi attraversata), facendo volare un uccello attraverso una serie di tubi, evitando di farlo scontrare con essi o di farlo cadere per terra. 
+L'uccellino, quando non riceve comandi si abbassa e cade verso il fondo. 
+Ad ogni click del mouse o della barra spaziatrice corrisponde un solo battito delle ali, che comporta un innalzamento minimo, il che rende il pennuto molto sensibile ai movimenti, motivo per cui il gioco risulta piuttosto difficile e impegnativo. (https://it.wikipedia.org/wiki/Flappy_Bird)
 
-This README would normally document whatever steps are necessary to get your application up and running.
+FUNZIONALITA' OBBLIGATORIE:
+Creazione menù di gioco
+Creazione interfaccia di gioco
+Conteggio e salvataggio del punteggio ottenuto
 
-### What is this repository for? ###
+FUNZIONALITA' OPZIONALI:
+Possibilità di scegliere un altro sfondo di gioco
+Possibilità di cambiare l'uccellino
+Aggiunta di effetti sonori nel gioco
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+CHALLENGE PRINCIPALI:
+Gestione delle collisioni dell'uccellino
+Corretto utilizzo del pattern MVC
+Corretto utilizzo di JavaFX
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+SUDDIVISIONE DEL LAVORO:
+Davide Ciandrini: Creazione menù principale e campo di gioco, gestione dell'uccellino
+Leonardo Vincenzi: Gestione punteggi, gestione dei tubi e delle collisioni
