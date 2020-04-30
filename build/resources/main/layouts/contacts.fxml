@@ -16,12 +16,7 @@
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label prefHeight="43.0" prefWidth="513.0" text="Leonardo Vincenzi :       xxxxxxxxxxxxx@studio.unibo.it">
-               <font>
-                  <Font name="System Bold Italic" size="15.0" />
-               </font>
-            </Label>
-            <Label prefHeight="22.0" prefWidth="438.0" text="Filippo Zammarchi :       yyyyyyyyyyyyyy@studio.unibo.it">
+            <Label prefHeight="43.0" prefWidth="513.0" text="Leonardo Vincenzi :      leonardo.vincenzi@studio.unibo.it">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
