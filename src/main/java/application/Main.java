@@ -14,7 +14,7 @@ import java.io.IOException;
 public final class Main extends Application {
 
     private static final int SCENE_WIDTH = 600;
-    private static final int SCENE_HEIGHT = 400;
+    private static final int SCENE_HEIGHT = 335;
 
     public void start(final Stage menu) throws Exception {
 
@@ -25,6 +25,7 @@ public final class Main extends Application {
         menu.setTitle("Flappy Bird");
         menu.setScene(scene);
         menu.show();
+        menu.setResizable(false);
 
     }
 

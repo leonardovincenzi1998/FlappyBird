@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ContactsController">
+<Pane maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ContactsController">
    <children>
-      <VBox alignment="CENTER" depthTest="DISABLE" layoutX="91.0" layoutY="125.0" prefHeight="168.0" prefWidth="417.0">
+      <VBox alignment="CENTER" depthTest="DISABLE" layoutX="91.0" layoutY="114.0" prefHeight="168.0" prefWidth="417.0">
          <children>
             <Label prefHeight="22.0" prefWidth="403.0" text="Davide Ciandrini :       davide.ciandrini@studio.unibo.it">
                <font>
@@ -26,7 +26,7 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <Button fx:id="goBack" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="317.0" mnemonicParsing="false" onAction="#returnHome" text="Torna al menu principale" />
+      <Button fx:id="goBack" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="282.0" mnemonicParsing="false" onAction="#returnHome" text="Torna al menu principale" />
       <Label contentDisplay="CENTER" layoutX="166.0" layoutY="32.0" text="CONTATTI">
          <font>
             <Font name="Ink Free" size="50.0" />

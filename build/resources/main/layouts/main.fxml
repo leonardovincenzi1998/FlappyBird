@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+<BorderPane maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
    <top>
-      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="161.0" prefWidth="366.0" text="FLAPPY BIRD" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="149.0" prefWidth="366.0" text="FLAPPY BIRD" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font name="Ink Free" size="50.0" />
          </font>
@@ -18,7 +18,7 @@
    <center>
       <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="playBtn" defaultButton="true" mnemonicParsing="false" text="GIOCA" />
+            <Button fx:id="playBtn" defaultButton="true" mnemonicParsing="false" onAction="#clickPlay" text="GIOCA" />
             <Button fx:id="leaderboardBtn" mnemonicParsing="false" onAction="#clickLeaderboard" text="CLASSIFICA" />
             <Button fx:id="contactBtn" mnemonicParsing="false" onAction="#clickContacts" text="CONTATTI" />
          </children>
