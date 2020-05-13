@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.image.Image;
+
 public class FlappyImpl implements Flappy  {
 
     private final int widthBird;
@@ -7,15 +9,18 @@ public class FlappyImpl implements Flappy  {
     private double posX;
     private double posY;
 
-    private final String flappyImagePath;
+    /*private final String flappyImagePath;*/
+
 
     public FlappyImpl() {
         posX = 50;
         posY = 50;
-        widthBird = 50;
-        heightBird = 50;
-        flappyImagePath = "/res/flappy.png";
+        widthBird = 45;
+        heightBird = 32;
+        /*flappyImagePath = "/flappy.png";*/
     }
+
+    /*public String getFlappyImagePath() { return flappyImagePath; }*/
 
     public int getWidthBird() {
         return widthBird;
