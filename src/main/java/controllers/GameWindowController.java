@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class GameWindowController {
     FlappyImpl flappy= new FlappyImpl();
-    Image ico = new Image("/flappy.png");
+    Image ico = new Image(flappy.getFlappyImagePath());
 
 
     @FXML

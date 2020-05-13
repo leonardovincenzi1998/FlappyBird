@@ -2,7 +2,7 @@ package model;
 
 public interface Flappy {
 
-    /*String getFlappyImagePath();*/
+    String getFlappyImagePath();
     int getWidthBird();
     int getHeightBird();
     double getPosX();
