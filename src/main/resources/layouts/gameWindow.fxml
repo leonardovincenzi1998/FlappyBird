@@ -4,9 +4,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GameWindowController">
+<Pane fx:id="pane" maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FlappyGameControllerImpl">
    <children>
-      <ImageView fitHeight="335.0" fitWidth="600.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="background" fitHeight="335.0" fitWidth="600.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../res/background.jpeg" />
          </image>

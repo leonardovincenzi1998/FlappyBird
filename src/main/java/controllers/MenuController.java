@@ -18,9 +18,9 @@ import javafx.stage.Stage;
 public final class MenuController {
 
     @FXML
-    public Button leaderboardBtn;
-    public Button contactBtn;
-    public Button playBtn;
+    private Button leaderboardBtn;
+    private Button contactBtn;
+    private Button playBtn;
 
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML
