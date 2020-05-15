@@ -1,6 +1,9 @@
 package view;
 
-public interface FlappyGameView {
+import java.awt.*;
+
+public interface FlappyBirdView {
+
 
     void start();
 

@@ -12,13 +12,12 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- * The Controller related to the contacts.fxml GUI.
+ * The Controller related to the leaderboard.fxml GUI.
  *
  */
-public class ContactsController {
-
+public class LeaderboardViewController {
     @FXML
-    public Button goBack;
+    Button goBack;
 
     //Quando questo metodo viene chiamato ritorno al mainMenu
     public void returnHome(ActionEvent event) throws IOException {

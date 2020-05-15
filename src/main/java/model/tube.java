@@ -10,5 +10,7 @@ public interface tube {
 
     double getHeight();
 
+    double randomHeight();
+
     
 }
