@@ -17,11 +17,11 @@ public class FlappyImpl implements Flappy  {
         return flappyImagePath; }
 
     public int getWidthBird() {
-        return 45;
+        return 55;
     }
 
     public int getHeightBird() {
-        return 32;
+        return 150;
     }
 
     public double getPosX() {
