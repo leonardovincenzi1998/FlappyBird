@@ -5,7 +5,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import model.Flappy;
+import model.FlappyImpl;
 
 import java.awt.*;
 
@@ -21,6 +25,10 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private Scene scene;
     private FlappyGameViewObserver observer;
 
+    //oggetti per stampare uccellino
+    Flappy flappy= new FlappyImpl();
+    Rectangle r = new Rectangle();
+    Image ico = new Image(flappy.getFlappyImagePath());
 
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
@@ -40,6 +48,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
 
+
     private void setGameBackground(final Dimension screenSize) {
         this.root = new AnchorPane();
         this.scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
@@ -56,11 +65,22 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         background.fitWidthProperty().bind(root.widthProperty());
         background.fitHeightProperty().bind(root.heightProperty());
-        background.setPreserveRatio(true); //BOH
         this.observer.startGame();
         primaryStage.setScene(this.scene);
 
+        //this.printBird();
+
     }
+    @Override
+    public void printBird() {
+        r.setTranslateX(flappy.getPosX());
+        r.setTranslateY(flappy.getGravity());
+        r.setWidth(flappy.getWidthBird());
+        r.setHeight(flappy.getHeightBird());
+        r.setFill(new ImagePattern(ico));
+        this.root.getChildren().add(r);
+    }
+
 
     @Override
     public void start() {

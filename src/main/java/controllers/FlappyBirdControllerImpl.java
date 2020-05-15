@@ -2,13 +2,12 @@ package controllers;
 
 
 import javafx.stage.Stage;
+import model.FlappyImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
 public class FlappyBirdControllerImpl implements FlappyGameViewObserver {
-
-
 
     //private final FlappyGame model;
     private final FlappyBirdView view;
@@ -20,11 +19,12 @@ public class FlappyBirdControllerImpl implements FlappyGameViewObserver {
 
     }
 
-
     @Override
     public void startGame() {
         //System.out.println("Parte il gioco");
     //DA QUI FACCIO PARTIRE LA CREAZIONE DELL'UCCELLINO E DEI TUBI
+       this.view.printBird();
+
 
     }
 
