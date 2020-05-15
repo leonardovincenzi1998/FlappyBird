@@ -16,7 +16,7 @@
       </Label>
    </top>
    <center>
-      <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="playBtn" defaultButton="true" mnemonicParsing="false" onAction="#clickPlay" text="GIOCA" />
             <Button fx:id="leaderboardBtn" mnemonicParsing="false" onAction="#clickLeaderboard" text="CLASSIFICA" />
