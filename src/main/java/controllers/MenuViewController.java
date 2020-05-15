@@ -16,12 +16,12 @@ import javafx.stage.Stage;
  * The Controller related to the main.fxml GUI.
  *
  */
-public final class MenuController {
+public final class MenuViewController {
 
     @FXML
-    public Button leaderboardBtn;
-    public Button contactBtn;
-    public Button playBtn;
+    private Button leaderboardBtn;
+    private Button contactBtn;
+    private Button playBtn;
 
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML
@@ -58,17 +58,28 @@ public final class MenuController {
     @FXML
     public void clickPlay(ActionEvent event) throws IOException {
 
-        final Parent game = FXMLLoader.load(ClassLoader.getSystemResource("layouts/gameWindow.fxml"));
-        final Scene gameScene = new Scene(game);
+        /*final Parent game = FXMLLoader.load(ClassLoader.getSystemResource("layouts/gameWindow.fxml"));
+        final Scene gameScene = new Scene(game);*/
 
         //Prendo le informazioni dello Stage
-        final Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        /*gameScene.setOnKeyPressed();*/
-        //Cambio scena con .setScene e mostro window
-        window.setScene(gameScene);
-        window.show();
+
+        final Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        new FlappyBirdControllerImpl(primaryStage);
+        //Cambio scena con .setScene e mostro primaryStage
+        //primaryStage.setScene(gameScene);
+        //primaryStage.show();
 
     }
 }
+
+
+    /*public Button getPlayBtn() {
+        return playBtn;
+    }
+
+    public void setPlayBtn(Button playBtn) {
+        this.playBtn = playBtn;
+    }*/
+
 
 
