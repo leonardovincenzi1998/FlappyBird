@@ -31,7 +31,7 @@ public final class Main extends Application  {
         stage.setScene(scene);
         stage.show();
 
-        //stage.setResizable(false); //DA CONTROLLARE SE FARE IL GIOCO RESPONSIVE O NO
+        stage.setResizable(false); //DA CONTROLLARE SE FARE IL GIOCO RESPONSIVE O NO
 
 
     }

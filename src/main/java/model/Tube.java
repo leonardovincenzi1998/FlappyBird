@@ -1,6 +1,6 @@
 package model;
 
-public interface tube {
+public interface Tube {
 
     double getPosX();
 
@@ -11,6 +11,8 @@ public interface tube {
     double getHeight();
 
     double randomHeight();
+
+    public String getTubeImagePath();
 
     
 }

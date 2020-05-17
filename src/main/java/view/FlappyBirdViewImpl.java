@@ -1,10 +1,12 @@
 package view;
 
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -20,13 +22,13 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private AnchorPane root;
     private Scene scene;
     private FlappyGameViewObserver observer;
+    final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         screenSize.setSize(WIDTH,HEIGHT);
         this.primaryStage.setTitle(TITLE);
         this.primaryStage.centerOnScreen(); //BOH
@@ -44,6 +46,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         this.root = new AnchorPane();
         this.scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
+        //final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
         //background.setVisible(true);
         this.root.getChildren().add(background);
 
@@ -54,17 +57,30 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         AnchorPane.setTopAnchor(this.score, 0.);
         this.root.getChildren().add(this.score);*/
 
-        background.fitWidthProperty().bind(root.widthProperty());
-        background.fitHeightProperty().bind(root.heightProperty());
-        background.setPreserveRatio(true); //BOH
+        background.fitWidthProperty().bind(this.root.widthProperty());
+        background.fitHeightProperty().bind(this.root.heightProperty());
+        //background.setPreserveRatio(true); //BOH
         this.observer.startGame();
         primaryStage.setScene(this.scene);
+
+
+        //this.root.getChildren().add(tubo);
 
     }
 
     @Override
     public void start() {
 
+    }
+
+    @Override
+    public void setObserver(FlappyGameViewObserver observer) {
+        this.observer = observer;
+    }
+
+    @Override
+    public void addChildren(Node n) {
+        this.root.getChildren().add(n);
     }
 
     /*@Override

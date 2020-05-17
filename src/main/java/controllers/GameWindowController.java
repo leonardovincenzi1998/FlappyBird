@@ -38,7 +38,7 @@ public class GameWindowController {
         r.setWidth(flappy.getWidthBird());
         r.setHeight(flappy.getHeightBird());
         r.setFill(new ImagePattern(ico));
-        pane.getChildren().add(r);
+        //root.getChildren().add(r);
 
         timeline = new Timeline(new KeyFrame(
             Duration.seconds(0.025),
