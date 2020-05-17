@@ -52,7 +52,8 @@ public class FlappyImpl implements Flappy  {
     }
 
     public String getFlappyImagePath() {
-        return flappyImagePath; }
+        return flappyImagePath;
+    }
 
     public int getWidthBird() {
         return 45;
