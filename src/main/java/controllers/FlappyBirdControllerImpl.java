@@ -2,9 +2,10 @@ package controllers;
 
 
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import model.Flappy;
 import model.Tube;
 import model.TubeImpl;
 import view.FlappyBirdView;
@@ -19,12 +20,15 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     //private final Flappy flappy;
     private final Tube tube;
     private final FlappyBirdView view;
-    private TubeViewImpl tubeView = null;
+    private TubeViewImpl tubeView;
+    //public Rectangle r = new Rectangle();
+
 
     public FlappyBirdControllerImpl(Stage primaryStage) {
         //this.flappy = new FlappyImpl();
         this.tube = new TubeImpl(/*primaryStage.getHeight()*/);
-        this.view = new FlappyBirdViewImpl(primaryStage, this);
+        this.tubeView = new TubeViewImpl(this.tube, this);
+        this.view = new FlappyBirdViewImpl(primaryStage, this, this.tubeView);
         //System.out.println(view);
         //this.view.start();
 
@@ -33,7 +37,13 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     @Override
     public void startGame() {
-        this.tubeView = new TubeViewImpl(this.tube, this);
+
+        //final Rectangle prova = this.tubeView.getTube();
+        //this.view.addChildren(this.tubeView.getTube());
+
+
+        //System.out.println(this.tubeView.getTube());
+        //this.addNode(this.tubeView.getTube());
         //System.out.println("Parte il gioco");
     //DA QUI FACCIO PARTIRE LA CREAZIONE DELL'UCCELLINO E DEI TUBI
         //System.out.println(this.view.getScreenHeight());

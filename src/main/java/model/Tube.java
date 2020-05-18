@@ -10,9 +10,7 @@ public interface Tube {
 
     double getHeight();
 
-    double randomHeight();
-
-    public String getTubeImagePath();
+    String getTubeImagePath();
 
     
 }

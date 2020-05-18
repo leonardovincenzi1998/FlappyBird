@@ -2,15 +2,15 @@ package model;
 
 public class TubeImpl implements Tube{
 
-    private final static double INITIAL_POSX = 600;
-    private final static double INITIAL_POSY = 0;
+    private final static double INITIAL_POSX = 545;
+    private final static double INITIAL_POSY = 335;
     private final static double WIDTH = 55;
     //private static final int SCENE_WIDTH = 600;
     //private static final int SCENE_HEIGHT = 335;
     private double PosX;
     private double PosY;
     //private double screenHeight;
-    private double tubeHeight;
+    private double tubeHeight = 50 + (Math.random() * 141);;
     private final String tubeImagePath;
 
 
@@ -19,6 +19,8 @@ public class TubeImpl implements Tube{
         this.PosY = INITIAL_POSY;
         //this.screenHeight = height;
         tubeImagePath = ("tube.png");
+        /*System.out.println("Lunghezza tubo: " + this.getHeight());
+        System.out.println("Y tubo: " + this.PosY);*/
         //System.out.println("Costruttore tubo ok");
         //System.out.println(getHeight());
     }
@@ -40,13 +42,9 @@ public class TubeImpl implements Tube{
 
     @Override
     public double getHeight() {
-        return randomHeight();
+        return tubeHeight;
     }
 
-    @Override
-    public double randomHeight() {
-        return (tubeHeight = 50 + (Math.random() * 141));
-    }
     @Override
     public String getTubeImagePath(){
         return tubeImagePath;
