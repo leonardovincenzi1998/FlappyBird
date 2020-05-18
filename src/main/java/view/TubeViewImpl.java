@@ -19,7 +19,7 @@ public class TubeViewImpl {
     public FlappyBirdController controller;
     //StackPane imageContainer = new StackPane();
     //ImageView image = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
-    final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
+    //final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
 
 
     public TubeViewImpl(final Tube tube, FlappyBirdController controller){
@@ -29,7 +29,7 @@ public class TubeViewImpl {
         r.setY(tube.getPosY());
         r.setWidth(tube.getWidth());
         r.setHeight(tube.getHeight());
-        //r.setFill(new ImagePattern(ico));
+        r.setFill(new ImagePattern(ico));
         //imageContainer.getChildren().addAll(r);
         //this.controller.addNode(imageContainer);
         //r.setFill(new ImagePattern(ico));

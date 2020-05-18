@@ -30,12 +30,9 @@ public final class Main extends Application  {
         stage.setTitle("Flappy Bird");
         stage.setScene(scene);
         stage.show();
-<<<<<<< HEAD
         stage.setResizable(false);
-=======
 
-        stage.setResizable(false); //DA CONTROLLARE SE FARE IL GIOCO RESPONSIVE O NO
->>>>>>> 85a138a34cf214c14af3b4c961378f9d12c289ea
+
 
 
     }

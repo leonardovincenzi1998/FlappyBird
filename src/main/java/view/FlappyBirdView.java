@@ -1,22 +1,19 @@
 package view;
 
-<<<<<<< HEAD
 import model.FlappyImpl;
 
 import java.awt.*;
-=======
 import javafx.scene.Node;
 import javafx.scene.shape.Rectangle;
->>>>>>> 85a138a34cf214c14af3b4c961378f9d12c289ea
+
 
 public interface FlappyBirdView {
 
-    void printBird();
 
     void start();
-<<<<<<< HEAD
+
    // void setScore();
-=======
+
 
 
     void setObserver(FlappyGameViewObserver observer);
@@ -44,6 +41,6 @@ public interface FlappyBirdView {
      * @param e node to be removed
      */
    // void removeChildren(Node e);
->>>>>>> 85a138a34cf214c14af3b4c961378f9d12c289ea
+
 
 }

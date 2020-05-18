@@ -6,14 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-<<<<<<< HEAD
-import javafx.scene.paint.ImagePattern;
-=======
->>>>>>> 85a138a34cf214c14af3b4c961378f9d12c289ea
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import model.Flappy;
-import model.FlappyImpl;
+
 
 import java.awt.*;
 
@@ -25,20 +21,20 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private static final int FONT_SIZE = 20;
     private final Label score = new Label();
     private final Stage primaryStage;
-    private AnchorPane root;
+    private Pane root;
     private Scene scene;
     private FlappyGameViewObserver observer;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private FlappyViewImpl flappyView;
 
     //oggetti per stampare uccellino
-    Flappy flappy= new FlappyImpl();
     Rectangle r = new Rectangle();
-    Image ico = new Image(flappy.getFlappyImagePath());
 
 
-    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
+    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView) {
         this.primaryStage = primaryStage;
         this.observer = observer;
+        this.flappyView = flappyView;
         screenSize.setSize(WIDTH,HEIGHT);
         this.primaryStage.setTitle(TITLE);
         this.primaryStage.centerOnScreen(); //BOH
@@ -51,10 +47,8 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     }
 
-
-
     private void setGameBackground(final Dimension screenSize) {
-        this.root = new AnchorPane();
+        this.root = new Pane();
         this.scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
         //final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
@@ -68,33 +62,15 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         AnchorPane.setTopAnchor(this.score, 0.);
         this.root.getChildren().add(this.score);*/
 
-<<<<<<< HEAD
         background.fitWidthProperty().bind(root.widthProperty());
         background.fitHeightProperty().bind(root.heightProperty());
         this.observer.startGame();
         primaryStage.setScene(this.scene);
 
-        //this.printBird();
-=======
-        background.fitWidthProperty().bind(this.root.widthProperty());
-        background.fitHeightProperty().bind(this.root.heightProperty());
-        //background.setPreserveRatio(true); //BOH
-        this.observer.startGame();
-        primaryStage.setScene(this.scene);
+
+        this.root.getChildren().add(this.flappyView.getFlappy());
 
 
-        //this.root.getChildren().add(tubo);
->>>>>>> 85a138a34cf214c14af3b4c961378f9d12c289ea
-
-    }
-    @Override
-    public void printBird() {
-        r.setTranslateX(flappy.getPosX());
-        r.setTranslateY(flappy.getGravity());
-        r.setWidth(flappy.getWidthBird());
-        r.setHeight(flappy.getHeightBird());
-        r.setFill(new ImagePattern(ico));
-        this.root.getChildren().add(r);
     }
 
 
