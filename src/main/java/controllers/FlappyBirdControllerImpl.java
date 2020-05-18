@@ -2,35 +2,35 @@ package controllers;
 
 
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import model.Flappy;
+import model.FlappyImpl;
 import model.Tube;
 import model.TubeImpl;
-import view.FlappyBirdView;
-import view.FlappyBirdViewImpl;
-import view.FlappyGameViewObserver;
-import view.TubeViewImpl;
+import view.*;
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
 
-
     //private final Flappy flappy;
     private final Tube tube;
+    private final Flappy flappy;
     private final FlappyBirdView view;
     private TubeViewImpl tubeView;
-    //public Rectangle r = new Rectangle();
+    private FlappyViewImpl flappyView;
+
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) {
-        //this.flappy = new FlappyImpl();
+
         this.tube = new TubeImpl(/*primaryStage.getHeight()*/);
         this.tubeView = new TubeViewImpl(this.tube, this);
-        this.view = new FlappyBirdViewImpl(primaryStage, this, this.tubeView);
+        this.flappy = new FlappyImpl();
+        flappyView = new FlappyViewImpl(this.flappy, this);
+        this.view = new FlappyBirdViewImpl(primaryStage, this, this.flappyView, this.tubeView);
         //System.out.println(view);
         //this.view.start();
+        this.flappy.flappyUpdate(flappyView.getFlappy());
 
     }
 
@@ -38,16 +38,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     @Override
     public void startGame() {
 
-        //final Rectangle prova = this.tubeView.getTube();
-        //this.view.addChildren(this.tubeView.getTube());
-
-
-        //System.out.println(this.tubeView.getTube());
-        //this.addNode(this.tubeView.getTube());
-        //System.out.println("Parte il gioco");
-    //DA QUI FACCIO PARTIRE LA CREAZIONE DELL'UCCELLINO E DEI TUBI
-        //System.out.println(this.view.getScreenHeight());
-        //System.out.println(this.view.getScreenWidth());
     }
 
     @Override

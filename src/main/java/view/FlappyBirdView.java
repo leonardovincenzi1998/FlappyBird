@@ -1,12 +1,19 @@
 package view;
 
+import model.FlappyImpl;
+
+import java.awt.*;
 import javafx.scene.Node;
 import javafx.scene.shape.Rectangle;
+
 
 public interface FlappyBirdView {
 
 
     void start();
+
+   // void setScore();
+
 
 
     void setObserver(FlappyGameViewObserver observer);

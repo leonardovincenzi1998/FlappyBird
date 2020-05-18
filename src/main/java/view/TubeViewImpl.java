@@ -30,7 +30,7 @@ public class TubeViewImpl {
         r.setY(tube.getPosY());*/
         System.out.println("Lunghezza tubo: " + this.tube.getHeight());
 
-        r.setWidth(tube.getWidth());
+        r.setWidth(this.tube.getWidth());
         r.setHeight(this.tube.getHeight());
 
         //System.out.println("Lunghezza tubo2: " + this.tube.getHeight());
@@ -42,8 +42,6 @@ public class TubeViewImpl {
         r.setFill(new ImagePattern(ico));
         r.setStroke(Color.BLACK);
 
-        System.out.println("Y rettangolo: " + r.getY());
-        //System.out.println(r);
         //this.view.addChildren(r);
 
         //this.controller.addNode(tubo);
