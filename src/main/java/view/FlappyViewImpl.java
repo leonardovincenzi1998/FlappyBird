@@ -15,19 +15,14 @@ public class FlappyViewImpl {
 
     Rectangle r = new Rectangle();
     Image ico;
-    public FlappyBirdController controller;
 
-    public FlappyViewImpl(final Flappy flappy, FlappyBirdController controller) {
-        this.controller = controller;
+    public FlappyViewImpl(final Flappy flappy) {
         this.ico = new Image(flappy.getFlappyImagePath());
         r.setX(flappy.getPosX());
         r.setTranslateY(flappy.getPosY());
         r.setWidth(flappy.getWidthBird());
         r.setHeight(flappy.getHeightBird());
         r.setFill(new ImagePattern(ico));
-
-        System.out.println(r);
-        System.out.println("Diocane sono dentro la view di flappy");
 
     }
     public Rectangle getFlappy(){

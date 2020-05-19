@@ -16,15 +16,13 @@ public class TubeViewImpl {
     public Image ico;
     private Tube tube;
 
-    public FlappyBirdController controller;
     //StackPane imageContainer = new StackPane();
     //ImageView image = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
     //final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
 
 
-    public TubeViewImpl(final Tube tube, FlappyBirdController controller){
+    public TubeViewImpl(final Tube tube){
         this.tube = tube;
-        this.controller = controller;
         this.ico = new Image(tube.getTubeImagePath());
         /*r.setX(tube.getPosX());
         r.setY(tube.getPosY());*/
@@ -49,6 +47,7 @@ public class TubeViewImpl {
         //System.out.println("Diocane sono dentro la view di tube");
 
     }
+
 
     public Rectangle getTube(){
         return this.r;

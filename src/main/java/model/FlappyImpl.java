@@ -20,7 +20,6 @@ public class FlappyImpl implements Flappy  {
 
     public FlappyImpl() {
         posX = 50;
-        gravity = 20;
         flappyImagePath = ("bird.png");
     }
 
