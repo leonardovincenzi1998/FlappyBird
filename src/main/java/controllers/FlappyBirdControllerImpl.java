@@ -31,7 +31,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         this.addNode(this.flappyView.getFlappy());
 
         this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
-        //this.flappy.flappyUpdate(this.flappyView.getFlappy());
+        this.flappy.flappyUpdate(this.flappyView.getFlappy());
 
         //this.tube.tubeUpdate(this.tubeView.getTube());
 
