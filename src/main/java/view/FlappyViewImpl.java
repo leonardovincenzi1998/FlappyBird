@@ -15,10 +15,8 @@ public class FlappyViewImpl {
 
     Rectangle r = new Rectangle();
     Image ico;
-    public FlappyBirdController controller;
 
-    public FlappyViewImpl(final Flappy flappy, FlappyBirdController controller) {
-        this.controller = controller;
+    public FlappyViewImpl(final Flappy flappy) {
         this.ico = new Image(flappy.getFlappyImagePath());
         r.setX(flappy.getPosX());
         r.setTranslateY(flappy.getPosY());
