@@ -1,7 +1,8 @@
-package controllers;
+package controllers.view;
 
 import java.io.IOException;
 
+import controllers.FlappyBirdControllerImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
