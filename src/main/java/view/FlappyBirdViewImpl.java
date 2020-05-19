@@ -39,8 +39,8 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         this.primaryStage.centerOnScreen(); //BOH
         /*this.primaryStage.setMaximized(false);
         this.primaryStage.setFullScreen(false);*/
-        this.primaryStage.setMinHeight(HEIGHT);
-        this.primaryStage.setMinWidth(WIDTH);
+        /*this.primaryStage.setMinHeight(HEIGHT);
+        this.primaryStage.setMinWidth(WIDTH);*/
         this.setGameBackground(screenSize);
         //System.out.println("Ciao");
 
@@ -63,9 +63,9 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         background.fitWidthProperty().bind(root.widthProperty());
         background.fitHeightProperty().bind(root.heightProperty());
-        this.observer.startGame();
-        primaryStage.setScene(this.scene);
 
+        primaryStage.setScene(this.scene);
+        this.observer.startGame();
 
         this.root.getChildren().add(this.tubeView.getTube());
         this.root.getChildren().add(this.flappyView.getFlappy());

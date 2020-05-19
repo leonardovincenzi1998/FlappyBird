@@ -22,15 +22,17 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) {
-
+        //this.tubeController = new TubeControllerImpl(this, )
         this.tube = new TubeImpl(/*primaryStage.getHeight()*/);
         this.tubeView = new TubeViewImpl(this.tube, this);
         this.flappy = new FlappyImpl();
-        flappyView = new FlappyViewImpl(this.flappy, this);
+        this.flappyView = new FlappyViewImpl(this.flappy, this);
         this.view = new FlappyBirdViewImpl(primaryStage, this, this.flappyView, this.tubeView);
         //System.out.println(view);
         //this.view.start();
-        this.flappy.flappyUpdate(flappyView.getFlappy());
+        this.flappy.flappyUpdate(this.flappyView.getFlappy());
+        this.tube.tubeUpdate(this.tubeView.getTube());
+
 
     }
 
