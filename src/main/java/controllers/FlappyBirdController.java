@@ -6,6 +6,8 @@ import javafx.scene.shape.Rectangle;
 
 public interface FlappyBirdController {
 
+
+    void pressSpace();
     //SpongebobGame getModel();
 
     /**

@@ -14,6 +14,7 @@ public class FlappyControllerImpl {
         this.flappyView = new FlappyViewImpl(this.flappy);
     }
 
+
     public Flappy getFlappyModel(){
         return this.flappy;
     }

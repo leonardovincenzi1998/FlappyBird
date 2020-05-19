@@ -1,5 +1,6 @@
 package view;
 
+import javafx.scene.layout.Pane;
 import model.FlappyImpl;
 
 import java.awt.*;
@@ -14,7 +15,7 @@ public interface FlappyBirdView {
 
    // void setScore();
 
-
+    Pane getRoot();
 
     void setObserver(FlappyGameViewObserver observer);
 

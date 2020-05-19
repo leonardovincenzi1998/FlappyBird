@@ -1,7 +1,10 @@
 package controllers;
 
 
+import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import model.Flappy;
 import model.FlappyImpl;
@@ -36,9 +39,14 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     }
 
+    public void pressSpace() {
+       this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
+        //System.out.println("prova");
+    }
 
     @Override
     public void startGame() {
+        this.pressSpace();
 
     }
 
