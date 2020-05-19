@@ -2,6 +2,7 @@ package model;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
@@ -18,19 +19,27 @@ public class TubeImpl implements Tube{
     private double tubeHeight = 50 + (Math.random() * 141);;
     private final String tubeImagePath;
 
+    private final TranslateTransition transition = new TranslateTransition();
+    private final int duration = 10000;
+
 
     public TubeImpl(/*double height*/) {
         this.PosX = INITIAL_POSX;
         this.PosY = INITIAL_POSY;
         //this.screenHeight = height;
         tubeImagePath = ("tube.png");
-        /*System.out.println("Lunghezza tubo: " + this.getHeight());
-        System.out.println("Y tubo: " + this.PosY);*/
-        //System.out.println("Costruttore tubo ok");
-        //System.out.println(getHeight());
     }
 
+
     public void tubeUpdate(Rectangle r) {
+        transition.setNode(r);
+        transition.setFromX(55);
+        transition.setToX(-600);
+        transition.setDuration(Duration.millis(this.duration));
+        transition.play();
+    }
+
+    /*public void tubeUpdate(Rectangle r) {
         r.setTranslateX(gravity);
         timeline = new Timeline(new KeyFrame(
                 Duration.seconds(0.025),
@@ -40,7 +49,7 @@ public class TubeImpl implements Tube{
         timeline.play();
 
 
-    }
+    }*/
 
     public void tubeMovement(Rectangle r) {
         gravity = gravity-inc;

@@ -26,9 +26,6 @@ public class FlappyViewImpl {
         r.setHeight(flappy.getHeightBird());
         r.setFill(new ImagePattern(ico));
 
-        System.out.println(r);
-        System.out.println("Diocane sono dentro la view di flappy");
-
     }
     public Rectangle getFlappy(){
         return this.r;

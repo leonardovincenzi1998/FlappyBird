@@ -67,8 +67,8 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         primaryStage.setScene(this.scene);
         this.observer.startGame();
 
-        this.root.getChildren().add(this.tubeView.getTube());
-        this.root.getChildren().add(this.flappyView.getFlappy());
+        //this.root.getChildren().add(this.tubeView.getTube());
+        //this.root.getChildren().add(this.flappyView.getFlappy());
 
 
     }

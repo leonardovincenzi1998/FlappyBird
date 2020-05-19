@@ -11,27 +11,29 @@ import view.*;
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
-
-    //private final Flappy flappy;
-    private final Tube tube;
     private final Flappy flappy;
     private final FlappyBirdView view;
-    private TubeViewImpl tubeView;
     private FlappyViewImpl flappyView;
+    private TubeControllerImpl tubeController;
 
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) {
-        //this.tubeController = new TubeControllerImpl(this, )
-        this.tube = new TubeImpl(/*primaryStage.getHeight()*/);
-        this.tubeView = new TubeViewImpl(this.tube, this);
+        this.tubeController = new TubeControllerImpl();
+
         this.flappy = new FlappyImpl();
         this.flappyView = new FlappyViewImpl(this.flappy, this);
-        this.view = new FlappyBirdViewImpl(primaryStage, this, this.flappyView, this.tubeView);
+
+        this.view = new FlappyBirdViewImpl(primaryStage, this, this.flappyView, this.tubeController.getTubeView());
         //System.out.println(view);
         //this.view.start();
-        this.flappy.flappyUpdate(this.flappyView.getFlappy());
-        this.tube.tubeUpdate(this.tubeView.getTube());
+        this.addNode(this.tubeController.getTubeView().getTube());
+        this.addNode(this.flappyView.getFlappy());
+
+        this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
+        //this.flappy.flappyUpdate(this.flappyView.getFlappy());
+
+        //this.tube.tubeUpdate(this.tubeView.getTube());
 
 
     }
