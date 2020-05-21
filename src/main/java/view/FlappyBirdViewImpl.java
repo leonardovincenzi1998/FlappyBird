@@ -4,6 +4,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -65,7 +67,13 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         background.fitHeightProperty().bind(root.heightProperty());
 
         primaryStage.setScene(this.scene);
-        this.observer.startGame();
+
+
+        this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+            if (event.getCode() == KeyCode.SPACE) {
+                this.observer.startGame();
+            }
+        });
 
         //this.root.getChildren().add(this.tubeView.getTube());
         //this.root.getChildren().add(this.flappyView.getFlappy());
@@ -74,9 +82,14 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
 
+
     @Override
     public void start() {
 
+    }
+
+    public Pane getRoot() {
+        return this.root;
     }
 
     @Override

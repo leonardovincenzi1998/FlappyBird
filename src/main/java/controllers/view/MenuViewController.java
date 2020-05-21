@@ -59,8 +59,7 @@ public final class MenuViewController {
     @FXML
     public void clickPlay(ActionEvent event) throws IOException {
 
-        /*final Parent game = FXMLLoader.load(ClassLoader.getSystemResource("layouts/gameWindow.fxml"));
-        final Scene gameScene = new Scene(game);*/
+
 
         //Prendo le informazioni dello Stage
 

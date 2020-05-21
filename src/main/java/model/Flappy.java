@@ -6,6 +6,11 @@ import java.awt.*;
 
 public interface Flappy {
 
+    //void jump(Rectangle r);
+    void flappyJump(Rectangle r);
+
+    void flappyGravity(Rectangle r, double inc);
+
     void flappyUpdate(Rectangle r);
 
     String getFlappyImagePath();
