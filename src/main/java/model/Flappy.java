@@ -6,8 +6,10 @@ import java.awt.*;
 
 public interface Flappy {
 
-    //void jump(Rectangle r);
+    //void gravity(Rectangle flappy);
     void flappyJump(Rectangle r);
+
+    //void flappyReverse(Rectangle r);
 
     void flappyGravity(Rectangle r, double inc);
 

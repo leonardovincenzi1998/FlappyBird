@@ -16,26 +16,26 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     private final FlappyBirdView view;
     private TubeControllerImpl tubeController;
-    private FlappyControllerImpl flappyController;
-
+    private  FlappyControllerImpl flappyController;
+    //private GameLoopImpl gameLoop;
 
     public FlappyBirdControllerImpl(Stage primaryStage) {
-        this.tubeController = new TubeControllerImpl();
-        this.flappyController = new FlappyControllerImpl();
+        tubeController = new TubeControllerImpl();
+        flappyController = new FlappyControllerImpl();
 
-        this.view = new FlappyBirdViewImpl(primaryStage, this, this.flappyController.getFlappyView(), this.tubeController.getTubeView());
-        //System.out.println(view);
-        //this.view.start();
-        this.addNode(this.tubeController.getTubeView().getTube());
+        this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView(), tubeController.getTubeView());
+        //this.addNode(this.tubeController.getTubeView().getTube());
         this.addNode(this.flappyController.getFlappyView().getFlappy());
 
-        this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
+
+        // STAMPA TUBO UCCELLINO
+
+
+
+        // PRE IMPLEMENTAZIONE GAMELOOP
+        //this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
         this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
 
-        //this.flappy.flappyUpdate(this.flappyView.getFlappy());
-
-
-        //this.tube.tubeUpdate(this.tubeView.getTube());
 
 
     }
@@ -47,8 +47,8 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     @Override
     public void startGame() {
+        //gameLoop = new GameLoopImpl(this.tubeController, this.flappyController);
         this.pressSpace();
-
     }
 
     @Override

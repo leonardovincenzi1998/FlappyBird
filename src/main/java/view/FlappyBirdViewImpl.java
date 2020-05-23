@@ -1,5 +1,6 @@
 package view;
 
+import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -77,6 +78,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         //this.root.getChildren().add(this.tubeView.getTube());
         //this.root.getChildren().add(this.flappyView.getFlappy());
+        //this.observer.startGame();
 
 
     }
