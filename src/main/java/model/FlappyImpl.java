@@ -21,6 +21,7 @@ public class FlappyImpl implements Flappy  {
     Timeline timelineDown=new Timeline();
     Timeline timelineUp=new Timeline();
     TranslateTransition move = new TranslateTransition(Duration.seconds(4));
+    //int cont=0;
 
 
 

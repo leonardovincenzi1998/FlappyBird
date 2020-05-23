@@ -1,6 +1,30 @@
 package controllers;
 
-public class GameLoopImpl {
+import javafx.animation.Animation;
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class GameLoopImpl extends Application {
+    private FlappyBirdController controller;
+
+    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
+        this.controller = controller;
+        this.start(primaryStage);
+    }
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                update();
+            }
+        }.start();
+    }
+
+    public void update(){
+        this.controller.initialGame();
+    }
 
     /*private double previous = System.currentTimeMillis();
     private double lag;

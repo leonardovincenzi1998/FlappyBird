@@ -57,7 +57,7 @@ public final class MenuViewController {
 
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML
-    public void clickPlay(ActionEvent event) throws IOException {
+    public void clickPlay(ActionEvent event) throws Exception {
 
 
 
