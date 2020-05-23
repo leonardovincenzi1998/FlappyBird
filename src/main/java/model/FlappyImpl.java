@@ -18,11 +18,8 @@ public class FlappyImpl implements Flappy  {
     //private double inc = 1.0;
     private final String flappyImagePath;
 
-    /*Timeline timelineDown=new Timeline();
-    Timeline timelineUp=new Timeline();*/
-    TranslateTransition move = new TranslateTransition(Duration.seconds(4));
-
-
+    Timeline timelineDown=new Timeline();
+    Timeline timelineUp=new Timeline();
 
 
     public FlappyImpl() {
@@ -30,9 +27,44 @@ public class FlappyImpl implements Flappy  {
         flappyImagePath = ("bird.png");
     }
 
-    public void gravity() {
-        setPosY(getPosY()+0.001);
+    public void flappyUpdate(Rectangle r) {
+        double inc = 1.0;
+        r.setTranslateY(gravity);
+        timelineDown = new Timeline(new KeyFrame(
+                Duration.seconds(0.005),
+                x -> flappyGravity(r,inc))
+        );
+        timelineDown.setCycleCount(Timeline.INDEFINITE);
+        timelineDown.setRate(inc);
+        timelineDown.play();
     }
+
+    public void flappyGravity(Rectangle r, double inc) {
+        if ((gravity >= HEIGHT - getHeightBird()) || (gravity == 0 )) {
+            System.out.println("fermati");
+            timelineDown.stop();
+            //timelineUp.stop();
+        }
+        gravity = gravity + inc;
+        r.setTranslateY(gravity);
+    }
+
+    public void flappyJump(Rectangle r) {
+        timelineDown.pause();
+        double inc = -1.0;
+        r.setTranslateY(gravity);
+        timelineUp = new Timeline(new KeyFrame(
+                Duration.seconds(0.005),
+                x -> flappyGravity(r, inc))
+        );
+        timelineUp.setCycleCount(55);
+        timelineUp.play();
+        timelineUp.setOnFinished(actionEvent -> timelineDown.play());
+    }
+
+    /*public void gravity() {
+        setPosY(getPosY()+1);
+    }*/
 
     public String getFlappyImagePath() {
         return flappyImagePath;
@@ -61,57 +93,6 @@ public class FlappyImpl implements Flappy  {
     public void setPosY(double posY) {
         this.posY = posY;
     }
-
-    /*public void flappyUpdate(Rectangle r) {
-        move.setNode(r);
-        //move.setFromY(gravity);
-        move.setByY(40);
-        move.setRate(1);
-        move.play();
-    }
-
-    public void flappyReverse(Rectangle r) {
-        move.setNode(r);
-        move.setRate(-1);
-        move.play();
-    }
-    public void flappyUpdate(Rectangle r) {
-        double inc = 1.0;
-        r.setTranslateY(gravity);
-        timelineDown = new Timeline(new KeyFrame(
-                Duration.seconds(0.005),
-                x -> flappyGravity(r,inc))
-        );
-        timelineDown.setCycleCount(Timeline.INDEFINITE);
-        timelineDown.setRate(inc);
-        timelineDown.play();
-    }
-
-    public void flappyGravity(Rectangle r, double inc) {
-        if ((gravity >= HEIGHT - getHeightBird()) || (gravity == 0 )) {
-            System.out.println("fermati");
-            timelineDown.stop();
-            //timelineUp.stop();
-        }
-        gravity = gravity + inc;
-        r.setTranslateY(gravity);
-    }
-
-    /*public void flappyJump(Rectangle r) {
-        timelineDown.pause();
-        double inc = -1.0;
-        r.setTranslateY(gravity);
-        timelineUp = new Timeline(new KeyFrame(
-                Duration.seconds(0.005),
-                x -> flappyGravity(r, inc))
-        );
-        timelineUp.setCycleCount(55);
-        timelineUp.play();
-        timelineUp.setOnFinished(actionEvent -> timelineDown.play());
-
-
-    }
-*/
 
 
 

@@ -1,10 +1,10 @@
 package controllers;
 
-public class GameLoopImpl {
+public class GameLoopImpl {/*
 
     private double previus = System.currentTimeMillis();
     private double lag = 0.0;
-    private final static double MS_PER_UPDATE = 0.01666666667;
+    private final static double MS_PER_UPDATE = 16.66666667;
     private TubeControllerImpl tubeController;
     private FlappyControllerImpl flappyController;
 
@@ -14,7 +14,7 @@ public class GameLoopImpl {
         this.flappyController = flappyController;
         this.loop();
     }
-    
+
     public void loop() {
         while (true) {
             double current = System.currentTimeMillis();
@@ -37,5 +37,5 @@ public class GameLoopImpl {
     public void update() {
         this.flappyController.getFlappyModel().gravity();
 
-    }
+    }*/
 }

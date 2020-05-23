@@ -15,32 +15,32 @@ import view.*;
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
-    private TubeControllerImpl tubeController;
-    private FlappyControllerImpl flappyController;
-    private GameLoopImpl gameLoop;
+    private final TubeControllerImpl tubeController = new TubeControllerImpl();
+    private final FlappyControllerImpl flappyController = new FlappyControllerImpl();
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) {
-        this.tubeController = new TubeControllerImpl();
-        this.flappyController = new FlappyControllerImpl();
-        this.gameLoop = new GameLoopImpl(this.tubeController, this.flappyController);
+        TubeControllerImpl tubeController = new TubeControllerImpl();
+        FlappyControllerImpl flappyController = new FlappyControllerImpl();
 
-        this.view = new FlappyBirdViewImpl(primaryStage, this, this.flappyController.getFlappyView(), this.tubeController.getTubeView());
 
-        // STAMPA TUBO UCCELLINO
-        //this.addNode(this.tubeController.getTubeView().getTube());
-        //this.addNode(this.flappyController.getFlappyView().getFlappy());
+        this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView(), tubeController.getTubeView());
+        //GameLoopImpl gameLoop = new GameLoopImpl(tubeController, flappyController);
+
+
+        this.addNode(this.tubeController.getTubeView().getTube());
+        this.addNode(this.flappyController.getFlappyView().getFlappy());
 
         // PRE IMPLEMENTAZIONE GAMELOOP
-        //this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
-        //this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
+        this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
 
 
     }
 
     public void pressSpace() {
-       //this.flappyController.getFlappyModel().flappyReverse(this.flappyController.getFlappyView().getFlappy());
-        //System.out.println("prova");
+       this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
+       System.out.println("prova");
     }
 
     @Override
