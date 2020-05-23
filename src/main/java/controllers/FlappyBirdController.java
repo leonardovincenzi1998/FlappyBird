@@ -8,8 +8,9 @@ public interface FlappyBirdController {
 
 
     void pressSpace();
-    //SpongebobGame getModel();
 
+
+    void initialGame();
     /**
      * Quits the game.
      */

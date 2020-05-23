@@ -21,6 +21,10 @@ public class FlappyImpl implements Flappy  {
     Timeline timelineDown=new Timeline();
     Timeline timelineUp=new Timeline();
 
+    TranslateTransition move = new TranslateTransition(Duration.seconds(4));
+    //int cont=0;
+
+
 
     public FlappyImpl() {
         posX = 50;
@@ -28,7 +32,10 @@ public class FlappyImpl implements Flappy  {
     }
 
     public void flappyUpdate(Rectangle r) {
-        double inc = 1.0;
+        r.setY(getPosY()+3);
+        setPosY(getPosY()+3);
+
+        /*double inc = 1.0;
         r.setTranslateY(gravity);
         timelineDown = new Timeline(new KeyFrame(
                 Duration.seconds(0.005),
@@ -36,14 +43,14 @@ public class FlappyImpl implements Flappy  {
         );
         timelineDown.setCycleCount(Timeline.INDEFINITE);
         timelineDown.setRate(inc);
-        timelineDown.play();
+        timelineDown.play();*/
     }
 
-    public void flappyGravity(Rectangle r, double inc) {
+    /*public void flappyGravity(Rectangle r, double inc) {
         if ((gravity >= HEIGHT - getHeightBird()) || (gravity == 0 )) {
             System.out.println("fermati");
             timelineDown.stop();
-            //timelineUp.stop();
+            timelineUp.stop();
         }
         gravity = gravity + inc;
         r.setTranslateY(gravity);
@@ -60,10 +67,6 @@ public class FlappyImpl implements Flappy  {
         timelineUp.setCycleCount(55);
         timelineUp.play();
         timelineUp.setOnFinished(actionEvent -> timelineDown.play());
-    }
-
-    /*public void gravity() {
-        setPosY(getPosY()+1);
     }*/
 
     public String getFlappyImagePath() {
@@ -93,8 +96,6 @@ public class FlappyImpl implements Flappy  {
     public void setPosY(double posY) {
         this.posY = posY;
     }
-
-
 
 
 }

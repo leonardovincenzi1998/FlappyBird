@@ -1,7 +1,8 @@
-package controllers;
+package controllers.view;
 
 import java.io.IOException;
 
+import controllers.FlappyBirdControllerImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,10 +57,9 @@ public final class MenuViewController {
 
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML
-    public void clickPlay(ActionEvent event) throws IOException {
+    public void clickPlay(ActionEvent event) throws Exception {
 
-        /*final Parent game = FXMLLoader.load(ClassLoader.getSystemResource("layouts/gameWindow.fxml"));
-        final Scene gameScene = new Scene(game);*/
+
 
         //Prendo le informazioni dello Stage
 

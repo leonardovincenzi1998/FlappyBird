@@ -1,5 +1,6 @@
 package view;
 
+import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -27,9 +28,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private TubeViewImpl tubeView;
     private FlappyViewImpl flappyView;
 
-
-    //oggetti per stampare uccellino
-    Rectangle r = new Rectangle();
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView, TubeViewImpl tubeView) {
         this.primaryStage = primaryStage;
@@ -77,6 +75,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         //this.root.getChildren().add(this.tubeView.getTube());
         //this.root.getChildren().add(this.flappyView.getFlappy());
+        //this.observer.startGame();
 
 
     }

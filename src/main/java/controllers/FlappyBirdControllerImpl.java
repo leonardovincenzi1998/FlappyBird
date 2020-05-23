@@ -1,52 +1,56 @@
 package controllers;
 
 
-import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import model.Flappy;
-import model.FlappyImpl;
-import model.Tube;
-import model.TubeImpl;
-import view.*;
+import view.FlappyBirdView;
+import view.FlappyBirdViewImpl;
+import view.FlappyGameViewObserver;
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
-    private final TubeControllerImpl tubeController = new TubeControllerImpl();
-    private final FlappyControllerImpl flappyController = new FlappyControllerImpl();
+    private TubeControllerImpl tubeController;
+    private  FlappyControllerImpl flappyController;
+    private GameLoopImpl gameLoop;
 
-
-    public FlappyBirdControllerImpl(Stage primaryStage) {
-        TubeControllerImpl tubeController = new TubeControllerImpl();
-        FlappyControllerImpl flappyController = new FlappyControllerImpl();
-
+    public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
+        tubeController = new TubeControllerImpl();
+        flappyController = new FlappyControllerImpl();
+        gameLoop = new GameLoopImpl(this, primaryStage);
 
         this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView(), tubeController.getTubeView());
-        //GameLoopImpl gameLoop = new GameLoopImpl(tubeController, flappyController);
-
-
-        this.addNode(this.tubeController.getTubeView().getTube());
+        //this.addNode(this.tubeController.getTubeView().getTube());
         this.addNode(this.flappyController.getFlappyView().getFlappy());
 
+
+        // STAMPA TUBO UCCELLINO
+
+
+
+
         // PRE IMPLEMENTAZIONE GAMELOOP
-        this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
+        //this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
+        //this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
+
 
 
     }
 
+    public void initialGame(){
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
+    }
+
     public void pressSpace() {
-       this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
-       System.out.println("prova");
+        gameLoop.update();
+       //this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
+        //System.out.println("prova");
     }
 
     @Override
     public void startGame() {
+        //gameLoop = new GameLoopImpl(this.tubeController, this.flappyController);
         this.pressSpace();
-
     }
 
     @Override

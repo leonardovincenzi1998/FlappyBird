@@ -6,11 +6,11 @@ import java.awt.*;
 
 public interface Flappy {
 
-    //void gravity();
+    //void gravity(Rectangle flappy);
 
-    void flappyJump(Rectangle r);
+    //void flappyJump(Rectangle r);
 
-    void flappyGravity(Rectangle r, double inc);
+    //void flappyGravity(Rectangle r, double inc);
 
     void flappyUpdate(Rectangle r);
 
