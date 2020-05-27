@@ -7,6 +7,8 @@ import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
+import java.io.IOException;
+
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
@@ -24,40 +26,21 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         this.addNode(this.flappyController.getFlappyView().getFlappy());
 
 
-        // STAMPA TUBO UCCELLINO
-
-
-
-
-        // PRE IMPLEMENTAZIONE GAMELOOP
-        //this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
-        //this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
-
-
-
     }
 
-    public void initialGame(){
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
+    public void initialGame(double n){
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(),n);
     }
 
+    @Override
     public void pressSpace() {
-        gameLoop.update();
-       //this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
-        //System.out.println("prova");
+        gameLoop.spazioPremuto();
+        //this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
     }
 
-    @Override
-    public void startGame() {
-        //gameLoop = new GameLoopImpl(this.tubeController, this.flappyController);
-        this.pressSpace();
+    public void quit() throws IOException {
+        this.flappyController.getFlappyModel().floorCollision(this.flappyController.getFlappyView().getFlappy());
     }
-
-    @Override
-    public void quit() {
-
-    }
-
 
     @Override
     public void addNode(final Node n) {

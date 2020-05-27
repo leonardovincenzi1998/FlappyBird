@@ -3,6 +3,7 @@ package model;
 import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
+import java.io.IOException;
 
 public interface Flappy {
 
@@ -12,7 +13,9 @@ public interface Flappy {
 
     //void flappyGravity(Rectangle r, double inc);
 
-    void flappyUpdate(Rectangle r);
+    void floorCollision(Rectangle r) throws IOException;
+
+    void flappyUpdate(Rectangle r, double n);
 
     String getFlappyImagePath();
 

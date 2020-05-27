@@ -4,13 +4,16 @@ import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
+
 public interface FlappyBirdController {
 
 
     void pressSpace();
 
+    void quit() throws IOException;
 
-    void initialGame();
+    void initialGame(double n);
     /**
      * Quits the game.
      */

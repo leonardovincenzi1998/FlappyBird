@@ -1,32 +1,69 @@
 package controllers;
 
-
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class GameLoopImpl extends Application {
     private FlappyBirdController controller;
+    private boolean flag = false;
+    private int cont = 0;
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
         this.controller = controller;
         this.start(primaryStage);
     }
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                update();
+                if (!flag) {
+                    flappyUpdateDown();
+                }
+                else {
+                    flappyUpdateJump();
+                    cont++;
+                    if (cont == 20) {
+                        flag=false;
+                        cont=0;
+                    }
+                    else {
+                        spazioPremuto();
+                    }
+                }
+                try {
+                    quitloop();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
+
         }.start();
     }
 
-    public void update(){
-        this.controller.initialGame();
+    public void spazioPremuto() {
+        flag=true;
+        //System.out.println(flag);
     }
 
+    public void flappyUpdateDown(){
+        double n = 3.0;
+        this.controller.initialGame(n);
+    }
+
+    public void flappyUpdateJump() {
+        double n = -3.0;
+        this.controller.initialGame(n);
+
+    }
+    public void quitloop() throws IOException {
+        this.controller.quit();
+    }
     /*private double previous = System.currentTimeMillis();
     private double lag;
     private final static double MS_PER_UPDATE = 16.666666;
