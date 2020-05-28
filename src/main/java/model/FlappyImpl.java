@@ -31,7 +31,7 @@ public class FlappyImpl implements Flappy  {
         flappyImagePath = ("bird.png");
     }
 
-    public void flappyUpdate(Rectangle r) {
+    public void flappyDown(Rectangle r) {
         r.setY(getPosY()+3);
         setPosY(getPosY()+3);
 
@@ -44,6 +44,11 @@ public class FlappyImpl implements Flappy  {
         timelineDown.setCycleCount(Timeline.INDEFINITE);
         timelineDown.setRate(inc);
         timelineDown.play();*/
+    }
+
+    public void flappyUp(Rectangle r){
+        r.setY(getPosY() - 3);
+        setPosY(getPosY() - 3);
     }
 
     /*public void flappyGravity(Rectangle r, double inc) {

@@ -1,6 +1,5 @@
 package view;
 
-import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -12,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.Map;
 
 public class FlappyBirdViewImpl implements FlappyBirdView {
 
@@ -27,12 +27,14 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private TubeViewImpl tubeView;
     private FlappyViewImpl flappyView;
+    //private Map mappa;
 
 
-    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView, TubeViewImpl tubeView) {
+    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView/*, Map tubeMap*/) {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        this.tubeView = tubeView;
+        //this.mappa = tubeMap;
+        //this.tubeView = tubeView;
         this.flappyView = flappyView;
         screenSize.setSize(WIDTH,HEIGHT);
         this.primaryStage.setTitle(TITLE);
@@ -69,9 +71,14 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
-                this.observer.startGame();
+                try {
+                    this.observer.pressSpace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
+
 
         //this.root.getChildren().add(this.tubeView.getTube());
         //this.root.getChildren().add(this.flappyView.getFlappy());

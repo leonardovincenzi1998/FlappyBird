@@ -11,8 +11,9 @@ public interface Flappy {
     //void flappyJump(Rectangle r);
 
     //void flappyGravity(Rectangle r, double inc);
+    void flappyUp(Rectangle r);
 
-    void flappyUpdate(Rectangle r);
+    void flappyDown(Rectangle r);
 
     String getFlappyImagePath();
 

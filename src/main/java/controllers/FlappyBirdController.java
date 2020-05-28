@@ -7,8 +7,11 @@ import javafx.scene.shape.Rectangle;
 public interface FlappyBirdController {
 
 
-    void pressSpace();
+    void pressSpace() throws Exception;
 
+    void flappyJump();
+
+    void scrollTubes();
 
     void initialGame();
     /**

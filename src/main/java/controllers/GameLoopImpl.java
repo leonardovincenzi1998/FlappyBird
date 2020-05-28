@@ -1,13 +1,14 @@
 package controllers;
 
 
-import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class GameLoopImpl extends Application {
     private FlappyBirdController controller;
+    private AnimationTimer timer;
+    private int cont=0;
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
         this.controller = controller;
@@ -15,17 +16,49 @@ public class GameLoopImpl extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws Exception {
-        new AnimationTimer() {
+        timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                update();
+                scrollingTube();
+                /*cont++;
+                if(cont == 250){
+                    cont=0;
+                    try {
+                        controller.pressSpace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }*/
+
             }
-        }.start();
+        };
+        timer.start();
     }
 
-    public void update(){
-        this.controller.initialGame();
+
+
+    public void scrollingTube(){
+        this.controller.scrollTubes();
     }
+
+    /*public void updateDown(){
+        this.controller.initialGame();
+    }*/
+
+    /*public void updateUp() throws Exception {
+        timer.stop();
+        AnimationTimer timer1 = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                jump();
+            }
+        };
+        timer1.start();
+    }*/
+
+    /*public void jump(){
+        this.controller.flappyJump();
+    }*/
 
     /*private double previous = System.currentTimeMillis();
     private double lag;
