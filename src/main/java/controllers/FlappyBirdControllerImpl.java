@@ -18,13 +18,12 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
         tubeController = new TubeControllerImpl();
-        flappyController = new FlappyControllerImpl();
+        flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage);
 
         this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView(), tubeController.getTubeView());
         //this.addNode(this.tubeController.getTubeView().getTube());
         this.addNode(this.flappyController.getFlappyView().getFlappy());
-
 
     }
 
@@ -38,8 +37,11 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         //this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
     }
 
-    public void quit() throws IOException {
-        this.flappyController.getFlappyModel().floorCollision(this.flappyController.getFlappyView().getFlappy());
+    public void quit() {
+        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
+            System.out.println("quit");
+            this.view.quitBtn();
+        }
     }
 
     @Override
@@ -47,6 +49,8 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         this.view.addChildren(n);
     }
 }
+
+
     //creo istanza uccellino
 
     //creo istanza tubo

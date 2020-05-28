@@ -13,8 +13,6 @@ public interface Flappy {
 
     //void flappyGravity(Rectangle r, double inc);
 
-    void floorCollision(Rectangle r) throws IOException;
-
     void flappyUpdate(Rectangle r, double n);
 
     String getFlappyImagePath();

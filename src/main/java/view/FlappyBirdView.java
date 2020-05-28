@@ -13,6 +13,7 @@ public interface FlappyBirdView {
 
     void start();
 
+    void quitBtn();
    // void setScore();
 
     Pane getRoot();

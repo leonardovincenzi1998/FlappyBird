@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class GameLoopImpl extends Application {
     private FlappyBirdController controller;
-    private boolean flag = false;
+    private boolean gravity = true;
     private int cont = 0;
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
@@ -22,48 +22,49 @@ public class GameLoopImpl extends Application {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (!flag) {
-                    flappyUpdateDown();
-                }
-                else {
-                    flappyUpdateJump();
-                    cont++;
-                    if (cont == 20) {
-                        flag=false;
-                        cont=0;
+                    try {
+                        quitLoop();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    else {
-                        spazioPremuto();
+                    if (gravity) {
+                        flappyUpdateDown();
+                    } else {
+                        flappyUpdateJump();
+                        cont++;
+                        if (cont == 20) {
+                            gravity = true;
+                            cont = 0;
+                        } else {
+                            spazioPremuto();
+                        }
                     }
+
                 }
-                try {
-                    quitloop();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+
 
         }.start();
     }
 
     public void spazioPremuto() {
-        flag=true;
+        gravity=false;
         //System.out.println(flag);
     }
 
     public void flappyUpdateDown(){
-        double n = 3.0;
+        double n = 2.75;
         this.controller.initialGame(n);
     }
 
     public void flappyUpdateJump() {
-        double n = -3.0;
+        double n = -2.75;
         this.controller.initialGame(n);
 
     }
-    public void quitloop() throws IOException {
+    public void quitLoop() throws IOException {
         this.controller.quit();
     }
+
     /*private double previous = System.currentTimeMillis();
     private double lag;
     private final static double MS_PER_UPDATE = 16.666666;

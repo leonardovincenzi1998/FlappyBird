@@ -33,19 +33,9 @@ public class FlappyImpl implements Flappy  {
         //System.out.println(getPosY());
         r.setY(getPosY()+n);
         setPosY(getPosY()+n);
+        System.out.println(getPosY());
     }
 
-    public void floorCollision(Rectangle r) throws IOException {
-        final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/main.fxml"));
-        final Scene scene = new Scene(root);
-        final Stage window = new Stage();
-
-        if (getPosY()==HEIGHT-getHeightBird()) {
-            System.out.println("quit");
-            window.setScene(scene);
-            window.show();
-        }
-    }
 
     /*public void flappyJump(Rectangle r) {
         System.out.println(getPosY());
