@@ -1,20 +1,33 @@
 package controllers;
 
+<<<<<<< HEAD
 
+=======
+import javafx.animation.Animation;
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class GameLoopImpl extends Application {
     private FlappyBirdController controller;
+<<<<<<< HEAD
     private AnimationTimer timer;
     private int cont=0;
+=======
+    private boolean gravity = true;
+    private int cont = 0;
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
         this.controller = controller;
         this.start(primaryStage);
     }
     @Override
+<<<<<<< HEAD
     public void start(Stage primaryStage) throws Exception {
         timer = new AnimationTimer() {
             @Override
@@ -54,6 +67,54 @@ public class GameLoopImpl extends Application {
     /*public void jump(){
         this.controller.flappyJump();
     }*/
+=======
+    public void start(Stage primaryStage) {
+        new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                    try {
+                        quitLoop();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if (gravity) {
+                        flappyUpdateDown();
+                    } else {
+                        flappyUpdateJump();
+                        cont++;
+                        if (cont == 20) {
+                            gravity = true;
+                            cont = 0;
+                        } else {
+                            spazioPremuto();
+                        }
+                    }
+
+                }
+
+
+        }.start();
+    }
+
+    public void spazioPremuto() {
+        gravity=false;
+        //System.out.println(flag);
+    }
+
+    public void flappyUpdateDown(){
+        double n = 2.75;
+        this.controller.initialGame(n);
+    }
+
+    public void flappyUpdateJump() {
+        double n = -2.75;
+        this.controller.initialGame(n);
+
+    }
+    public void quitLoop() throws IOException {
+        this.controller.quit();
+    }
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 
     /*private double previous = System.currentTimeMillis();
     private double lag;

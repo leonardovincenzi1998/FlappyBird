@@ -9,7 +9,11 @@ import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
+<<<<<<< HEAD
 import java.util.Map;
+=======
+import java.io.IOException;
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
@@ -20,11 +24,12 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
         tubeController = new TubeControllerImpl();
-        flappyController = new FlappyControllerImpl();
+        flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage);
         this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView()/*, tubeController.getTubeMap()*/);
 
 
+<<<<<<< HEAD
         //this.addNode(this.tubeController.getTubeView().getTubeUp());
         //this.addNode(this.tubeController.getTubeView().getTubeDown());
         //this.addNode(this.flappyController.getFlappyView().getFlappy());
@@ -105,16 +110,34 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
 
     @Override
-    public void quit() {
-
+=======
     }
 
+    public void initialGame(double n){
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(),n);
+    }
+
+    @Override
+    public void pressSpace() {
+        gameLoop.spazioPremuto();
+        //this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
+    }
+
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
+    public void quit() {
+        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
+            System.out.println("quit");
+            this.view.quitBtn();
+        }
+    }
 
     @Override
     public void addNode(final Node n) {
         this.view.addChildren(n);
     }
 }
+
+
     //creo istanza uccellino
 
     //creo istanza tubo

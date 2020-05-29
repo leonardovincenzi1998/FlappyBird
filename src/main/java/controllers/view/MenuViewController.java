@@ -19,11 +19,6 @@ import javafx.stage.Stage;
  */
 public final class MenuViewController {
 
-    @FXML
-    private Button leaderboardBtn;
-    private Button contactBtn;
-    private Button playBtn;
-
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML
     public void clickContacts(ActionEvent event) throws IOException {

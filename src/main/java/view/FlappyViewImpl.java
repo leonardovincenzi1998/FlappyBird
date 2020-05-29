@@ -23,8 +23,8 @@ public class FlappyViewImpl {
         r.setWidth(flappy.getWidthBird());
         r.setHeight(flappy.getHeightBird());
         r.setFill(new ImagePattern(ico));
-
     }
+
     public Rectangle getFlappy(){
         return this.r;
     }

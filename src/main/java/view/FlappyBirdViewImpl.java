@@ -1,17 +1,33 @@
 package view;
 
+<<<<<<< HEAD
+=======
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
+import javafx.geometry.Pos;
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.awt.*;
+<<<<<<< HEAD
 import java.util.Map;
+=======
+import java.io.IOException;
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 
 public class FlappyBirdViewImpl implements FlappyBirdView {
 
@@ -71,11 +87,17 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
+<<<<<<< HEAD
                 try {
                     this.observer.pressSpace();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+=======
+                this.observer.pressSpace();
+
+
+>>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
             }
         });
 
@@ -83,10 +105,36 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         //this.root.getChildren().add(this.tubeView.getTube());
         //this.root.getChildren().add(this.flappyView.getFlappy());
         //this.observer.startGame();
-
-
     }
 
+    public void quitBtn() {
+        BorderPane layout = new BorderPane();
+        Button quitBtn = new Button("Return to Main Menu");
+
+        layout.setCenter(quitBtn);
+        quitBtn.setAlignment(Pos.CENTER);
+        quitBtn.setPrefSize(250,100);
+
+        this.root.getChildren().add(layout);
+        primaryStage.show();
+
+
+        quitBtn.setOnAction(actionEvent -> {
+            final Parent menu;
+            try {
+                menu = FXMLLoader.load(ClassLoader.getSystemResource("layouts/main.fxml"));
+                final Scene menuScene = new Scene(menu);
+
+                final Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                window.setScene(menuScene);
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+    }
 
 
     @Override
