@@ -34,15 +34,17 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     @Override
     public void pressSpace() {
         gameLoop.spazioPremuto();
-        //this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
     }
 
-    public void quit() {
+    public void checkCollision() {
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
+            //this.flappyController.getFlappyModel().flappyStop(this.flappyController.getFlappyView().getFlappy());
             System.out.println("quit");
+            gameLoop.collision();
             this.view.quitBtn();
         }
     }
+
 
     @Override
     public void addNode(final Node n) {

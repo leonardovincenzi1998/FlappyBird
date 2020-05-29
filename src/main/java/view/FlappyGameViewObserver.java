@@ -6,6 +6,5 @@ public interface FlappyGameViewObserver {
 
     void pressSpace();
 
-    void quit() throws IOException;
 
 }

@@ -30,12 +30,17 @@ public class FlappyImpl implements Flappy  {
     }
 
     public void flappyUpdate(Rectangle r, double n) {
-        //System.out.println(getPosY());
+
         r.setY(getPosY()+n);
         setPosY(getPosY()+n);
         System.out.println(getPosY());
     }
 
+    public void flappyStop(Rectangle r) {
+        r.setY(getPosY()-50);
+        setPosY(getPosY()-50);
+        System.out.println(getPosY()+"ciaoo");
+    }
 
     /*public void flappyJump(Rectangle r) {
         System.out.println(getPosY());

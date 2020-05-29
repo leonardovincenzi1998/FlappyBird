@@ -11,9 +11,9 @@ public interface FlappyBirdController {
 
     void pressSpace();
 
-    void quit() throws IOException;
-
     void initialGame(double n);
+
+    void checkCollision();
     /**
      * Quits the game.
      */

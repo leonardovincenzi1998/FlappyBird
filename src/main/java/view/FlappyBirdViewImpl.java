@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
@@ -90,16 +91,16 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
     public void quitBtn() {
-        BorderPane layout = new BorderPane();
+        int btnWidth = 250;
+        int btnHeight = 50;
         Button quitBtn = new Button("Return to Main Menu");
 
-        layout.setCenter(quitBtn);
+        quitBtn.setPrefSize(btnWidth,btnHeight);
+        quitBtn.setLayoutX((WIDTH/2)-(btnWidth/2));
+        quitBtn.setLayoutY(HEIGHT/2);
         quitBtn.setAlignment(Pos.CENTER);
-        quitBtn.setPrefSize(250,100);
 
-        this.root.getChildren().add(layout);
-        primaryStage.show();
-
+        root.getChildren().add(quitBtn);
 
         quitBtn.setOnAction(actionEvent -> {
             final Parent menu;
