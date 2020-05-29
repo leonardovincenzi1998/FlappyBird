@@ -14,7 +14,7 @@ import java.util.Map;
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
-    private TubeControllerImpl tubeController;
+    private final TubeControllerImpl tubeController;
     private  FlappyControllerImpl flappyController;
     private GameLoopImpl gameLoop;
 
@@ -22,14 +22,14 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         tubeController = new TubeControllerImpl();
         flappyController = new FlappyControllerImpl();
         gameLoop = new GameLoopImpl(this, primaryStage);
-
         this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView()/*, tubeController.getTubeMap()*/);
+
 
         //this.addNode(this.tubeController.getTubeView().getTubeUp());
         //this.addNode(this.tubeController.getTubeView().getTubeDown());
         //this.addNode(this.flappyController.getFlappyView().getFlappy());
 
-
+        //System.out.println(tubeController.createTubePair());
         //printMap(tubeController.getTubeMap());
         /*System.out.println(tubeController.getTubeMap());
         tubeController.addToMap();
@@ -38,9 +38,16 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         System.out.println(tubeController.getTubeMap());*/
         // STAMPA TUBO UCCELLINO
 
-        printMap(tubeController.getTubeMap());
-
-
+        //printPairTube(tubeController.getTubeMap().entrySet().iterator().next().getValue());
+        //System.out.println(tubeController.getTubeMap().entrySet().stream().findFirst().get().getValue());
+        printPairTube(tubeController.getTubeMap().entrySet().iterator().next().getValue());
+        //printPairTube(tubeController.get);
+        //printMap(tubeController.getTubeMap());
+        //System.out.println(tubeController.getTubeMap());
+        /*tubeController.addToMap();
+        System.out.println(tubeController.getTubeMap());*/
+        /*tubeController.addToMap();
+        System.out.println(tubeController.getTubeMap());*/
         // PRE IMPLEMENTAZIONE GAMELOOP
         //this.tubeController.getTubeModel().tubeUpdate(this.tubeController.getTubeView().getTube());
         //this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
@@ -49,25 +56,35 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     }
 
-    public void printMap(Map<Integer, Pair> tubeMap){
-        tubeMap.forEach((key, value) -> {
-            addNode((Node) value.getX());
-            addNode((Node) value.getY());
-        });
-        //System.out.println(tubeMap);
+    public void printPairTube(Pair tubePair){
+        addNode((Node) tubePair.getX());
+        addNode((Node) tubePair.getY());
     }
 
     public void scrollTubes(){
-        tubeController.getTubeMap().forEach((key, value) -> {
+        /*tubeController.getTubeMap().forEach((key, value) -> {
             this.tubeController.scrollTubePair((Rectangle) value.getX());
             this.tubeController.scrollTubePair((Rectangle) value.getY());
-        });
+        });*/
+        tubeController.scrollTubePair(tubeController.getTubeMap());
 
     }
 
     public void initialGame(){
         //this.flappyController.getFlappyModel().flappyDown(this.flappyController.getFlappyView().getFlappy());
 
+    }
+
+    @Override
+    public void addTube() throws Exception {
+        this.tubeController.addToMap();
+        //System.out.println(tubeController.getTubeMap());
+        //System.out.println(tubeController.getTubeMap().get((tubeController.getTubeMap().size())));
+        printPairTube(tubeController.getTubeMap().get((tubeController.getTubeMap().size())));
+        //System.out.println(tubeController.getTubeMap());
+        //printMap(tubeController.getTubeMap());
+        //printMap(tubeController.getTubeMap());
+        //System.out.println(tubeController.getTubeMap());
     }
 
     public void flappyJump(){
@@ -82,8 +99,10 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     @Override
     public void pressSpace() throws Exception {
-        //this.tubeController.addToMap();
+
     }
+
+
 
     @Override
     public void quit() {

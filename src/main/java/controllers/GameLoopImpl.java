@@ -19,27 +19,22 @@ public class GameLoopImpl extends Application {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                scrollingTube();
-                /*cont++;
+                controller.scrollTubes();
+                cont++;
                 if(cont == 250){
                     cont=0;
                     try {
-                        controller.pressSpace();
+                        controller.addTube();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                }*/
+                }
 
             }
         };
         timer.start();
     }
 
-
-
-    public void scrollingTube(){
-        this.controller.scrollTubes();
-    }
 
     /*public void updateDown(){
         this.controller.initialGame();

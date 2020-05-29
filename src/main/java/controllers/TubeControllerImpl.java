@@ -14,16 +14,19 @@ import java.util.Map;
 
 public class TubeControllerImpl {
 
-    public TubeUp tubeUp;
-    public TubeDown tubeDown;
+    //public TubeUp tubeUp;
+    //public TubeDown tubeDown;
     private TubeViewImpl tubeView;
     private Map<Integer, Pair> tubeMap;
     private int cont=0;
     private int deleteKeyN = 0;
+    private TubeUp tubeUp = new TubeUp("top.png");
+    private TubeDown tubeDown = new TubeDown("bottom.png");
 
 
 
     public TubeControllerImpl() {
+
 
 
 
@@ -55,27 +58,35 @@ public class TubeControllerImpl {
         Rectangle r = new Rectangle();
         Rectangle r2 = new Rectangle();
 
-        this.tubeUp = new TubeUp("top.png");
-        this.tubeDown = new TubeDown("bottom.png");
-
-        this.tubeUp.setY();
-        this.tubeDown.getDownHeight(this.tubeUp.getHeight());
-        this.tubeDown.setY();
+        TubeUp tubeUpCopy = tubeUp.copy();
+        TubeDown tubeDownCopy = tubeDown.copy();
+        tubeUpCopy.setY();
+        tubeDownCopy.getDownHeight(tubeUpCopy.getHeight());
+        tubeDownCopy.setY();
         //System.out.println(cont);
-        r.setWidth(this.tubeUp.getWidth());
-        r.setHeight(this.tubeUp.getHeight());
-        r2.setWidth(this.tubeDown.getWidth());
-        r2.setHeight(this.tubeDown.getHeight());
+        r.setWidth(tubeUpCopy.getWidth());
+        r.setHeight(tubeUpCopy.getHeight());
+        r2.setWidth(tubeDownCopy.getWidth());
+        r2.setHeight(tubeDownCopy.getHeight());
 
-        r.setX(tubeUp.getPosX());
-        r.setY(tubeUp.getPosY() - r.getHeight());
-        r.setFill(new ImagePattern(new Image(this.tubeUp.getTubeImagePath())));
-        r2.setX(tubeDown.getPosX());
-        r2.setY(tubeDown.getPosY());
-        r2.setFill(new ImagePattern(new Image(this.tubeDown.getTubeImagePath())));
+        r.setX(tubeUpCopy.getPosX());
+        r.setY(tubeUpCopy.getPosY() - r.getHeight());
+        r.setFill(new ImagePattern(new Image(tubeUp.getTubeImagePath())));
+        r2.setX(tubeDownCopy.getPosX());
+        r2.setY(tubeDownCopy.getPosY());
+        r2.setFill(new ImagePattern(new Image(tubeDown.getTubeImagePath())));
+
+        /*System.out.println(tubeUpCopy.getPosX());
+        System.out.println(r.getX());
+        System.out.println(tubeDownCopy.getPosX());
+        System.out.println(r2.getX());*/
 
         return new Pair(r, r2);
     }
+
+    /*public Pair getPair(){
+        //return tubeMap.e;
+    }*/
 
     public void addToMap(){
         cont++;
@@ -100,11 +111,16 @@ public class TubeControllerImpl {
         return this.tubeView;
     }
 
-    public void scrollTubePair(Rectangle rectangle){
-        this.tubeUp.setPosX(this.tubeUp.getPosX()-1);
-        rectangle.setX(this.tubeUp.getPosX()-1);
+    public void scrollTubePair(Map<Integer, Pair> tubeMap){
+
+        tubeMap.forEach((key, value) -> {
+            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-1);
+            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-1);
+        //this.tubeUp.setPosX(this.tubeUp.getPosX()-1);
+        //rectangle.setX(rectangle.getX()-1);
 
         /*this.tubeDown.setPosX(this.tubeDown.getPosX()-1);
         this.r2.setX(this.tubeDown.getPosX()-1);*/
+        });
     }
 }

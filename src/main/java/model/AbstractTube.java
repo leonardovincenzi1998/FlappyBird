@@ -5,7 +5,7 @@ public abstract class AbstractTube {
     private double height = 50 + (Math.random() * 141);
     private double width = 55;
     private final String tubeImagePath;
-    private double PosX = 550;
+    private double PosX = 600;
     private double PosY;
 
     public AbstractTube(String tubeImagePath) {

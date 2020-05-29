@@ -14,6 +14,8 @@ public interface FlappyBirdController {
     void scrollTubes();
 
     void initialGame();
+
+    void addTube() throws Exception;
     /**
      * Quits the game.
      */
