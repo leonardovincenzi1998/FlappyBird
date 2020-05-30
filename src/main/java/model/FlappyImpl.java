@@ -15,13 +15,12 @@ import java.sql.SQLXML;
 
 public class FlappyImpl implements Flappy  {
 
-    private static final double HEIGHT = 335;
     private double posX;
     private double posY;
     private double gravity = 20;
     private final String flappyImagePath;
 
-    TranslateTransition move = new TranslateTransition();
+    //TranslateTransition move = new TranslateTransition();
 
     public FlappyImpl() {
         posX = 50;
@@ -29,44 +28,14 @@ public class FlappyImpl implements Flappy  {
         flappyImagePath = ("bird.png");
     }
 
-<<<<<<< HEAD
-    public void flappyDown(Rectangle r) {
-        r.setY(getPosY()+3);
-        setPosY(getPosY()+3);
-=======
+
     public void flappyUpdate(Rectangle r, double n) {
-        //System.out.println(getPosY());
+
         r.setY(getPosY()+n);
         setPosY(getPosY()+n);
         System.out.println(getPosY());
     }
 
->>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
-
-    /*public void flappyJump(Rectangle r) {
-        System.out.println(getPosY());
-        move.setByY(-400);
-        System.out.println(getPosY());
-        move.setDuration(Duration.millis(1000));
-        move.setAutoReverse(true);
-        move.setCycleCount(2);
-        move.setNode(r);
-        move.play();
-        //double inc = 1.0;
-        r.setTranslateY(gravity);
-        timelineDown = new Timeline(new KeyFrame(
-                Duration.seconds(0.005),
-                x -> flappyGravity(r,inc))
-        );
-        timelineDown.setCycleCount(Timeline.INDEFINITE);
-        timelineDown.setRate(inc);
-        timelineDown.play();
-    }*/
-
-    public void flappyUp(Rectangle r){
-        r.setY(getPosY() - 3);
-        setPosY(getPosY() - 3);
-    }
 
     /*public void flappyGravity(Rectangle r, double inc) {
         if ((gravity >= HEIGHT - getHeightBird()) || (gravity == 0 )) {

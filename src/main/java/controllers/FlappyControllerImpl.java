@@ -28,6 +28,7 @@ public class FlappyControllerImpl {
         return false;
     }
 
+
     public Flappy getFlappyModel(){
         return this.flappy;
     }

@@ -1,12 +1,9 @@
 package controllers;
 
-<<<<<<< HEAD
 
-=======
-import javafx.animation.Animation;
->>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -14,28 +11,46 @@ import java.io.IOException;
 
 public class GameLoopImpl extends Application {
     private FlappyBirdController controller;
-<<<<<<< HEAD
+
     private AnimationTimer timer;
-    private int cont=0;
-=======
-    private boolean gravity = true;
     private int cont = 0;
->>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
+    private int cont2=0;
+
+    private boolean gravity = true;
+    private boolean collision = false;
+
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
         this.controller = controller;
         this.start(primaryStage);
     }
+
     @Override
-<<<<<<< HEAD
     public void start(Stage primaryStage) throws Exception {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
+                try {
+                    checkCollision();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (gravity) {
+                    flappyUpdateDown();
+                } else {
+                    flappyUpdateJump();
+                    cont++;
+                    if (cont == 20) {
+                        gravity = true;
+                        cont = 0;
+                    } else {
+                        spazioPremuto();
+                    }
+                }
                 controller.scrollTubes();
-                cont++;
-                if(cont == 250){
-                    cont=0;
+                cont2++;
+                if (cont2 == 250) {
+                    cont2 = 0;
                     try {
                         controller.addTube();
                     } catch (Exception e) {
@@ -67,41 +82,13 @@ public class GameLoopImpl extends Application {
     /*public void jump(){
         this.controller.flappyJump();
     }*/
-=======
-    public void start(Stage primaryStage) {
-        new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                    try {
-                        quitLoop();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    if (gravity) {
-                        flappyUpdateDown();
-                    } else {
-                        flappyUpdateJump();
-                        cont++;
-                        if (cont == 20) {
-                            gravity = true;
-                            cont = 0;
-                        } else {
-                            spazioPremuto();
-                        }
-                    }
-
-                }
-
-
-        }.start();
-    }
 
     public void spazioPremuto() {
-        gravity=false;
+        gravity = false;
         //System.out.println(flag);
     }
 
-    public void flappyUpdateDown(){
+    public void flappyUpdateDown() {
         double n = 2.75;
         this.controller.initialGame(n);
     }
@@ -109,12 +96,21 @@ public class GameLoopImpl extends Application {
     public void flappyUpdateJump() {
         double n = -2.75;
         this.controller.initialGame(n);
+    }
+
+    public void checkCollision() throws IOException {
+        controller.checkCollision();
 
     }
-    public void quitLoop() throws IOException {
-        this.controller.quit();
+
+    public void collision() {
+        collision = true;
+        if (collision = true) {
+            timer.stop();
+        }
     }
->>>>>>> be1bf76344845f50f09ab0a0f40d1840992607d3
+}
+
 
     /*private double previous = System.currentTimeMillis();
     private double lag;
@@ -182,4 +178,4 @@ public class GameLoopImpl extends Application {
         //this.flappyController.getFlappyView();
 >>>>>>> e8750f17183241ad9a57d3182128728f3627100a
     }*/
-}
+

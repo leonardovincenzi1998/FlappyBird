@@ -9,20 +9,15 @@ import java.io.IOException;
 public interface FlappyBirdController {
 
 
-    void pressSpace() throws Exception;
-
-
-    void flappyJump();
+    void pressSpace();
 
     void scrollTubes();
 
-    void initialGame();
-
     void addTube() throws Exception;
 
-    void quit() throws IOException;
-
     void initialGame(double n);
+
+    void checkCollision();
 
     /**
      * Quits the game.
