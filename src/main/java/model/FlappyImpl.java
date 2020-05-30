@@ -42,48 +42,6 @@ public class FlappyImpl implements Flappy  {
         System.out.println(getPosY()+"ciaoo");
     }
 
-    /*public void flappyJump(Rectangle r) {
-        System.out.println(getPosY());
-        move.setByY(-400);
-        System.out.println(getPosY());
-        move.setDuration(Duration.millis(1000));
-        move.setAutoReverse(true);
-        move.setCycleCount(2);
-        move.setNode(r);
-        move.play();
-        //double inc = 1.0;
-        r.setTranslateY(gravity);
-        timelineDown = new Timeline(new KeyFrame(
-                Duration.seconds(0.005),
-                x -> flappyGravity(r,inc))
-        );
-        timelineDown.setCycleCount(Timeline.INDEFINITE);
-        timelineDown.setRate(inc);
-        timelineDown.play();
-    }*/
-
-    /*public void flappyGravity(Rectangle r, double inc) {
-        if ((gravity >= HEIGHT - getHeightBird()) || (gravity == 0 )) {
-            System.out.println("fermati");
-            timelineDown.stop();
-            timelineUp.stop();
-        }
-        gravity = gravity + inc;
-        r.setTranslateY(gravity);
-    }
-
-    public void flappyJump(Rectangle r) {
-        timelineDown.pause();
-        double inc = -1.0;
-        r.setTranslateY(gravity);
-        timelineUp = new Timeline(new KeyFrame(
-                Duration.seconds(0.005),
-                x -> flappyGravity(r, inc))
-        );
-        timelineUp.setCycleCount(55);
-        timelineUp.play();
-        timelineUp.setOnFinished(actionEvent -> timelineDown.play());
-    }*/
 
     public String getFlappyImagePath() {
         return flappyImagePath;

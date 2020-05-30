@@ -7,12 +7,6 @@ import java.io.IOException;
 
 public interface Flappy {
 
-    //void gravity(Rectangle flappy);
-
-    //void flappyJump(Rectangle r);
-
-    //void flappyGravity(Rectangle r, double inc);
-
     void flappyUpdate(Rectangle r, double n);
 
     void flappyStop(Rectangle r);

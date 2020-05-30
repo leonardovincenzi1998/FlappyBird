@@ -53,23 +53,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 }
 
 
-    //creo istanza uccellino
-
-    //creo istanza tubo
-    /*@FXML
-    private Pane pane;
-
-    @FXML
-    private ImageView background;
-
-    @FXML
-    void display(MouseEvent event) {
-        background.fitWidthProperty().bind(pane.widthProperty());
-        background.fitHeightProperty().bind(pane.heightProperty());*/
-
-
-
-    //background.setVisible(false);
 
 
 
