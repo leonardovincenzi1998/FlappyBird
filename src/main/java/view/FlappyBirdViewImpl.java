@@ -1,9 +1,6 @@
 package view;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -13,15 +10,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+
 
 public class FlappyBirdViewImpl implements FlappyBirdView {
 
@@ -37,12 +31,14 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private TubeViewImpl tubeView;
     private FlappyViewImpl flappyView;
+    //private Map mappa;
 
 
-    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView, TubeViewImpl tubeView) {
+    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView/*, Map tubeMap*/) {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        this.tubeView = tubeView;
+        //this.mappa = tubeMap;
+        //this.tubeView = tubeView;
         this.flappyView = flappyView;
         screenSize.setSize(WIDTH,HEIGHT);
         this.primaryStage.setTitle(TITLE);
@@ -82,8 +78,9 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
                 this.observer.pressSpace();
             }
         });
-
     }
+
+
 
     public void quitBtn() {
         int btnWidth = 250;

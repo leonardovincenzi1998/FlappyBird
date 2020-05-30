@@ -1,6 +1,6 @@
 package controllers;
 
-import javafx.animation.Animation;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.shape.Rectangle;
@@ -11,10 +11,14 @@ import java.io.IOException;
 
 public class GameLoopImpl extends Application {
     private FlappyBirdController controller;
+
+    private AnimationTimer timer;
+    private int cont = 0;
+    private int cont2=0;
+
     private boolean gravity = true;
     private boolean collision = false;
-    private int cont = 0;
-    private AnimationTimer timer;
+
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
         this.controller = controller;
@@ -22,7 +26,7 @@ public class GameLoopImpl extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -43,13 +47,41 @@ public class GameLoopImpl extends Application {
                         spazioPremuto();
                     }
                 }
+                controller.scrollTubes();
+                cont2++;
+                if (cont2 == 250) {
+                    cont2 = 0;
+                    try {
+                        controller.addTube();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
 
             }
-
-
         };
         timer.start();
     }
+
+
+    /*public void updateDown(){
+        this.controller.initialGame();
+    }*/
+
+    /*public void updateUp() throws Exception {
+        timer.stop();
+        AnimationTimer timer1 = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                jump();
+            }
+        };
+        timer1.start();
+    }*/
+
+    /*public void jump(){
+        this.controller.flappyJump();
+    }*/
 
     public void spazioPremuto() {
         gravity = false;

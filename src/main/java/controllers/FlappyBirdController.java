@@ -11,9 +11,14 @@ public interface FlappyBirdController {
 
     void pressSpace();
 
+    void scrollTubes();
+
+    void addTube() throws Exception;
+
     void initialGame(double n);
 
     void checkCollision();
+
     /**
      * Quits the game.
      */

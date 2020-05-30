@@ -15,13 +15,12 @@ import java.sql.SQLXML;
 
 public class FlappyImpl implements Flappy  {
 
-    private static final double HEIGHT = 335;
     private double posX;
     private double posY;
     private double gravity = 20;
     private final String flappyImagePath;
 
-    TranslateTransition move = new TranslateTransition();
+    //TranslateTransition move = new TranslateTransition();
 
     public FlappyImpl() {
         posX = 50;
@@ -29,20 +28,13 @@ public class FlappyImpl implements Flappy  {
         flappyImagePath = ("bird.png");
     }
 
-    public void flappyUpdate(Rectangle r, double n) {
 
+    public void flappyUpdate(Rectangle r, double n) {
         r.setY(getPosY()+n);
         setPosY(getPosY()+n);
         System.out.println(getPosY());
     }
-
-    public void flappyStop(Rectangle r) {
-        r.setY(getPosY()-50);
-        setPosY(getPosY()-50);
-        System.out.println(getPosY()+"ciaoo");
-    }
-
-
+    
     public String getFlappyImagePath() {
         return flappyImagePath;
     }

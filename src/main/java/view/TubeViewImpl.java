@@ -1,56 +1,82 @@
 package view;
 
-import controllers.FlappyBirdController;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import model.Tube;
+import model.TubeDown;
+import model.TubeUp;
+import util.Pair;
 
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class TubeViewImpl {
 
     //FlappyBirdView view;
-    public Rectangle r = new Rectangle();
-    public Image ico;
-    private Tube tube;
-
-    //StackPane imageContainer = new StackPane();
-    //ImageView image = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
-    //final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
-
-
-    public TubeViewImpl(final Tube tube){
-        this.tube = tube;
-        this.ico = new Image(tube.getTubeImagePath());
-        /*r.setX(tube.getPosX());
-        r.setY(tube.getPosY());*/
-        System.out.println("Lunghezza tubo: " + this.tube.getHeight());
-
-        r.setWidth(this.tube.getWidth());
-        r.setHeight(this.tube.getHeight());
-
-        //System.out.println("Lunghezza tubo2: " + this.tube.getHeight());
-        System.out.println("Lunghezza rettangolo: " + r.getHeight());
+    //public Rectangle r = new Rectangle();
+    //public Rectangle r2 = new Rectangle();
+    //public Imag   e ico;
+    //public Image ico2;
+    //private TubeUp tubeUp;
+    //private TubeDown tubeDown;
+    public Map<Integer, Pair> tube = new HashMap<>();
+    private int cont=-1;
+    private Rectangle r;
+    private Pair pair;
 
 
-        r.setX(tube.getPosX());
-        r.setY(tube.getPosY() - r.getHeight());
-        r.setFill(new ImagePattern(ico));
-        r.setStroke(Color.BLACK);
-
-        //this.view.addChildren(r);
-
-        //this.controller.addNode(tubo);
-
-        //System.out.println("Diocane sono dentro la view di tube");
+    public TubeViewImpl(final Map tubeMap){
+        //addRectangles(tubePair);
+        this.tube = tubeMap;
 
     }
 
+    public void addRectangles(Pair tubePair){
+        cont++;
+        Rectangle r = new Rectangle();
+        this.pair = tubePair;
 
-    public Rectangle getTube(){
+        //r.setWidth(tubePair.getX().);
+        //r.setHeight(this.tubeUp.getHeight());
+        tube.put(cont, tubePair);
+        System.out.println(tubePair.getX());
+    }
+
+
+
+    /*public TubeViewImpl(final TubeUp tubeUp, TubeDown tubeDown){
+        this.tubeUp = tubeUp;
+        this.tubeDown = tubeDown;
+        this.ico = new Image(tubeUp.getTubeImagePath());
+        this.ico2 = new Image(tubeDown.getTubeImagePath());
+
+
+        r.setWidth(this.tubeUp.getWidth());
+        r.setHeight(this.tubeUp.getHeight());
+
+        r2.setWidth(this.tubeDown.getWidth());
+        r2.setHeight(this.tubeDown.getHeight());
+
+        r.setX(tubeUp.getPosX());
+        r.setY(tubeUp.getPosY() - r.getHeight());
+        r.setFill(new ImagePattern(ico));
+
+        r2.setX(tubeDown.getPosX());
+        r2.setY(tubeDown.getPosY());
+        r2.setFill(new ImagePattern(ico2));
+
+
+    }*/
+
+
+    /*public Rectangle getTubeUp(){
         return this.r;
     }
+
+    public Rectangle getTubeDown(){
+        return this.r2;
+    }*/
 
 }
