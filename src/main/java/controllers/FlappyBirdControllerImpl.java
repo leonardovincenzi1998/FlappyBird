@@ -2,15 +2,13 @@ package controllers;
 
 
 import javafx.scene.Node;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import util.Pair;
 import util.TubeMap;
+import util.TubeMapImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
-
-import java.util.Map;
 
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
@@ -23,7 +21,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
-        tubeMap = new TubeMap();
+        tubeMap = new TubeMapImpl();
         tubeController = new TubeControllerImpl(tubeMap);
         flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage);

@@ -1,18 +1,14 @@
 package controllers;
 
-import javafx.scene.Node;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import model.TubeDown;
 import model.TubeUp;
 import util.Pair;
 import util.TubeMap;
+import util.TubeMapImpl;
 import view.TubeViewImpl;
-
-import java.util.*;
 
 public class TubeControllerImpl {
 

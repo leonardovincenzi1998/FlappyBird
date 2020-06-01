@@ -49,7 +49,7 @@ public class GameLoopImpl extends Application {
                 }
                 controller.scrollTubes();
                 cont2++;
-                if (cont2 == 250) {
+                if (cont2 == 125) {
                     cont2 = 0;
                     try {
                         controller.addTube();
