@@ -33,7 +33,7 @@ public class FlappyImpl implements Flappy  {
 
         r.setY(getPosY()+n);
         setPosY(getPosY()+n);
-        System.out.println(getPosY());
+        //System.out.println(getPosY());
     }
 
 

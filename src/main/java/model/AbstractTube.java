@@ -2,7 +2,7 @@ package model;
 
 public abstract class AbstractTube {
 
-    private double height = 50 + (Math.random() * 141);
+    private double height = 175;
     private double width = 55;
     private final String tubeImagePath;
     private double PosX = 600;
@@ -43,12 +43,6 @@ public abstract class AbstractTube {
     public void setPosY(double y){
         PosY = y;
     }
-
-    public void setHeight(double h){
-        height = h;
-    }
-
-    public void setPosX(double x) {PosX=x;}
 
 
 

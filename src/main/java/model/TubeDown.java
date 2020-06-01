@@ -11,12 +11,9 @@ public class TubeDown extends AbstractTube{
         return new TubeDown(this.getTubeImagePath());
     }
 
-    public void setY(){
-        setPosY(335 - getHeight());
+    public void setY(double y){
+        setPosY(y+105);
 
     }
 
-    public void getDownHeight(double upHeight){
-         setHeight(335-upHeight-100);
-    }
 }

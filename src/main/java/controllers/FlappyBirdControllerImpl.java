@@ -9,6 +9,7 @@ import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
+import java.util.Map;
 
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
@@ -26,7 +27,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
 
         this.addNode(flappyController.getFlappyView().getFlappy());
-        printPairTube(tubeController.getTubeMap().entrySet().iterator().next().getValue());
+        printPairTube(tubeController.getLastValue());
 
 
     }
@@ -37,15 +38,16 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     }
 
     public void scrollTubes(){
-        tubeController.scrollTubePair(tubeController.getTubeMap());
-
+        tubeController.scrollTubePair();
+        tubeController.finishPlayground();
     }
 
 
     @Override
     public void addTube() throws Exception {
         this.tubeController.addToMap();
-        printPairTube(tubeController.getTubeMap().get((tubeController.getTubeMap().size())));
+        printPairTube(tubeController.getLastValue());
+
 
     }
 

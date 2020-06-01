@@ -13,6 +13,6 @@ public class TubeUp extends AbstractTube{
     }
 
     public void setY(){
-        setPosY(getHeight());
+        setPosY(Math.random() * (175-60) + 60);
     }
 }
