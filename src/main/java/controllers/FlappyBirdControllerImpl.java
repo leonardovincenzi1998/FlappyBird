@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import util.Pair;
+import util.TubeMap;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
@@ -18,16 +19,19 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final TubeControllerImpl tubeController;
     private  FlappyControllerImpl flappyController;
     private GameLoopImpl gameLoop;
+    private TubeMap tubeMap;
+
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
-        tubeController = new TubeControllerImpl();
+        tubeMap = new TubeMap();
+        tubeController = new TubeControllerImpl(tubeMap);
         flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage);
         this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView()/*, tubeController.getTubeMap()*/);
 
 
         this.addNode(flappyController.getFlappyView().getFlappy());
-        printPairTube(tubeController.getLastValue());
+        printPairTube(tubeController.getTubeMap().getLastValue());
 
 
     }
@@ -38,19 +42,16 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     }
 
     public void scrollTubes(){
-        tubeController.scrollTubePair();
-        tubeController.finishPlayground();
+        tubeController.getTubeMap().scrollTubePair();
+        tubeController.getTubeMap().checkWindowEnd();
     }
 
 
     @Override
-    public void addTube() throws Exception {
-        this.tubeController.addToMap();
-        printPairTube(tubeController.getLastValue());
-
-
+    public void addTube() {
+        this.tubeController.getTubeMap().addToMap(tubeController.createTubePair());
+        printPairTube(tubeController.getTubeMap().getLastValue());
     }
-
 
     @Override
     public void initialGame(double n){

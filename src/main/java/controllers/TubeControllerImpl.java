@@ -9,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 import model.TubeDown;
 import model.TubeUp;
 import util.Pair;
+import util.TubeMap;
 import view.TubeViewImpl;
 
 import java.util.*;
@@ -18,16 +19,16 @@ public class TubeControllerImpl {
     //public TubeUp tubeUp;
     //public TubeDown tubeDown;
     private TubeViewImpl tubeView;
-    private TreeMap<Integer, Pair> tubeMap;
+    private TubeMap tubeMap;
     private int cont=0;
     private int deleteKeyN = 1;
     private TubeUp tubeUp = new TubeUp("top.png");
     private TubeDown tubeDown = new TubeDown("bottom.png");
 
-    public TubeControllerImpl() {
+    public TubeControllerImpl(TubeMap tubeMap) {
 
-        tubeMap = new TreeMap<>();
-        addToMap();
+        this.tubeMap = tubeMap;
+        this.tubeMap.addToMap(createTubePair());
     }
 
     public Pair createTubePair(){
@@ -56,41 +57,8 @@ public class TubeControllerImpl {
         return new Pair(r, r2);
     }
 
-    /*public Pair getPair(){
-        //return tubeMap.e;
-    }*/
-
-    public void addToMap(){
-        cont++;
-        tubeMap.put(cont, createTubePair());
-
+    public TubeMap getTubeMap(){
+        return this.tubeMap;
     }
 
-    public Pair getLastValue(){
-        return tubeMap.lastEntry().getValue();
-    }
-
-    public Map<Integer, Pair> getTubeMap(){
-        return tubeMap;
-    }
-
-
-    public void scrollTubePair(){
-
-        tubeMap.forEach((key, value) -> {
-            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-1);
-            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-1);
-        //this.tubeUp.setPosX(this.tubeUp.getPosX()-1);
-        //rectangle.setX(rectangle.getX()-1);
-
-        /*this.tubeDown.setPosX(this.tubeDown.getPosX()-1);
-        this.r2.setX(this.tubeDown.getPosX()-1);*/
-        });
-    }
-
-    public void finishPlayground() {
-        if (((Rectangle)tubeMap.firstEntry().getValue().getX()).getX() == -55) {
-            tubeMap.remove(tubeMap.firstKey());
-        }
-    }
 }
