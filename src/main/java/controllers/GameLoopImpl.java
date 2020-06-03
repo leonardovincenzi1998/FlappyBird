@@ -70,6 +70,7 @@ public class GameLoopImpl extends Application {
     public void flappyUpdateDown() {
         double n = 2.75;
         this.controller.initialGame(n);
+
     }
 
     public void flappyUpdateUp() {

@@ -76,9 +76,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         }
 
     }
-
-
-
+    
     @Override
     public void addNode(final Node n) {
         this.view.addChildren(n);

@@ -23,6 +23,7 @@ public class FlappyImpl implements Flappy{
     private double posY;
     double inc = 1.0;
     private final String flappyImagePath;
+    private FlappyStateImpl state;
 
 
     public FlappyImpl() {
@@ -35,8 +36,18 @@ public class FlappyImpl implements Flappy{
     @Override
     public void flappyUpdate(Rectangle r, double n) {
         r.setY(r.getY()+n);
-        //System.out.println(r.getY());
+        System.out.println(r.getY());
     }
+
+
+    /*public void getJump(){
+        return state.setState();
+    }
+
+    public void getDown(){
+        return state.setState();
+
+    }*/
 
     public String getFlappyImagePath() {
         return flappyImagePath;
