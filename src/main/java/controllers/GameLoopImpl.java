@@ -17,7 +17,6 @@ public class GameLoopImpl extends Application {
     private int cont2=0;
 
     private boolean gravity = true;
-    private boolean collision = false;
 
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
@@ -38,7 +37,7 @@ public class GameLoopImpl extends Application {
                 if (gravity) {
                     flappyUpdateDown();
                 } else {
-                    flappyUpdateJump();
+                    flappyUpdateUp();
                     cont++;
                     if (cont == 20) {
                         gravity = true;
@@ -93,10 +92,11 @@ public class GameLoopImpl extends Application {
         this.controller.initialGame(n);
     }
 
-    public void flappyUpdateJump() {
+    public void flappyUpdateUp() {
         double n = -2.75;
         this.controller.initialGame(n);
     }
+
 
     public void checkCollision() throws IOException {
         controller.checkCollision();
@@ -104,10 +104,7 @@ public class GameLoopImpl extends Application {
     }
 
     public void collision() {
-        collision = true;
-        if (collision = true) {
             timer.stop();
-        }
     }
 }
 

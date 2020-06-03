@@ -19,6 +19,7 @@ public interface FlappyBirdController {
 
     void checkCollision();
 
+
     /**
      * Quits the game.
      */

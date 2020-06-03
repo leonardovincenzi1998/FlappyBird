@@ -53,7 +53,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     @Override
     public void initialGame(double n){
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(),n);
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(), n);
     }
 
     @Override
@@ -70,6 +70,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
             this.view.quitBtn();
         }
     }
+
 
 
     @Override

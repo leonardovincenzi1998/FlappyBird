@@ -1,7 +1,10 @@
 package model;
 
 import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -30,10 +33,20 @@ public class FlappyImpl implements Flappy  {
 
 
     public void flappyUpdate(Rectangle r, double n) {
+        r.setY(r.getY()+n);
+    }
 
-        r.setY(getPosY()+n);
-        setPosY(getPosY()+n);
-        //System.out.println(getPosY());
+    public void flappyJump(Rectangle r){
+        /*Timeline jump;
+        //r.setTranslateY(getPosY());
+        jump = new Timeline(new KeyFrame(
+                Duration.seconds(0.068), x ->
+                r.setY(r.getY()-1)
+        ));
+        //r.setTranslateY(getPosY());
+        jump.setCycleCount(38);
+        jump.play();
+        jump.setOnFinished(actionEvent-> jump.stop());*/
     }
 
 
