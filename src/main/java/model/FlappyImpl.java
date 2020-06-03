@@ -4,6 +4,7 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -30,6 +31,10 @@ public class FlappyImpl implements Flappy  {
         flappyImagePath = ("bird.png");
     }
 
+
+    public void flappyUpdate(Rectangle r, double n) {
+        r.setY(r.getY()+n);
+    }
 
 
     public String getFlappyImagePath() {

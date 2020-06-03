@@ -14,13 +14,13 @@ public interface FlappyBirdController {
 
     void addTube() throws Exception;
 
-    void checkBorderCollision() throws IOException;
 
-    //void initialGame();
+    void initialGame(double n);
 
-    //void checkCollision();
+    void checkCollision();
 
     void startGame();
+
 
     /**
      * Quits the game.

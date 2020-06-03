@@ -2,15 +2,15 @@ package controllers;
 
 
 import javafx.scene.Node;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import util.Pair;
+import util.TubeMap;
+import util.TubeMapImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
 import java.io.IOException;
-
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
@@ -18,19 +18,19 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final TubeControllerImpl tubeController;
     private  FlappyControllerImpl flappyController;
     private GameLoopImpl gameLoop;
+    private TubeMap tubeMap;
+
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
-        tubeController = new TubeControllerImpl();
+        tubeMap = new TubeMapImpl();
+        tubeController = new TubeControllerImpl(tubeMap);
         flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage);
         this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView()/*, tubeController.getTubeMap()*/);
 
 
         this.addNode(flappyController.getFlappyView().getFlappy());
-        printPairTube(tubeController.getTubeMap().entrySet().iterator().next().getValue());
-
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
-
+        printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
     public void printPairTube(Pair tubePair){
@@ -39,41 +39,38 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     }
 
     public void scrollTubes(){
-        tubeController.scrollTubePair(tubeController.getTubeMap());
-
+        tubeController.getTubeMap().scrollTubePair();
+        tubeController.getTubeMap().checkWindowEnd();
     }
 
 
     @Override
-    public void addTube() throws Exception {
-        this.tubeController.addToMap();
-        printPairTube(tubeController.getTubeMap().get((tubeController.getTubeMap().size())));
-
+    public void addTube() {
+        this.tubeController.getTubeMap().addToMap(tubeController.createTubePair());
+        printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
+    public void initialGame(double n){
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(), n);
+    }
 
+    @Override
     public void pressSpace() {
-        this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
-        //System.out.println("prova")
+        gameLoop.spazioPremuto();
         }
 
     public void startGame() {
         this.pressSpace();
     }
 
-    public void checkBorderCollision() {
-        if ((this.flappyController.groundCollision(this.flappyController.getFlappyView().getFlappy()))) {
-            System.out.println("quit");
-            gameLoop.collision();
-            this.view.quitBtn();
-        }
-
-        if ((this.flappyController.roofCollision(this.flappyController.getFlappyView().getFlappy()))) {
+    public void checkCollision() {
+        if ((this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy()))) {
             System.out.println("quit");
             gameLoop.collision();
             this.view.quitBtn();
         }
     }
+
 
 
     @Override

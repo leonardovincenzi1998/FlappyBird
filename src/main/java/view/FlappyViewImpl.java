@@ -19,7 +19,7 @@ public class FlappyViewImpl {
     public FlappyViewImpl(final Flappy flappy) {
         this.ico = new Image(flappy.getFlappyImagePath());
         r.setX(flappy.getPosX());
-        r.setTranslateY(flappy.getPosY());
+        r.setY(flappy.getPosY());
         r.setWidth(flappy.getWidthBird());
         r.setHeight(flappy.getHeightBird());
         r.setFill(new ImagePattern(ico));

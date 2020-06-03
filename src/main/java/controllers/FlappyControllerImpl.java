@@ -21,11 +21,10 @@ public class FlappyControllerImpl {
     }
 
     public boolean floorCollision(Rectangle r) {
-        if (flappy.getPosY() >= 335 - flappy.getHeightBird()){
-            System.out.println("fermati");
-        flappy.flappyTouchGround();
-        return true;
-    }
+        if (r.getY() == (335 - flappy.getHeightBird())) {
+            System.out.println("QUIT");
+            return true;
+        }
         return false;
     }
 
