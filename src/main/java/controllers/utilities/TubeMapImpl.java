@@ -52,6 +52,10 @@ public class TubeMapImpl implements TubeMap{
             if(intersect2.getBoundsInLocal().getWidth() != -1){
                 flag.set(1);
             }
+
+            if((flappy.getY() < 0 && ((Rectangle) value.getX()).getX() == flappy.getX())){
+                flag.set(1);
+            }
         });
         return flag.get() != 0;
     }
