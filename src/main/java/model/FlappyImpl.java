@@ -16,7 +16,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.SQLXML;
 
-public class FlappyImpl implements Flappy  {
+public class FlappyImpl implements Flappy{
 
     private static final double HEIGHT = 335  ;
     private double posX;
@@ -32,35 +32,42 @@ public class FlappyImpl implements Flappy  {
     }
 
 
+    @Override
     public void flappyUpdate(Rectangle r, double n) {
         r.setY(r.getY()+n);
+        //System.out.println(r.getY());
     }
-
 
     public String getFlappyImagePath() {
         return flappyImagePath;
     }
 
+    @Override
     public int getWidthBird() {
         return 45;
     }
 
+    @Override
     public int getHeightBird() {
         return 32;
     }
 
+    @Override
     public double getPosX() {
         return posX;
     }
 
+    @Override
     public void setPosX(double posX) {
         this.posX = posX;
     }
 
+    @Override
     public double getPosY() {
         return posY;
     }
 
+    @Override
     public void setPosY(double posY) {
         this.posY = posY;
     }

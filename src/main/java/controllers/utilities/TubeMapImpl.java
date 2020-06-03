@@ -1,8 +1,11 @@
-package util;
+package controllers.utilities;
 
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+import util.Pair;
 
 import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TubeMapImpl implements TubeMap{
 
@@ -35,5 +38,21 @@ public class TubeMapImpl implements TubeMap{
             tubeMap.remove(tubeMap.firstKey());
             System.out.println("Eliminato");
         }
+    }
+
+    public boolean checkCollision(Rectangle flappy){
+        AtomicInteger flag = new AtomicInteger(0);
+        //Shape intersect = Shape.intersect()
+        tubeMap.forEach((key, value) -> {
+            Shape intersect = Shape.intersect(flappy, ((Rectangle)value.getX()));
+            if(intersect.getBoundsInLocal().getWidth() != -1){
+                flag.set(1);
+            }
+            Shape intersect2 = Shape.intersect(flappy, ((Rectangle)value.getY()));
+            if(intersect2.getBoundsInLocal().getWidth() != -1){
+                flag.set(1);
+            }
+        });
+        return flag.get() != 0;
     }
 }

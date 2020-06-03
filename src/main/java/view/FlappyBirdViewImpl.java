@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+
 import java.awt.*;
 import java.io.IOException;
 
@@ -29,7 +30,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private Scene scene;
     private FlappyGameViewObserver observer;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private TubeViewImpl tubeView;
     private FlappyViewImpl flappyView;
     //private Map mappa;
 
@@ -37,8 +37,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView/*, Map tubeMap*/) {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        //this.mappa = tubeMap;
-        //this.tubeView = tubeView;
         this.flappyView = flappyView;
         screenSize.setSize(WIDTH,HEIGHT);
         this.primaryStage.setTitle(TITLE);
@@ -57,7 +55,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         this.scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
-        //final ImageView tubo = new ImageView(new Image(ClassLoader.getSystemResource("tube.png").toString()));
         this.root.getChildren().add(background);
 
         //BOZZA SCORE

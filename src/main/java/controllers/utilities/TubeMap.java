@@ -1,4 +1,7 @@
-package util;
+package controllers.utilities;
+
+import javafx.scene.shape.Rectangle;
+import util.Pair;
 
 public interface TubeMap {
 
@@ -9,4 +12,6 @@ public interface TubeMap {
     void scrollTubePair();
 
     void checkWindowEnd();
+
+    boolean checkCollision(Rectangle flappy);
 }
