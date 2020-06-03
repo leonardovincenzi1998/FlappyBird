@@ -9,6 +9,7 @@ import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
+import java.io.IOException;
 
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
@@ -28,6 +29,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         this.addNode(flappyController.getFlappyView().getFlappy());
         printPairTube(tubeController.getTubeMap().entrySet().iterator().next().getValue());
 
+        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy());
 
     }
 
@@ -50,20 +52,23 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     }
 
 
-    @Override
-    public void initialGame(double n){
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(),n);
-    }
-
-    @Override
     public void pressSpace() {
-        gameLoop.spazioPremuto();
+        this.flappyController.getFlappyModel().flappyJump(this.flappyController.getFlappyView().getFlappy());
+        //System.out.println("prova")
+        }
+
+    public void startGame() {
+        this.pressSpace();
     }
 
+    public void checkBorderCollision() {
+        if ((this.flappyController.groundCollision(this.flappyController.getFlappyView().getFlappy()))) {
+            System.out.println("quit");
+            gameLoop.collision();
+            this.view.quitBtn();
+        }
 
-    public void checkCollision() {
-        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
-            //this.flappyController.getFlappyModel().flappyStop(this.flappyController.getFlappyView().getFlappy());
+        if ((this.flappyController.roofCollision(this.flappyController.getFlappyView().getFlappy()))) {
             System.out.println("quit");
             gameLoop.collision();
             this.view.quitBtn();

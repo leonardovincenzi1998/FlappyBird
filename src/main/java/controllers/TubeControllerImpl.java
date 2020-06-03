@@ -114,8 +114,8 @@ public class TubeControllerImpl {
     public void scrollTubePair(Map<Integer, Pair> tubeMap){
 
         tubeMap.forEach((key, value) -> {
-            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-1);
-            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-1);
+            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-2);
+            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-2);
         //this.tubeUp.setPosX(this.tubeUp.getPosX()-1);
         //rectangle.setX(rectangle.getX()-1);
 

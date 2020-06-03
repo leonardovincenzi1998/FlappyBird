@@ -7,10 +7,14 @@ import java.io.IOException;
 
 public interface Flappy {
 
-    void flappyUpdate(Rectangle r, double n);
+    //void flappyUpdate(Rectangle r, double n);
+    void flappyTouchRoof();
 
+    void flappyTouchGround();
 
+    void flappyJump(Rectangle r);
 
+    void flappyUpdate(Rectangle r);
 
     String getFlappyImagePath();
 

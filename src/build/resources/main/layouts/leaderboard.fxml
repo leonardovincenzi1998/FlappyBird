@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.view.LeaderboardViewController">
+    <children>
+        <VBox alignment="CENTER" depthTest="DISABLE" layoutX="91.0" layoutY="125.0" prefHeight="147.0" prefWidth="417.0">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <Button fx:id="goBack" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="281.0" mnemonicParsing="false" onAction="#returnHome" text="Torna al menu principale" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="26.0" text="CLASSIFICA">
+            <font>
+                <Font name="Ink Free" size="50.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

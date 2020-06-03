@@ -1,6 +1,8 @@
 package model;
 
 import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,12 +17,12 @@ import java.sql.SQLXML;
 
 public class FlappyImpl implements Flappy  {
 
+    private static final double HEIGHT = 335  ;
     private double posX;
     private double posY;
-    private double gravity = 20;
+    double inc = 1.0;
     private final String flappyImagePath;
 
-    //TranslateTransition move = new TranslateTransition();
 
     public FlappyImpl() {
         posX = 50;
@@ -29,12 +31,7 @@ public class FlappyImpl implements Flappy  {
     }
 
 
-    public void flappyUpdate(Rectangle r, double n) {
-        r.setY(getPosY()+n);
-        setPosY(getPosY()+n);
-        System.out.println(getPosY());
-    }
-    
+
     public String getFlappyImagePath() {
         return flappyImagePath;
     }
