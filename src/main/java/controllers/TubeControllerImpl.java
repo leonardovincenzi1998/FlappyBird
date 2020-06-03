@@ -6,15 +6,12 @@ import javafx.scene.shape.Rectangle;
 import model.TubeDown;
 import model.TubeUp;
 import util.Pair;
-import util.TubeMap;
-import util.TubeMapImpl;
-import view.TubeViewImpl;
+import controllers.utilities.TubeMap;
 
 public class TubeControllerImpl {
 
     //public TubeUp tubeUp;
     //public TubeDown tubeDown;
-    private TubeViewImpl tubeView;
     private TubeMap tubeMap;
     private int cont=0;
     private int deleteKeyN = 1;

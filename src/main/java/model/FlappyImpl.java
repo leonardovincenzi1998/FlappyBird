@@ -16,7 +16,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.SQLXML;
 
-public class FlappyImpl implements Flappy  {
+public class FlappyImpl implements Flappy{
 
     private double posX;
     private double posY;
@@ -32,71 +32,43 @@ public class FlappyImpl implements Flappy  {
     }
 
 
+    @Override
     public void flappyUpdate(Rectangle r, double n) {
         r.setY(r.getY()+n);
+        //System.out.println(r.getY());
     }
 
-    public void flappyJump(Rectangle r){
-        /*Timeline jump;
-        //r.setTranslateY(getPosY());
-        jump = new Timeline(new KeyFrame(
-                Duration.seconds(0.068), x ->
-                r.setY(r.getY()-1)
-        ));
-        //r.setTranslateY(getPosY());
-        jump.setCycleCount(38);
-        jump.play();
-        jump.setOnFinished(actionEvent-> jump.stop());*/
-    }
-
-
-    /*public void flappyGravity(Rectangle r, double inc) {
-        if ((gravity >= HEIGHT - getHeightBird()) || (gravity == 0 )) {
-            System.out.println("fermati");
-            timelineDown.stop();
-            timelineUp.stop();
-        }
-        gravity = gravity + inc;
-        r.setTranslateY(gravity);
-    }
-
-    public void flappyJump(Rectangle r) {
-        timelineDown.pause();
-        double inc = -1.0;
-        r.setTranslateY(gravity);
-        timelineUp = new Timeline(new KeyFrame(
-                Duration.seconds(0.005),
-                x -> flappyGravity(r, inc))
-        );
-        timelineUp.setCycleCount(55);
-        timelineUp.play();
-        timelineUp.setOnFinished(actionEvent -> timelineDown.play());
-    }*/
-
+    @Override
     public String getFlappyImagePath() {
         return flappyImagePath;
     }
 
+    @Override
     public int getWidthBird() {
         return 45;
     }
 
+    @Override
     public int getHeightBird() {
         return 32;
     }
 
+    @Override
     public double getPosX() {
         return posX;
     }
 
+    @Override
     public void setPosX(double posX) {
         this.posX = posX;
     }
 
+    @Override
     public double getPosY() {
         return posY;
     }
 
+    @Override
     public void setPosY(double posY) {
         this.posY = posY;
     }

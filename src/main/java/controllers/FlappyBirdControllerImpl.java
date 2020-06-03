@@ -2,10 +2,11 @@ package controllers;
 
 
 import javafx.scene.Node;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import util.Pair;
-import util.TubeMap;
-import util.TubeMapImpl;
+import controllers.utilities.TubeMap;
+import controllers.utilities.TubeMapImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
@@ -69,6 +70,11 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
             gameLoop.collision();
             this.view.quitBtn();
         }
+        if(tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())){
+            gameLoop.collision();
+            this.view.quitBtn();
+        }
+
     }
 
 
