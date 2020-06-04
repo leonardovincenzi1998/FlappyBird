@@ -1,20 +1,6 @@
 package model;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-import javafx.util.Duration;
-
-import java.io.IOException;
-import java.sql.SQLXML;
 
 public class FlappyImpl implements Flappy{
 
@@ -23,7 +9,7 @@ public class FlappyImpl implements Flappy{
     private double posY;
     double inc = 1.0;
     private final String flappyImagePath;
-    private FlappyStateImpl state;
+    private FlappySetState state= new FlappySetState();
 
 
     public FlappyImpl() {
@@ -32,22 +18,19 @@ public class FlappyImpl implements Flappy{
         flappyImagePath = ("bird.png");
     }
 
-
     @Override
     public void flappyUpdate(Rectangle r, double n) {
         r.setY(r.getY()+n);
         System.out.println(r.getY());
     }
 
-
-    /*public void getJump(){
-        return state.setState();
+    public void getJump(Rectangle r){
+        state.setStateJump(r);
     }
 
-    public void getDown(){
-        return state.setState();
-
-    }*/
+    public void getDown(Rectangle r){
+        state.setStateDown(r);
+    }
 
     public String getFlappyImagePath() {
         return flappyImagePath;

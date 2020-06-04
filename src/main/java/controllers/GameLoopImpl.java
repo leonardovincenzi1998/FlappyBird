@@ -36,9 +36,10 @@ public class GameLoopImpl extends Application {
                 if (gravity) {
                     flappyUpdateDown();
                 } else {
-                    flappyUpdateUp();
+                    flappyUpdateJump();
                     cont++;
                     if (cont == 20) {
+                        System.out.println("ciao");
                         gravity = true;
                         cont = 0;
                     } else {
@@ -61,21 +62,18 @@ public class GameLoopImpl extends Application {
         timer.start();
     }
 
-
     public void spazioPremuto() {
         gravity = false;
         //System.out.println(flag);
     }
 
-    public void flappyUpdateDown() {
-        double n = 2.75;
-        this.controller.initialGame(n);
-
+    public void flappyUpdateJump() {
+        this.controller.salta();
     }
 
-    public void flappyUpdateUp() {
-        double n = -2.75;
-        this.controller.initialGame(n);
+    public void flappyUpdateDown() {
+        this.controller.initialGame();
+
     }
 
     public void checkCollision() throws IOException {

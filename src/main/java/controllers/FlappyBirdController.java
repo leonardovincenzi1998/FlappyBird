@@ -14,8 +14,9 @@ public interface FlappyBirdController {
 
     void addTube() throws Exception;
 
+    void salta();
 
-    void initialGame(double n);
+    void initialGame();
 
     void checkCollision();
 

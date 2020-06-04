@@ -1,11 +1,18 @@
 package model;
 
-public class FlappyStateImpl {
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.shape.Rectangle;
 
-    private FlappyState state;
+public class FlappyStateImpl implements FlappyState {
 
-    public void setState(FlappyState state) {
-        this.state = state;
+    public FlappyState flappyJump(Rectangle r) {
+        r.setY(r.getY()-2.75);
+        return this;
     }
 
+    public FlappyState flappyDown(Rectangle r) {
+        r.setY(r.getY()+2.75);
+        return this;
+    }
 }

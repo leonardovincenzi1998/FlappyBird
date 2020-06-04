@@ -4,8 +4,8 @@ import javafx.scene.shape.Rectangle;
 
 public interface FlappyState {
 
-    void flappyDown(Rectangle r);
+    FlappyState flappyDown(Rectangle r);
 
-    void flappyJump(Rectangle r);
+    FlappyState flappyJump(Rectangle r);
 
 }

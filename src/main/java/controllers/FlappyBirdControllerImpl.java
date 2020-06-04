@@ -51,14 +51,18 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
-    public void initialGame(double n){
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(), n);
+    public void initialGame(){
+        this.flappyController.getFlappyModel().getDown(this.flappyController.getFlappyView().getFlappy());
     }
 
     @Override
     public void pressSpace() {
         gameLoop.spazioPremuto();
         }
+
+    public void salta() {
+        this.flappyController.getFlappyModel().getJump(this.flappyController.getFlappyView().getFlappy());
+    }
 
     public void startGame() {
         this.pressSpace();

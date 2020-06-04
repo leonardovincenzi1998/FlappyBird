@@ -7,6 +7,10 @@ import java.io.IOException;
 
 public interface Flappy {
 
+    void getDown(Rectangle r);
+
+    void getJump(Rectangle r);
+
     void flappyUpdate(Rectangle r,double n);
 
     String getFlappyImagePath();
