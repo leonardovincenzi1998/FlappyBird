@@ -36,7 +36,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     //private Map mappa;
 
 
-    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView/*, Map tubeMap*/) {
+    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
         this.primaryStage = primaryStage;
         this.observer = observer;
     }
@@ -72,21 +72,23 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         primaryStage.setScene(scene);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-            if (event.getCode() == KeyCode.SPACE) {
+            long keypresstime = System.currentTimeMillis();
+            if ((event.getCode() == KeyCode.SPACE)) {
                 this.observer.pressSpace();
+                System.out.println(keypresstime);
             }
         });
 
-       scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+       /*scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
-        });
+        });*/
     }
 
     public void quitBtn() {
-        double btnWidth = 250;
-        double btnHeight = 50;
+        double btnWidth = 250.0;
+        double btnHeight = 50.0;
         Button quitBtn = new Button("Return to Main Menu");
 
         quitBtn.setPrefSize(btnWidth,btnHeight);

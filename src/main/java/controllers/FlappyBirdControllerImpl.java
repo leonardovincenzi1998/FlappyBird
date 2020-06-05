@@ -16,34 +16,30 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     private final FlappyBirdView view;
     private final TubeControllerImpl tubeController;
-    private  FlappyControllerImpl flappyController;
-    private GameLoopImpl gameLoop;
-    private TubeMap tubeMap;
+    private final FlappyControllerImpl flappyController;
+    private final GameLoopImpl gameLoop;
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
-        tubeMap = new TubeMapImpl();
-        tubeController = new TubeControllerImpl(tubeMap, this);
+        tubeController = new TubeControllerImpl(this);
         flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage, tubeController, flappyController);
-        view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView());
+        view = new FlappyBirdViewImpl(primaryStage, this);
         view.start();
     }
 
     @Override
     public void startGame() {
         this.addNode(flappyController.getFlappyView().getFlappy());
-        tubeController.printPairTube(tubeController.getTubeMap().getLastValue());
+        tubeController.getTubeMap().printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
-    @Override
     public void pressSpace() {
         gameLoop.userAction();
     }
 
     public void checkCollision() {
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
-            //this.flappyController.getFlappyModel().flappyStop(this.flappyController.getFlappyView().getFlappy());
             gameLoop.collision();
             this.view.quitBtn();
         }

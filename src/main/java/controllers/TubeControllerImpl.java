@@ -1,5 +1,6 @@
 package controllers;
 
+import controllers.utilities.TubeMapImpl;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
@@ -13,20 +14,13 @@ import java.util.Map;
 
 public class TubeControllerImpl {
 
-    //public TubeUp tubeUp;
-    //public TubeDown tubeDown;
-    private TubeMap tubeMap;
-    private int cont=0;
-    private int deleteKeyN = 1;
     private final TubeUp tubeUp = new TubeUp("top.png");
     private final TubeDown tubeDown = new TubeDown("bottom.png");
-    private FlappyBirdController controller;
+    private final TubeMap tubeMap;
 
-    public TubeControllerImpl(TubeMap tubeMap, FlappyBirdController controller) {
-
-        this.tubeMap = tubeMap;
-        this.tubeMap.addToMap(createTubePair());
-        this.controller = controller;
+    public TubeControllerImpl(FlappyBirdController controller) {
+        tubeMap = new TubeMapImpl(controller);
+        tubeMap.addToMap(createTubePair());
     }
 
     public Pair createTubePair(){
@@ -56,38 +50,19 @@ public class TubeControllerImpl {
     }
 
     public void addTube() {
-        this.getTubeMap().addToMap(createTubePair());
-        printPairTube(getTubeMap().getLastValue());
-    }
-
-    void printPairTube(Pair tubePair){
-        this.controller.addNode((Node) tubePair.getX());
-        this.controller.addNode((Node) tubePair.getY());
+        tubeMap.addToMap(createTubePair());
+        tubeMap.printPairTube(tubeMap.getLastValue());
     }
 
     public void scrollTubes(){
-        this.getTubeMap().scrollTubePair();
-        this.getTubeMap().checkWindowEnd();
+        this.tubeMap.scrollTubePair();
+        this.tubeMap.checkWindowEnd();
     }
 
     public TubeMap getTubeMap(){
         return this.tubeMap;
     }
 
-    public void getTubeModel(){
-        //return this.tubeDown;
-    }
 
-    public void scrollTubePair(Map<Integer, Pair> tubeMap){
 
-        tubeMap.forEach((key, value) -> {
-            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-2);
-            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-2);
-        //this.tubeUp.setPosX(this.tubeUp.getPosX()-1);
-        //rectangle.setX(rectangle.getX()-1);
-
-        /*this.tubeDown.setPosX(this.tubeDown.getPosX()-1);
-        this.r2.setX(this.tubeDown.getPosX()-1);*/
-        });
-    }
 }

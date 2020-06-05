@@ -9,15 +9,11 @@ public class FlappyControllerImpl {
 
     private final Flappy flappy;
     private final FlappyViewImpl flappyView;
-    private final FlappyBirdController controller;
 
     public FlappyControllerImpl(FlappyBirdControllerImpl controller) {
         flappy = new FlappyImpl();
         flappyView = new FlappyViewImpl();
         this.setFlappyView();
-        this.controller = controller;
-
-
     }
 
     public void setFlappyView() {
@@ -39,9 +35,6 @@ public class FlappyControllerImpl {
         }
         return false;
     }
-
-
-
 
     public Flappy getFlappyModel(){
         return this.flappy;

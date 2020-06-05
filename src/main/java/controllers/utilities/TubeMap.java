@@ -15,5 +15,7 @@ public interface TubeMap {
 
     boolean checkCollision(Rectangle flappy);
 
+    void printPairTube(Pair tubePair);
+
 
 }

@@ -15,7 +15,7 @@ public class GameLoopImpl extends Application {
     private TubeControllerImpl tubeController;
     private FlappyControllerImpl flappyController;
     private AnimationTimer timer;
-    private int cont = 0;
+
     private int cont2=0;
     final Timer timer2 = new Timer(200, (elem) ->  gravity=true);
 
