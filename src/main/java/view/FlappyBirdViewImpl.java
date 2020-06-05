@@ -76,12 +76,8 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         this.observer.startGame();
 
-<<<<<<< HEAD
-       this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-=======
         primaryStage.setScene(this.scene);
         this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
->>>>>>> 4540c5e9cfc6bcea5b06f52317ac1d1180c36f4c
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.startGame();
                 //this.observer.pressSpace();

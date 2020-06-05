@@ -1,19 +1,22 @@
 package controllers;
 
 import javafx.scene.shape.Rectangle;
+import model.Flappy;
+import model.FlappyImpl;
 import view.FlappyViewImpl;
 
 public class FlappyControllerImpl {
 
-    private final FlappyImpl flappy;
+    private final Flappy flappy;
     private final FlappyViewImpl flappyView;
     private final FlappyBirdController controller;
 
     public FlappyControllerImpl(FlappyBirdControllerImpl controller) {
         flappy = new FlappyImpl();
         flappyView = new FlappyViewImpl();
+        this.setFlappyView();
         this.controller = controller;
-        setFlappyView();
+
 
     }
 

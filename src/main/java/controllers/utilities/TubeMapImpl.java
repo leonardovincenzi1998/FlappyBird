@@ -39,8 +39,8 @@ public class TubeMapImpl implements TubeMap{
 
     public void checkWindowEnd() {
         if (((Rectangle)tubeMap.firstEntry().getValue().getX()).getX() == -60) {
-            controller.removeNode((Node) tubeMap.firstEntry().getValue().getX());
-            controller.removeNode((Node) tubeMap.firstEntry().getValue().getY());
+            //controller.removeNode((Node) tubeMap.firstEntry().getValue().getX());
+            //controller.removeNode((Node) tubeMap.firstEntry().getValue().getY());
             tubeMap.remove(tubeMap.firstKey());
         }
     }
