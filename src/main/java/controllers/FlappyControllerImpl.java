@@ -1,10 +1,6 @@
 package controllers;
 
 import javafx.scene.shape.Rectangle;
-import model.Flappy;
-import model.FlappyImpl;
-import view.FlappyBirdView;
-import view.FlappyBirdViewImpl;
 import view.FlappyViewImpl;
 
 public class FlappyControllerImpl {
@@ -14,10 +10,17 @@ public class FlappyControllerImpl {
     private final FlappyBirdController controller;
 
     public FlappyControllerImpl(FlappyBirdControllerImpl controller) {
-        this.flappy = new FlappyImpl();
-        this.flappyView = new FlappyViewImpl(this.flappy);
+        flappy = new FlappyImpl();
+        flappyView = new FlappyViewImpl();
         this.controller = controller;
+        setFlappyView();
 
+    }
+
+    public void setFlappyView() {
+        flappyView.setPosition(flappy.getPosX(),flappy.getPosY());
+        flappyView.setWidthHeight(flappy.getHeightBird(),flappy.getWidthBird());
+        flappyView.setImage(flappy.getFlappyImagePath());
     }
 
     public boolean floorCollision(Rectangle r) {
