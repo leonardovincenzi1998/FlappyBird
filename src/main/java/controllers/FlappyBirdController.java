@@ -11,11 +11,11 @@ public interface FlappyBirdController {
 
     void pressSpace();
 
-    void scrollTubes();
+    //void scrollTubes();
 
-    void addTube() throws Exception;
+    //void addTube() throws Exception;
 
-    void initialGame(double n);
+    void flappyMovement(double n);
 
     void checkCollision();
 
@@ -40,7 +40,7 @@ public interface FlappyBirdController {
      * Removes node from view's root node.
      * @param e node to be removed
      */
-    //void removeNode(Node e);
+    void removeNode(Node e);
 
     /**
      * Adds node to view's root node.

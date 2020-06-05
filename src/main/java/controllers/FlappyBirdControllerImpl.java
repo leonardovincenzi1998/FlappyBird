@@ -2,7 +2,6 @@ package controllers;
 
 
 import javafx.scene.Node;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import util.Pair;
 import controllers.utilities.TubeMap;
@@ -23,50 +22,35 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
         tubeMap = new TubeMapImpl();
-        tubeController = new TubeControllerImpl(tubeMap);
+        tubeController = new TubeControllerImpl(tubeMap, this);
         flappyController = new FlappyControllerImpl(this);
-        gameLoop = new GameLoopImpl(this, primaryStage);
-        this.view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView()/*, tubeController.getTubeMap()*/);
+        gameLoop = new GameLoopImpl(this, primaryStage, tubeController);
+        view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView());
+        view.start();
+    }
 
-
+    @Override
+    public void startGame() {
         this.addNode(flappyController.getFlappyView().getFlappy());
-        printPairTube(tubeController.getTubeMap().getLastValue());
-
-
-    }
-
-    public void printPairTube(Pair tubePair){
-        addNode((Node) tubePair.getX());
-        addNode((Node) tubePair.getY());
-    }
-
-    public void scrollTubes(){
-        tubeController.getTubeMap().scrollTubePair();
-        tubeController.getTubeMap().checkWindowEnd();
+        tubeController.printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
 
     @Override
-    public void addTube() {
-        this.tubeController.getTubeMap().addToMap(tubeController.createTubePair());
-        printPairTube(tubeController.getTubeMap().getLastValue());
-    }
-
-    @Override
-    public void initialGame(double n){
+    public void flappyMovement(double n){
         this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(), n);
+        //this.flappyController.getFlappyView().getFlappy().setY(this.flappyController.getFlappyModel().getPosY());
     }
 
     @Override
     public void pressSpace() {
-        gameLoop.spazioPremuto();
+        gameLoop.userAction();
     }
-
 
     public void checkCollision() {
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
             //this.flappyController.getFlappyModel().flappyStop(this.flappyController.getFlappyView().getFlappy());
-            System.out.println("quit");
+
             gameLoop.collision();
             this.view.quitBtn();
         }
@@ -77,6 +61,10 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     }
 
+    @Override
+    public void removeNode(Node n) {
+        this.view.removeChildren(n);
+    }
 
 
     @Override
