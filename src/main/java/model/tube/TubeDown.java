@@ -1,4 +1,4 @@
-package model;
+package model.tube;
 
 public class TubeDown extends AbstractTube{
     public TubeDown(String tubeImagePath) {

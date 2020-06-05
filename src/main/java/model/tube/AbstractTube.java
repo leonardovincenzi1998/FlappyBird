@@ -1,4 +1,4 @@
-package model;
+package model.tube;
 
 public abstract class AbstractTube {
 

@@ -72,9 +72,10 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         primaryStage.setScene(scene);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-            long keypresstime = System.currentTimeMillis();
+            int keypresstime = 0;
             if ((event.getCode() == KeyCode.SPACE)) {
                 this.observer.pressSpace();
+                keypresstime++;
                 System.out.println(keypresstime);
             }
         });

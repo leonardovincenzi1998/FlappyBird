@@ -1,7 +1,6 @@
 package controllers.utilities;
 
 import controllers.FlappyBirdController;
-import controllers.FlappyBirdControllerImpl;
 import javafx.scene.Node;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
