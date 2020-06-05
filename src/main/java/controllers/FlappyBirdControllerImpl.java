@@ -17,7 +17,8 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final GameLoop gameLoop;
     private final Score score;
 
-    public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
+
+    public FlappyBirdControllerImpl(Stage primaryStage) {
         score = new ScoreImpl();
         tubeController = new TubeControllerImpl(this);
         flappyController = new FlappyControllerImpl();

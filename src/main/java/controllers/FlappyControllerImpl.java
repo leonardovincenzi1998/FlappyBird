@@ -15,8 +15,6 @@ public class FlappyControllerImpl implements FlappyController {
         flappy = new FlappyImpl();
         flappyView = new FlappyViewImpl();
         this.setFlappyView();
-
-
     }
 
     @Override

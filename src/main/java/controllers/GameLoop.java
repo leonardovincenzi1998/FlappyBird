@@ -6,9 +6,9 @@ public interface GameLoop {
 
     void userAction();
 
-    void flappyUpdateDown();
+    void birdUpdateDown();
 
-    void flappyUpdateUp();
+    void birdUpdateUp();
 
     void checkCollision() throws IOException;
 

@@ -33,7 +33,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private FlappyGameViewObserver observer;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
         this.primaryStage = primaryStage;
         this.observer = observer;
@@ -69,12 +68,20 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         primaryStage.setScene(scene);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-            if (event.getCode() == KeyCode.SPACE) {
+
+            int keypresstime = 0;
+            if ((event.getCode() == KeyCode.SPACE)) {
+
                 this.observer.pressSpace();
+                keypresstime++;
+                System.out.println(keypresstime);
             }
         });
 
        /*this.scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+=======
+       /*scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+>>>>>>> fec063c5191fcd559d1823fd5189d40c959eb918
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
@@ -82,8 +89,8 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
     public void quitBtn() {
-        int btnWidth = 250;
-        int btnHeight = 50;
+        double btnWidth = 250.0;
+        double btnHeight = 50.0;
         Button quitBtn = new Button("Return to Main Menu");
 
         quitBtn.setPrefSize(btnWidth,btnHeight);
@@ -114,8 +121,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     public void setScore(int score) {
         this.score.setText("Score: " + score );
     }
-
-
 
     @Override
     public void setObserver(FlappyGameViewObserver observer) {

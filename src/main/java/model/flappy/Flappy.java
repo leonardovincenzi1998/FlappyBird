@@ -2,9 +2,6 @@ package model.flappy;
 
 import javafx.scene.shape.Rectangle;
 
-import java.awt.*;
-import java.io.IOException;
-
 public interface Flappy {
 
     void flappyUpdate(Rectangle r, double n);
@@ -16,8 +13,6 @@ public interface Flappy {
     int getHeightBird();
 
     double getPosX();
-
-    void setPosX(double posX);
 
     double getPosY();
 

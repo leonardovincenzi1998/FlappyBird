@@ -1,12 +1,10 @@
 package controllers;
 
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import java.io.IOException;
 
 
 public class GameLoopImpl extends Application implements GameLoop{
@@ -19,7 +17,7 @@ public class GameLoopImpl extends Application implements GameLoop{
 
     private boolean gravity = true;
 
-    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
+    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) {
         this.controller = controller;
         this.start(primaryStage);
     }
@@ -31,13 +29,13 @@ public class GameLoopImpl extends Application implements GameLoop{
             public void handle(long now) {
                 try {
                     checkCollision();
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 if (gravity) {
-                    flappyUpdateDown();
+                    birdUpdateDown();
                 } else {
-                    flappyUpdateUp();
+                    birdUpdateUp();
                 }
                 controller.getTubeController().scrollTubes();
                 cont2++;
@@ -60,25 +58,22 @@ public class GameLoopImpl extends Application implements GameLoop{
         timer2.stop();
         gravity=false;
         timer2.start();
-        //gravity = true;
-        //cont=0;
-        //System.out.println(flag);
     }
 
     @Override
-    public void flappyUpdateDown() {
+    public void birdUpdateDown() {
         double n = 2.75;
         this.controller.getFlappyController().flappyMovement(n);
     }
 
     @Override
-    public void flappyUpdateUp() {
+    public void birdUpdateUp() {
         double n = -2.75;
         this.controller.getFlappyController().flappyMovement(n);
     }
 
     @Override
-    public void checkCollision() throws IOException {
+    public void checkCollision() {
         controller.checkCollision();
 
     }

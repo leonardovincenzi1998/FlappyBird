@@ -4,17 +4,15 @@ import javafx.scene.shape.Rectangle;
 
 public class FlappyImpl implements Flappy{
 
-    private double posX;
+    private final double posX;
     private double posY;
-    private double gravity = 20;
     private final String flappyImagePath;
 
     public FlappyImpl() {
-        posX = 50;
-        posY = 50;
+        this.posY = 50.0;
+        this.posX = 50.0;
         flappyImagePath = ("bird.png");
     }
-
 
     @Override
     public void flappyUpdate(Rectangle r, double n) {
@@ -37,24 +35,16 @@ public class FlappyImpl implements Flappy{
     }
 
     @Override
-    public double getPosX() {
-        return posX;
-    }
-
-    @Override
-    public void setPosX(double posX) {
-        this.posX = posX;
-    }
-
-    @Override
     public double getPosY() {
         return posY;
     }
+
+    public double getPosX() {
+        return posX; }
 
     @Override
     public void setPosY(double posY) {
         this.posY = posY;
     }
-
 
 }
