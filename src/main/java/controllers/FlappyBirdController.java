@@ -8,7 +8,6 @@ import java.io.IOException;
 
 public interface FlappyBirdController {
 
-
     void pressSpace();
 
     //void scrollTubes();
@@ -18,6 +17,8 @@ public interface FlappyBirdController {
     void flappyMovement(double n);
 
     void checkCollision();
+
+    void startGame();
 
 
     /**

@@ -10,19 +10,18 @@ import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
+import java.io.IOException;
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
     private final TubeControllerImpl tubeController;
-    private  FlappyControllerImpl flappyController;
-    private GameLoopImpl gameLoop;
-    private TubeMap tubeMap;
+    private final FlappyControllerImpl flappyController;
+    private final GameLoopImpl gameLoop;
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
-        tubeMap = new TubeMapImpl();
-        tubeController = new TubeControllerImpl(tubeMap, this);
+        tubeController = new TubeControllerImpl(this);
         flappyController = new FlappyControllerImpl(this);
         gameLoop = new GameLoopImpl(this, primaryStage, tubeController);
         view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView());
@@ -32,14 +31,12 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     @Override
     public void startGame() {
         this.addNode(flappyController.getFlappyView().getFlappy());
-        tubeController.printPairTube(tubeController.getTubeMap().getLastValue());
+        tubeController.getTubeMap().printPairTube(tubeController.getTubeMap().getLastValue());
     }
-
 
     @Override
     public void flappyMovement(double n){
         this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(), n);
-        //this.flappyController.getFlappyView().getFlappy().setY(this.flappyController.getFlappyModel().getPosY());
     }
 
     @Override
@@ -49,8 +46,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     public void checkCollision() {
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
-            //this.flappyController.getFlappyModel().flappyStop(this.flappyController.getFlappyView().getFlappy());
-
             gameLoop.collision();
             this.view.quitBtn();
         }
@@ -65,7 +60,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     public void removeNode(Node n) {
         this.view.removeChildren(n);
     }
-
 
     @Override
     public void addNode(final Node n) {

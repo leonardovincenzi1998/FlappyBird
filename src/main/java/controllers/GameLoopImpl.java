@@ -11,15 +11,14 @@ import java.io.IOException;
 
 public class GameLoopImpl extends Application {
 
-    private FlappyBirdController controller;
-    private TubeControllerImpl tubeController;
+    private final FlappyBirdController controller;
+    private final TubeControllerImpl tubeController;
     private AnimationTimer timer;
-    private int cont = 0;
+
     private int cont2=0;
     final Timer timer2 = new Timer(200, (elem) ->  gravity=true);
 
     private boolean gravity = true;
-
 
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage, TubeControllerImpl tubeController) throws Exception {
         this.controller = controller;
@@ -57,7 +56,6 @@ public class GameLoopImpl extends Application {
         };
         timer.start();
     }
-
 
     public void userAction() {
         timer2.stop();

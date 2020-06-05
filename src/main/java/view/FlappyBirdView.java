@@ -1,11 +1,8 @@
 package view;
 
 import javafx.scene.layout.Pane;
-import model.FlappyImpl;
 
-import java.awt.*;
 import javafx.scene.Node;
-import javafx.scene.shape.Rectangle;
 
 
 public interface FlappyBirdView {
