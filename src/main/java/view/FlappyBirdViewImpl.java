@@ -11,9 +11,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -34,17 +31,14 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private final Label score = new Label();
     private final Stage primaryStage;
     private Pane root;
-    private Scene scene;
     private FlappyGameViewObserver observer;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private FlappyViewImpl flappyView;
     //private Map mappa;
 
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView/*, Map tubeMap*/) {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        this.flappyView = flappyView;
     }
 
     @Override
@@ -61,7 +55,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     private void setGameBackground(final Dimension screenSize) {
         this.root = new Pane();
-        this.scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
+        Scene scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
         this.root.getChildren().add(background);
 
@@ -76,14 +70,14 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         this.observer.startGame();
 
-        primaryStage.setScene(this.scene);
-        this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+        primaryStage.setScene(scene);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
         });
 
-       this.scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+       scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
@@ -91,8 +85,8 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
     public void quitBtn() {
-        int btnWidth = 250;
-        int btnHeight = 50;
+        double btnWidth = 250;
+        double btnHeight = 50;
         Button quitBtn = new Button("Return to Main Menu");
 
         quitBtn.setPrefSize(btnWidth,btnHeight);
@@ -123,8 +117,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     public void setScore(int score) {
         this.score.setText("Score: " + score );
     }
-
-
 
     @Override
     public void setObserver(FlappyGameViewObserver observer) {

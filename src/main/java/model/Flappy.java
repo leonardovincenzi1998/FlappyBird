@@ -17,8 +17,6 @@ public interface Flappy {
 
     double getPosX();
 
-    void setPosX(double posX);
-
     double getPosY();
 
     void setPosY(double posY);
