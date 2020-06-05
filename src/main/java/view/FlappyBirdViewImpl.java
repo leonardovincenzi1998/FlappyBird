@@ -11,15 +11,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
 
 import java.awt.*;
 import java.io.IOException;
@@ -34,17 +30,13 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private final Label score = new Label();
     private final Stage primaryStage;
     private Pane root;
-    private Scene scene;
     private FlappyGameViewObserver observer;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private FlappyViewImpl flappyView;
-    //private Map mappa;
 
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        this.flappyView = flappyView;
     }
 
     @Override
@@ -61,12 +53,11 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     private void setGameBackground(final Dimension screenSize) {
         this.root = new Pane();
-        this.scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
+        Scene scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
         this.root.getChildren().add(background);
 
-        //BOZZA SCORE
-        this.score.setText("0");
+        this.score.setText("Score: 0");
         this.score.setFont(new Font("Arial", this.root.getHeight()/FONT_SIZE));
         this.score.setTextFill(Paint.valueOf(String.valueOf(Color.WHITE)));
         this.root.getChildren().add(this.score);
@@ -76,18 +67,18 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         this.observer.startGame();
 
-        primaryStage.setScene(this.scene);
-        this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+        primaryStage.setScene(scene);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
         });
 
-       this.scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+       /*this.scene.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
-        });
+        });*/
     }
 
     public void quitBtn() {

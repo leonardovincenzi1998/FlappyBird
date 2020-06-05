@@ -49,6 +49,7 @@ public class TubeMapImpl implements TubeMap{
             controller.removeNode((Node) tubeMap.firstEntry().getValue().getX());
             controller.removeNode((Node) tubeMap.firstEntry().getValue().getY());
             tubeMap.remove(tubeMap.firstKey());
+            controller.updateScore();
         }
     }
 

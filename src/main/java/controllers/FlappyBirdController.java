@@ -24,7 +24,7 @@ public interface FlappyBirdController {
     /**
      * Updates score via model and pass it to view to be displayed.
      */
-    //void updateScore();
+    void updateScore();
 
     /**
      * Return main view node from view.

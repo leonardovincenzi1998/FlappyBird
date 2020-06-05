@@ -3,6 +3,8 @@ package controllers;
 
 import javafx.scene.Node;
 import javafx.stage.Stage;
+import model.Score;
+import model.ScoreImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
@@ -13,9 +15,10 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final TubeController tubeController;
     private final FlappyController flappyController;
     private final GameLoop gameLoop;
-
+    private final Score score;
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
+        score = new ScoreImpl();
         tubeController = new TubeControllerImpl(this);
         flappyController = new FlappyControllerImpl();
         gameLoop = new GameLoopImpl(this, primaryStage);
@@ -56,7 +59,12 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
             gameLoop.findCollision();
             this.view.quitBtn();
         }
+    }
 
+    @Override
+    public void updateScore() {
+        score.incrementScore();
+        view.setScore(score.getScore());
     }
 
     @Override

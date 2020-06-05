@@ -11,15 +11,14 @@ public interface FlappyBirdView {
     void start();
 
     void quitBtn();
-    void setScore(int score);
 
     void setObserver(FlappyGameViewObserver observer);
 
     /**
      * Sets new score in game view "score" label.
-     * @param val New score.
+     * @param n New score.
      */
-    //void setScore(int val);
+    void setScore(int n);
 
     /**
      * Returns main view node.
