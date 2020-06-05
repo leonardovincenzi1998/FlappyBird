@@ -26,6 +26,10 @@ public class FlappyViewImpl {
         r.setFill(new ImagePattern( new Image(image)));
     }
 
+    public void updatePosition(double y) {
+        r.setY(y);
+    }
+
     public Rectangle getFlappy(){
         return this.r;
     }

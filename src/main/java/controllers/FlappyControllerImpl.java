@@ -28,6 +28,7 @@ public class FlappyControllerImpl {
 
     public void flappyMovement(double n){
         flappy.flappyUpdate(flappyView.getFlappy(), n);
+        flappyView.updatePosition(flappy.getPosY());
         //this.flappyController.getFlappyView().getFlappy().setY(this.flappyController.getFlappyModel().getPosY());
     }
 
