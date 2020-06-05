@@ -3,24 +3,32 @@ package controllers;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
+import javax.swing.*;
 import java.io.IOException;
 
-public class GameLoopImpl extends Application {
-    private FlappyBirdController controller;
 
+public class GameLoopImpl extends Application {
+
+    private FlappyBirdController controller;
+    private TubeControllerImpl tubeController;
     private AnimationTimer timer;
     private int cont = 0;
     private int cont2=0;
+    final Timer timer2 = new Timer(200, (elem) ->  gravity=true);
 
     private boolean gravity = true;
 
+<<<<<<< HEAD
     public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
+=======
+
+    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage, TubeControllerImpl tubeController) throws Exception {
+>>>>>>> 4540c5e9cfc6bcea5b06f52317ac1d1180c36f4c
         this.controller = controller;
         this.start(primaryStage);
+        this.tubeController = tubeController;
     }
 
     @Override
@@ -36,6 +44,7 @@ public class GameLoopImpl extends Application {
                 if (gravity) {
                     flappyUpdateDown();
                 } else {
+<<<<<<< HEAD
                     flappyUpdateJump();
                     cont++;
                     if (cont == 20) {
@@ -45,13 +54,16 @@ public class GameLoopImpl extends Application {
                     } else {
                         spazioPremuto();
                     }
+=======
+                    flappyUpdateUp();
+>>>>>>> 4540c5e9cfc6bcea5b06f52317ac1d1180c36f4c
                 }
-                controller.scrollTubes();
+                tubeController.scrollTubes();
                 cont2++;
                 if (cont2 == 125) {
                     cont2 = 0;
                     try {
-                        controller.addTube();
+                        tubeController.addTube();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -62,6 +74,7 @@ public class GameLoopImpl extends Application {
         timer.start();
     }
 
+<<<<<<< HEAD
     public void spazioPremuto() {
         gravity = false;
         //System.out.println(flag);
@@ -73,6 +86,28 @@ public class GameLoopImpl extends Application {
 
     public void flappyUpdateDown() {
         this.controller.initialGame();
+=======
+
+    public void userAction() {
+        timer2.stop();
+        gravity=false;
+        timer2.start();
+        //gravity = true;
+        //cont=0;
+        //System.out.println(flag);
+    }
+
+
+    public void flappyUpdateDown() {
+        double n = 2.75;
+        this.controller.flappyMovement(n);
+    }
+
+    public void flappyUpdateUp() {
+        double n = -2.75;
+        this.controller.flappyMovement(n);
+    }
+>>>>>>> 4540c5e9cfc6bcea5b06f52317ac1d1180c36f4c
 
     }
 
@@ -87,6 +122,7 @@ public class GameLoopImpl extends Application {
 }
 
 
+<<<<<<< HEAD
     /*private double previous = System.currentTimeMillis();
     private double lag;
     private final static double MS_PER_UPDATE = 16.666666;
@@ -142,4 +178,6 @@ public class GameLoopImpl extends Application {
     }
 */
 
+=======
+>>>>>>> 4540c5e9cfc6bcea5b06f52317ac1d1180c36f4c
 

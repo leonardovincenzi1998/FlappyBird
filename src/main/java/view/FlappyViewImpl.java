@@ -29,4 +29,9 @@ public class FlappyViewImpl {
     public Rectangle getFlappy(){
         return this.r;
     }
+
+    /*public setPosition(double x, double y){
+        r.setX(x);
+        r.setY(y);
+    }*/
 }

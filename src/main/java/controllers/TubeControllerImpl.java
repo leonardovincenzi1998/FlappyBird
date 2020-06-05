@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
@@ -17,13 +18,15 @@ public class TubeControllerImpl {
     private TubeMap tubeMap;
     private int cont=0;
     private int deleteKeyN = 1;
-    private TubeUp tubeUp = new TubeUp("top.png");
-    private TubeDown tubeDown = new TubeDown("bottom.png");
+    private final TubeUp tubeUp = new TubeUp("top.png");
+    private final TubeDown tubeDown = new TubeDown("bottom.png");
+    private FlappyBirdController controller;
 
-    public TubeControllerImpl(TubeMap tubeMap) {
+    public TubeControllerImpl(TubeMap tubeMap, FlappyBirdController controller) {
 
         this.tubeMap = tubeMap;
         this.tubeMap.addToMap(createTubePair());
+        this.controller = controller;
     }
 
     public Pair createTubePair(){
@@ -50,6 +53,21 @@ public class TubeControllerImpl {
         r2.setFill(new ImagePattern(new Image(tubeDown.getTubeImagePath())));
         //r2.setStroke(Color.BLACK);
         return new Pair(r, r2);
+    }
+
+    public void addTube() {
+        this.getTubeMap().addToMap(createTubePair());
+        printPairTube(getTubeMap().getLastValue());
+    }
+
+    void printPairTube(Pair tubePair){
+        this.controller.addNode((Node) tubePair.getX());
+        this.controller.addNode((Node) tubePair.getY());
+    }
+
+    public void scrollTubes(){
+        this.getTubeMap().scrollTubePair();
+        this.getTubeMap().checkWindowEnd();
     }
 
     public TubeMap getTubeMap(){

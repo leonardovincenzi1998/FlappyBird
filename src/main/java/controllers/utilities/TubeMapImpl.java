@@ -1,5 +1,7 @@
 package controllers.utilities;
 
+import controllers.FlappyBirdController;
+import javafx.scene.Node;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import util.Pair;
@@ -11,6 +13,7 @@ public class TubeMapImpl implements TubeMap{
 
     private TreeMap<Integer, Pair> tubeMap;
     private int cont=0;
+    FlappyBirdController controller;
 
     public TubeMapImpl(){
         tubeMap = new TreeMap<>();
@@ -21,6 +24,7 @@ public class TubeMapImpl implements TubeMap{
         cont++;
         tubeMap.put(cont, tubePair);
     }
+
 
     public Pair getLastValue(){
         return tubeMap.lastEntry().getValue();
@@ -35,14 +39,14 @@ public class TubeMapImpl implements TubeMap{
 
     public void checkWindowEnd() {
         if (((Rectangle)tubeMap.firstEntry().getValue().getX()).getX() == -60) {
+            controller.removeNode((Node) tubeMap.firstEntry().getValue().getX());
+            controller.removeNode((Node) tubeMap.firstEntry().getValue().getY());
             tubeMap.remove(tubeMap.firstKey());
-            System.out.println("Eliminato");
         }
     }
 
     public boolean checkCollision(Rectangle flappy){
         AtomicInteger flag = new AtomicInteger(0);
-        //Shape intersect = Shape.intersect()
         tubeMap.forEach((key, value) -> {
             Shape intersect = Shape.intersect(flappy, ((Rectangle)value.getX()));
             if(intersect.getBoundsInLocal().getWidth() != -1){
@@ -50,6 +54,10 @@ public class TubeMapImpl implements TubeMap{
             }
             Shape intersect2 = Shape.intersect(flappy, ((Rectangle)value.getY()));
             if(intersect2.getBoundsInLocal().getWidth() != -1){
+                flag.set(1);
+            }
+
+            if((flappy.getY() < 0 && ((Rectangle) value.getX()).getX() == flappy.getX())){
                 flag.set(1);
             }
         });

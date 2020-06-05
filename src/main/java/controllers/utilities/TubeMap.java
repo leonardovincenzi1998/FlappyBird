@@ -14,4 +14,6 @@ public interface TubeMap {
     void checkWindowEnd();
 
     boolean checkCollision(Rectangle flappy);
+
+
 }

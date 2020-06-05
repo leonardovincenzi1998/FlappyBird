@@ -11,9 +11,7 @@ public interface FlappyBirdView {
     void start();
 
     void quitBtn();
-   // void setScore();
-
-    Pane getRoot();
+    void setScore(int score);
 
     void setObserver(FlappyGameViewObserver observer);
 
@@ -39,7 +37,7 @@ public interface FlappyBirdView {
      * Removes children node e from root node.
      * @param e node to be removed
      */
-   // void removeChildren(Node e);
+    void removeChildren(Node e);
 
 
 
