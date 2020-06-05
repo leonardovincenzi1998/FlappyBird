@@ -25,7 +25,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         tubeMap = new TubeMapImpl();
         tubeController = new TubeControllerImpl(tubeMap, this);
         flappyController = new FlappyControllerImpl(this);
-        gameLoop = new GameLoopImpl(this, primaryStage, tubeController);
+        gameLoop = new GameLoopImpl(this, primaryStage, tubeController, flappyController);
         view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView());
         view.start();
     }
@@ -34,12 +34,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     public void startGame() {
         this.addNode(flappyController.getFlappyView().getFlappy());
         tubeController.printPairTube(tubeController.getTubeMap().getLastValue());
-    }
-
-    @Override
-    public void flappyMovement(double n){
-        this.flappyController.getFlappyModel().flappyUpdate(this.flappyController.getFlappyView().getFlappy(), n);
-        //this.flappyController.getFlappyView().getFlappy().setY(this.flappyController.getFlappyModel().getPosY());
     }
 
     @Override

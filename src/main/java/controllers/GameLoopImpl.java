@@ -13,6 +13,7 @@ public class GameLoopImpl extends Application {
 
     private FlappyBirdController controller;
     private TubeControllerImpl tubeController;
+    private FlappyControllerImpl flappyController;
     private AnimationTimer timer;
     private int cont = 0;
     private int cont2=0;
@@ -20,10 +21,11 @@ public class GameLoopImpl extends Application {
 
     private boolean gravity = true;
 
-    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage, TubeControllerImpl tubeController) throws Exception {
+    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage, TubeControllerImpl tubeController, FlappyControllerImpl flappyController) throws Exception {
         this.controller = controller;
         this.start(primaryStage);
         this.tubeController = tubeController;
+        this.flappyController = flappyController;
     }
 
     @Override
@@ -69,12 +71,12 @@ public class GameLoopImpl extends Application {
 
     public void flappyUpdateDown() {
         double n = 2.75;
-        this.controller.flappyMovement(n);
+        this.flappyController.flappyMovement(n);
     }
 
     public void flappyUpdateUp() {
         double n = -2.75;
-        this.controller.flappyMovement(n);
+        this.flappyController.flappyMovement(n);
     }
 
 

@@ -79,8 +79,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         primaryStage.setScene(this.scene);
         this.scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.SPACE) {
-                this.observer.startGame();
-                //this.observer.pressSpace();
+                this.observer.pressSpace();
             }
         });
 
@@ -90,9 +89,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
             }
         });
     }
-
-
-
 
     public void quitBtn() {
         int btnWidth = 250;

@@ -26,6 +26,11 @@ public class FlappyControllerImpl {
         flappyView.setImage(flappy.getFlappyImagePath());
     }
 
+    public void flappyMovement(double n){
+        flappy.flappyUpdate(flappyView.getFlappy(), n);
+        //this.flappyController.getFlappyView().getFlappy().setY(this.flappyController.getFlappyModel().getPosY());
+    }
+
     public boolean floorCollision(Rectangle r) {
         if (r.getY() == (335 - flappy.getHeightBird())) {
             System.out.println("QUIT");
@@ -33,6 +38,7 @@ public class FlappyControllerImpl {
         }
         return false;
     }
+
 
 
 
