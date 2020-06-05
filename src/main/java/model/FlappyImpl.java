@@ -34,8 +34,7 @@ public class FlappyImpl implements Flappy{
 
     @Override
     public void flappyUpdate(Rectangle r, double n) {
-        r.setY(r.getY()+n);
-        //System.out.println(r.getY());
+        setPosY(getPosY()+n);
     }
 
     @Override

@@ -90,9 +90,6 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         });
     }
 
-
-
-
     public void quitBtn() {
         int btnWidth = 250;
         int btnHeight = 50;
