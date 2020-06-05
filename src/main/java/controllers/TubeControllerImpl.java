@@ -1,18 +1,15 @@
 package controllers;
 
 import controllers.utilities.TubeMapImpl;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import model.TubeDown;
-import model.TubeUp;
+import model.tube.TubeDown;
+import model.tube.TubeUp;
 import util.Pair;
 import controllers.utilities.TubeMap;
 
-import java.util.Map;
-
-public class TubeControllerImpl {
+public class TubeControllerImpl implements TubeController{
 
     private final TubeUp tubeUp = new TubeUp("top.png");
     private final TubeDown tubeDown = new TubeDown("bottom.png");
@@ -23,6 +20,7 @@ public class TubeControllerImpl {
         tubeMap.addToMap(createTubePair());
     }
 
+    @Override
     public Pair createTubePair(){
 
         Rectangle r = new Rectangle();
@@ -49,16 +47,19 @@ public class TubeControllerImpl {
         return new Pair(r, r2);
     }
 
+    @Override
     public void addTube() {
         tubeMap.addToMap(createTubePair());
         tubeMap.printPairTube(tubeMap.getLastValue());
     }
 
+    @Override
     public void scrollTubes(){
         this.tubeMap.scrollTubePair();
         this.tubeMap.checkWindowEnd();
     }
 
+    @Override
     public TubeMap getTubeMap(){
         return this.tubeMap;
     }

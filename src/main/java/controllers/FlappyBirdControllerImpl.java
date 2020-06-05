@@ -3,30 +3,37 @@ package controllers;
 
 import javafx.scene.Node;
 import javafx.stage.Stage;
-import util.Pair;
-import controllers.utilities.TubeMap;
-import controllers.utilities.TubeMapImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
-import java.io.IOException;
-
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
-    private final TubeControllerImpl tubeController;
-    private final FlappyControllerImpl flappyController;
-    private final GameLoopImpl gameLoop;
+    private final TubeController tubeController;
+    private final FlappyController flappyController;
+    private final GameLoop gameLoop;
 
 
     public FlappyBirdControllerImpl(Stage primaryStage) throws Exception {
         tubeController = new TubeControllerImpl(this);
-        flappyController = new FlappyControllerImpl(this);
-        gameLoop = new GameLoopImpl(this, primaryStage, tubeController, flappyController);
-        view = new FlappyBirdViewImpl(primaryStage, this, flappyController.getFlappyView());
+        flappyController = new FlappyControllerImpl();
+        gameLoop = new GameLoopImpl(this, primaryStage);
+        view = new FlappyBirdViewImpl(primaryStage,this);
         view.start();
     }
+
+    @Override
+    public TubeController getTubeController(){
+        return tubeController;
+    }
+
+    @Override
+    public FlappyController getFlappyController(){
+        return flappyController;
+    }
+
+
 
     @Override
     public void startGame() {
@@ -34,17 +41,19 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         tubeController.getTubeMap().printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
+    @Override
     public void pressSpace() {
         gameLoop.userAction();
     }
 
+    @Override
     public void checkCollision() {
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
-            gameLoop.collision();
+            gameLoop.findCollision();
             this.view.quitBtn();
         }
         if(tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())){
-            gameLoop.collision();
+            gameLoop.findCollision();
             this.view.quitBtn();
         }
 

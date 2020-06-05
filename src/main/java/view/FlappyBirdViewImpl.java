@@ -41,7 +41,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     //private Map mappa;
 
 
-    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer, FlappyViewImpl flappyView/*, Map tubeMap*/) {
+    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
         this.primaryStage = primaryStage;
         this.observer = observer;
         this.flappyView = flappyView;

@@ -1,4 +1,4 @@
-package model;
+package model.flappy;
 
 import javafx.scene.shape.Rectangle;
 

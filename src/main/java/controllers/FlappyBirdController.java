@@ -8,16 +8,12 @@ import java.io.IOException;
 
 public interface FlappyBirdController {
 
-    void pressSpace();
 
-    //void scrollTubes();
+    TubeController getTubeController();
 
-    //void addTube() throws Exception;
-
+    FlappyController getFlappyController();
 
     void checkCollision();
-
-    void startGame();
 
 
     /**

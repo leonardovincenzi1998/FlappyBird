@@ -9,11 +9,9 @@ import javax.swing.*;
 import java.io.IOException;
 
 
-public class GameLoopImpl extends Application {
+public class GameLoopImpl extends Application implements GameLoop{
 
-    private FlappyBirdController controller;
-    private TubeControllerImpl tubeController;
-    private FlappyControllerImpl flappyController;
+    private final FlappyBirdController controller;
     private AnimationTimer timer;
 
     private int cont2=0;
@@ -21,15 +19,13 @@ public class GameLoopImpl extends Application {
 
     private boolean gravity = true;
 
-    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage, TubeControllerImpl tubeController, FlappyControllerImpl flappyController) throws Exception {
+    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) throws Exception {
         this.controller = controller;
         this.start(primaryStage);
-        this.tubeController = tubeController;
-        this.flappyController = flappyController;
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -43,12 +39,12 @@ public class GameLoopImpl extends Application {
                 } else {
                     flappyUpdateUp();
                 }
-                tubeController.scrollTubes();
+                controller.getTubeController().scrollTubes();
                 cont2++;
                 if (cont2 == 125) {
                     cont2 = 0;
                     try {
-                        tubeController.addTube();
+                        controller.getTubeController().addTube();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -59,6 +55,7 @@ public class GameLoopImpl extends Application {
         timer.start();
     }
 
+    @Override
     public void userAction() {
         timer2.stop();
         gravity=false;
@@ -68,24 +65,26 @@ public class GameLoopImpl extends Application {
         //System.out.println(flag);
     }
 
-
+    @Override
     public void flappyUpdateDown() {
         double n = 2.75;
-        this.flappyController.flappyMovement(n);
+        this.controller.getFlappyController().flappyMovement(n);
     }
 
+    @Override
     public void flappyUpdateUp() {
         double n = -2.75;
-        this.flappyController.flappyMovement(n);
+        this.controller.getFlappyController().flappyMovement(n);
     }
 
-
+    @Override
     public void checkCollision() throws IOException {
         controller.checkCollision();
 
     }
 
-    public void collision() {
+    @Override
+    public void findCollision() {
             timer.stop();
     }
 }

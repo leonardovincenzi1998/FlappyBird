@@ -1,20 +1,6 @@
-package model;
+package model.flappy;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-import javafx.util.Duration;
-
-import java.io.IOException;
-import java.sql.SQLXML;
 
 public class FlappyImpl implements Flappy{
 
@@ -22,8 +8,6 @@ public class FlappyImpl implements Flappy{
     private double posY;
     private double gravity = 20;
     private final String flappyImagePath;
-
-    //TranslateTransition move = new TranslateTransition();
 
     public FlappyImpl() {
         posX = 50;
