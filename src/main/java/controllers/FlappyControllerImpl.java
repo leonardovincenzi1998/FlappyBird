@@ -33,7 +33,6 @@ public class FlappyControllerImpl implements FlappyController {
     @Override
     public boolean floorCollision(Rectangle r) {
         if (r.getY() == (335 - flappy.getHeightBird())) {
-            System.out.println("QUIT");
             return true;
         }
         return false;

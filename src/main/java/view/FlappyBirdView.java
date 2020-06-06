@@ -7,7 +7,7 @@ public interface FlappyBirdView {
 
     void start();
 
-    void quitBtn();
+    void getQuitBtn();
 
     void setObserver(FlappyGameViewObserver observer);
 

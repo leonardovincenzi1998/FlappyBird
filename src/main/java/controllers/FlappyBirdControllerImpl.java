@@ -24,6 +24,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         flappyController = new FlappyControllerImpl();
         gameLoop = new GameLoopImpl(this, primaryStage);
         view = new FlappyBirdViewImpl(primaryStage,this);
+
         view.start();
     }
 
@@ -54,11 +55,11 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     public void checkCollision() {
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
             gameLoop.findCollision();
-            this.view.quitBtn();
+            this.view.getQuitBtn();
         }
         if(tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())){
             gameLoop.findCollision();
-            this.view.quitBtn();
+            this.view.getQuitBtn();
         }
     }
 
