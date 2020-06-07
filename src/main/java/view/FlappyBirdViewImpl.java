@@ -31,11 +31,13 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private final Stage primaryStage;
     private Pane root;
     private FlappyGameViewObserver observer;
+    private ScoresImpl scores;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
+    public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) throws IOException {
         this.primaryStage = primaryStage;
         this.observer = observer;
+        this.scores = new ScoresImpl();
     }
 
     @Override
@@ -86,6 +88,11 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
                 this.observer.pressSpace();
             }
         });*/
+    }
+
+    @Override
+    public void saveScore(int points) throws IOException {
+        this.scores.writeScore(points);
     }
 
     public void quitBtn() {

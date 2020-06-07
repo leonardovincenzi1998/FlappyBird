@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.IOException;
 
 
 public class GameLoopImpl extends Application implements GameLoop{
@@ -73,7 +74,7 @@ public class GameLoopImpl extends Application implements GameLoop{
     }
 
     @Override
-    public void checkCollision() {
+    public void checkCollision() throws IOException {
         controller.checkCollision();
 
     }

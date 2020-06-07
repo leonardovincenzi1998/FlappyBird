@@ -2,6 +2,8 @@ package view;
 
 import javafx.scene.Node;
 
+import java.io.IOException;
+
 public interface FlappyBirdView {
 
 
@@ -17,6 +19,7 @@ public interface FlappyBirdView {
      */
     void setScore(int n);
 
+    void saveScore(int points) throws IOException;
     /**
      * Returns main view node.
      * @return view's root node

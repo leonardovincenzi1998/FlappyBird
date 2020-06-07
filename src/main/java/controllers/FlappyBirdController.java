@@ -2,13 +2,15 @@ package controllers;
 
 import javafx.scene.Node;
 
+import java.io.IOException;
+
 public interface FlappyBirdController {
 
     TubeController getTubeController();
 
     FlappyController getFlappyController();
 
-    void checkCollision();
+    void checkCollision() throws IOException;
 
     /**
      * Quits the game.
