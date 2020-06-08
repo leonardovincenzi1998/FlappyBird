@@ -7,11 +7,19 @@ public class FlappyImpl implements Flappy{
     private final double posX;
     private double posY;
     private final String flappyImagePath;
+    private static FlappyImpl flappyInstance = null;
 
-    public FlappyImpl() {
+    private FlappyImpl() {
         this.posY = 50.0;
         this.posX = 50.0;
         flappyImagePath = ("bird.png");
+    }
+
+    public static FlappyImpl getInstance(){
+        if (flappyInstance == null) {
+            flappyInstance = new FlappyImpl();
+        }
+        return  flappyInstance;
     }
 
     @Override

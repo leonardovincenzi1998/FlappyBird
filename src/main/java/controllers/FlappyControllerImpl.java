@@ -12,7 +12,7 @@ public class FlappyControllerImpl implements FlappyController {
     private final FlappyView flappyView;
 
     public FlappyControllerImpl() {
-        flappy = new FlappyImpl();
+        flappy = FlappyImpl.getInstance();
         flappyView = new FlappyViewImpl();
         this.setFlappyView();
     }
@@ -32,10 +32,7 @@ public class FlappyControllerImpl implements FlappyController {
 
     @Override
     public boolean floorCollision(Rectangle r) {
-        if (r.getY() == (335 - flappy.getHeightBird())) {
-            return true;
-        }
-        return false;
+        return r.getY() == (335 - flappy.getHeightBird());
     }
 
     @Override
