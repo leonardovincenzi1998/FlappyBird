@@ -22,7 +22,6 @@ public class TubeControllerImpl implements TubeController{
         tubeMap = new TubeMapImpl(controller);
         tubeView = new TubeViewImpl();
         tubeMap.addToMap(createTubePair());
-
     }
 
     @Override

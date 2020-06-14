@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import util.IOScores;
 
 import java.awt.*;
 import java.io.IOException;
@@ -28,16 +29,13 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private Pane root;
     private FlappyGameViewObserver observer;
 
-    private ScoresImpl scores;
-    private final EndGameMenuImpl endGameMenu;
     final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) throws IOException {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        this.endGameMenu =  new EndGameMenuImpl(this);
-        this.scores = new ScoresImpl();
+        //this.scores = new IOScores();
     }
 
     @Override
@@ -78,15 +76,10 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
 
     @Override
-    public void saveScore(int points) throws IOException {
-        this.scores.writeScore(points);
-    }
-
-
-    public void getQuitBtn(){
+    public void endGame(int userScore) throws IOException {
+        EndGameMenuImpl endGameMenu = new EndGameMenuImpl(this, userScore);
         this.root.getChildren().add(endGameMenu.quitBtn);
-        this.endGameMenu.quitBtn();
-
+        endGameMenu.quitBtn();
     }
 
     @Override
@@ -114,11 +107,11 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
     public double getHeight() {
-        return this.HEIGHT;
+        return HEIGHT;
     }
 
     public double getWidth() {
-        return this.WIDTH;
+        return WIDTH;
     }
 }
 

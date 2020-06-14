@@ -9,7 +9,7 @@ public interface FlappyBirdView {
 
     void start();
 
-    void getQuitBtn();
+    void endGame(int score) throws IOException;
 
     void setObserver(FlappyGameViewObserver observer);
 
@@ -19,7 +19,6 @@ public interface FlappyBirdView {
      */
     void setScore(int n);
 
-    void saveScore(int points) throws IOException;
     /**
      * Returns main view node.
      * @return view's root node

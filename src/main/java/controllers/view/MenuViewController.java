@@ -19,6 +19,10 @@ import javafx.stage.Stage;
  */
 public final class MenuViewController {
 
+    private String name;
+
+
+
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML
     public void clickContacts(ActionEvent event) throws IOException {
@@ -57,9 +61,9 @@ public final class MenuViewController {
 
 
         //Prendo le informazioni dello Stage
-
+        final String name = "User";
         final Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        new FlappyBirdControllerImpl(primaryStage);
+        new FlappyBirdControllerImpl(primaryStage,name);
         //Cambio scena con .setScene e mostro primaryStage
         //primaryStage.setScene(gameScene);
         //primaryStage.show();
