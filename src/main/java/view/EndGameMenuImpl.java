@@ -55,7 +55,6 @@ public class EndGameMenuImpl implements EndGameMenu {
 
         });
         sendScore();
-
     }
 
     private void sendScore() throws IOException {
