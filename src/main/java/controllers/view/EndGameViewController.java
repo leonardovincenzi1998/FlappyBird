@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import util.IOName;
-import util.IOScores;
 
 import java.io.IOException;
 
@@ -17,7 +16,7 @@ public class EndGameViewController {
 
     private final IOName ioName;
 
-    public EndGameViewController() throws IOException {
+    public EndGameViewController() {
         ioName = new IOName();
     }
 

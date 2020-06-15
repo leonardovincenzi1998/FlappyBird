@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,6 +36,7 @@ import java.util.ResourceBundle;
 public class LeaderboardViewController implements Initializable {
 
 
+    public Button goBack;
     private int line = 0;
     private int line2=0;
     private final File file = new File("src/main/resources/input-output/Scores.txt");
