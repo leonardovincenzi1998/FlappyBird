@@ -12,34 +12,31 @@ public class FlappyControllerImpl implements FlappyController {
     private final FlappyView flappyView;
 
     public FlappyControllerImpl() {
-        flappy = new FlappyImpl();
+        flappy = FlappyImpl.getInstance();
         flappyView = new FlappyViewImpl();
         this.setFlappyView();
     }
 
     @Override
     public void setFlappyView() {
-        flappyView.setPosition(flappy.getPosX(),flappy.getPosY());
-        flappyView.setWidthHeight(flappy.getHeightBird(),flappy.getWidthBird());
+        flappyView.setPosition(flappy.getPosX(), flappy.getPosY());
+        flappyView.setWidthHeight(flappy.getHeightBird(), flappy.getWidthBird());
         flappyView.setImage(flappy.getFlappyImagePath());
     }
 
     @Override
-    public void flappyMovement(double n){
+    public void flappyMovement(double n) {
         flappy.flappyUpdate(flappyView.getFlappy(), n);
         flappyView.updatePosition(flappy.getPosY());
     }
 
     @Override
     public boolean floorCollision(Rectangle r) {
-        if (r.getY() == (335 - flappy.getHeightBird())) {
-            return true;
-        }
-        return false;
+        return r.getY() == (335 - flappy.getHeightBird());
     }
 
     @Override
-    public FlappyView getFlappyView(){
+    public FlappyView getFlappyView() {
         return this.flappyView;
     }
 }
