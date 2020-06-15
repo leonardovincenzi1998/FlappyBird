@@ -24,7 +24,6 @@
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="scoreArea" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" wrappingWidth="31.999998569488525" />
             <Label alignment="CENTER" prefHeight="28.0" prefWidth="107.0" text="Enter your name" textFill="WHITE" />
             <TextArea fx:id="nameArea" prefHeight="0.0" prefWidth="212.0" />
             <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#saveName" text="Submit" />
