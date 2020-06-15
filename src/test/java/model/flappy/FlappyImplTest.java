@@ -9,11 +9,12 @@ class FlappyImplTest {
     @Test
     void testFlappyUpdate() {
         double n = 10;
-        double result;
+        double expected;
+
         FlappyImpl flappy = FlappyImpl.getInstance();
         flappy.setPosY(50);
-        result = flappy.getPosY()+n;
-        flappy.setPosY(result);
-        assertEquals(result,flappy.getPosY());
+        expected = flappy.getPosY()+n;
+        flappy.setPosY(expected);
+        assertEquals(expected ,flappy.getPosY());
     }
 }

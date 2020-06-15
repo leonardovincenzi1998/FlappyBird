@@ -19,13 +19,13 @@ public class FlappyControllerImpl implements FlappyController {
 
     @Override
     public void setFlappyView() {
-        flappyView.setPosition(flappy.getPosX(),flappy.getPosY());
-        flappyView.setWidthHeight(flappy.getHeightBird(),flappy.getWidthBird());
+        flappyView.setPosition(flappy.getPosX(), flappy.getPosY());
+        flappyView.setWidthHeight(flappy.getHeightBird(), flappy.getWidthBird());
         flappyView.setImage(flappy.getFlappyImagePath());
     }
 
     @Override
-    public void flappyMovement(double n){
+    public void flappyMovement(double n) {
         flappy.flappyUpdate(flappyView.getFlappy(), n);
         flappyView.updatePosition(flappy.getPosY());
     }
@@ -36,7 +36,7 @@ public class FlappyControllerImpl implements FlappyController {
     }
 
     @Override
-    public FlappyView getFlappyView(){
+    public FlappyView getFlappyView() {
         return this.flappyView;
     }
 }
