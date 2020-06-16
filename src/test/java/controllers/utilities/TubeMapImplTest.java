@@ -52,7 +52,7 @@ class TubeMapImplTest {
             value.getY().setX(value.getY().getX()-n);
         });
 
-        (expected.getX()).setX(r.getX()-n);
+        expected.getX().setX(r.getX()-n);
         assertEquals((expected.getX()).getX(), tubeMap.lastEntry().getValue().getX().getX());
 
     }
@@ -73,6 +73,7 @@ class TubeMapImplTest {
 
 
         tubeMap.put(1,pair);
+
         for(int i = 0; i < 300; i++) {
             tubeMap.forEach((key, value) -> {
                 value.getX().setX(value.getX().getX() - n);
@@ -98,22 +99,5 @@ class TubeMapImplTest {
                 }
             });
         }
-        /*tubeMap.forEach((key, value) -> {
-            Shape intersect = Shape.intersect(flappy, ((Rectangle)value.getX()));
-            if(intersect.getBoundsInLocal().getWidth() != -1){
-                flag.set(1);
-            }
-            Shape intersect2 = Shape.intersect(flappy, ((Rectangle)value.getY()));
-            if(intersect2.getBoundsInLocal().getWidth() != -1){
-                flag.set(1);
-            }
-
-            if((flappy.getY() < 0 && ((Rectangle) value.getX()).getX() == flappy.getX())){
-                flag.set(1);
-            }
-        });*/
-
-
-
     }
 }

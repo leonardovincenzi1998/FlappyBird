@@ -13,6 +13,7 @@ public class FlappyControllerImpl implements FlappyController {
 
     public FlappyControllerImpl() {
         flappy = FlappyImpl.getInstance();
+        //flappy = new FlappyImpl();
         flappyView = new FlappyViewImpl();
         this.setFlappyView();
     }
@@ -38,5 +39,10 @@ public class FlappyControllerImpl implements FlappyController {
     @Override
     public FlappyView getFlappyView() {
         return this.flappyView;
+    }
+
+    @Override
+    public Flappy getFlappyModel(){
+        return this.flappy;
     }
 }

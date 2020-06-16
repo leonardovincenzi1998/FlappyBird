@@ -55,4 +55,9 @@ public class FlappyImpl implements Flappy{
         this.posY = posY;
     }
 
+    @Override
+    public void setFlappyInstance(){
+        flappyInstance=null;
+    }
+
 }

@@ -18,4 +18,6 @@ public interface Flappy {
 
     void setPosY(double posY);
 
+    void setFlappyInstance();
+
 }

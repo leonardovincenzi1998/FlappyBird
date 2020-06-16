@@ -11,7 +11,7 @@ public class IOName {
     FileWriter fw;
 
 
-    public void writeName(String name) throws IOException {
+    public void writeName(String name) {
         try {
             fw = new FileWriter(FILE_NAME, true);
             BufferedWriter bw = new BufferedWriter(fw);

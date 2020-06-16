@@ -60,10 +60,12 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
         if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
             gameLoop.findCollision();
             this.view.endGame(score.getScore());
+            this.flappyController.getFlappyModel().setFlappyInstance();
         }
         if(tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())){
             gameLoop.findCollision();
             this.view.endGame(score.getScore());
+            this.flappyController.getFlappyModel().setFlappyInstance();
         }
     }
 
