@@ -11,9 +11,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TubeMapImpl implements TubeMap{
 
-    private TreeMap<Integer, Pair> tubeMap;
+    private final TreeMap<Integer, Pair> tubeMap;
     private int cont=0;
     FlappyBirdController controller;
+    private static final int WINDOW_END = -60;
+    private static final int PIXEL_SCROLL = 2;
 
     public TubeMapImpl(FlappyBirdController controller){
         tubeMap = new TreeMap<>();
@@ -33,8 +35,8 @@ public class TubeMapImpl implements TubeMap{
 
     public void scrollTubePair(){
         tubeMap.forEach((key, value) -> {
-            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-2);
-            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-2);
+            ((Rectangle) value.getX()).setX(((Rectangle) value.getX()).getX()-PIXEL_SCROLL);
+            ((Rectangle) value.getY()).setX(((Rectangle) value.getY()).getX()-PIXEL_SCROLL);
         });
     }
 
@@ -44,7 +46,7 @@ public class TubeMapImpl implements TubeMap{
     }
 
     public void checkWindowEnd() {
-        if (((Rectangle)tubeMap.firstEntry().getValue().getX()).getX() == -60) {
+        if (((Rectangle)tubeMap.firstEntry().getValue().getX()).getX() == WINDOW_END) {
             controller.removeNode((Node) tubeMap.firstEntry().getValue().getX());
             controller.removeNode((Node) tubeMap.firstEntry().getValue().getY());
             tubeMap.remove(tubeMap.firstKey());

@@ -18,17 +18,16 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final FlappyController flappyController;
     private final GameLoop gameLoop;
     private final Score score;
-    public String name;
 
 
-    public FlappyBirdControllerImpl(Stage primaryStage, String name) throws IOException {
+
+    public FlappyBirdControllerImpl(Stage primaryStage) throws IOException {
         score = new ScoreImpl();
         tubeController = new TubeControllerImpl(this);
         flappyController = new FlappyControllerImpl();
         gameLoop = new GameLoopImpl(this, primaryStage);
         view = new FlappyBirdViewImpl(primaryStage,this);
         view.start();
-        this.name=name;
     }
 
 
@@ -57,17 +56,14 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     @Override
     public void checkCollision() throws IOException {
-        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
 
+        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
             gameLoop.findCollision();
-            //this.view.saveScore(score.getScore(), this.name);
             this.view.endGame(score.getScore());
         }
         if(tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())){
             gameLoop.findCollision();
-            //this.view.saveScore(score.getScore(), this.name);
             this.view.endGame(score.getScore());
-
         }
     }
 

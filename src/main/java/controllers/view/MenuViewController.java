@@ -61,9 +61,8 @@ public final class MenuViewController {
 
 
         //Prendo le informazioni dello Stage
-        final String name = "User";
         final Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        new FlappyBirdControllerImpl(primaryStage,name);
+        new FlappyBirdControllerImpl(primaryStage);
         //Cambio scena con .setScene e mostro primaryStage
         //primaryStage.setScene(gameScene);
         //primaryStage.show();

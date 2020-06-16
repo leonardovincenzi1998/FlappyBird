@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class FlappyImplTest {
 
     @Test
-    void testFlappyUpdate() {
+    public void testFlappyUpdate() {
         double n = 10;
         double expected;
 
