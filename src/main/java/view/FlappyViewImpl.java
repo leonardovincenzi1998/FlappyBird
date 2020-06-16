@@ -6,34 +6,34 @@ import javafx.scene.shape.Rectangle;
 
 public class FlappyViewImpl implements FlappyView {
 
-    Rectangle r = new Rectangle();
+    private Rectangle r = new Rectangle();
 
     public FlappyViewImpl() { }
 
     @Override
-    public void setPosition(double x, double y) {
+    public void setPosition(final double x, final double y) {
         r.setX(x);
         r.setY(y);
     }
 
     @Override
-    public void setWidthHeight(int height, int width){
+    public void setWidthHeight(final int height, final int width) {
         r.setHeight(height);
         r.setWidth(width);
     }
 
     @Override
-    public void setImage(String image){
-        r.setFill(new ImagePattern( new Image(image)));
+    public void setImage(final String image) {
+        r.setFill(new ImagePattern(new Image(image)));
     }
 
     @Override
-    public void updatePosition(double y) {
+    public void updatePosition(final double y) {
         r.setY(y);
     }
 
     @Override
-    public Rectangle getFlappy(){
+    public Rectangle getFlappy() {
         return this.r;
     }
 

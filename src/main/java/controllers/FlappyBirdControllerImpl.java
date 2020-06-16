@@ -18,17 +18,16 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final FlappyController flappyController;
     private final GameLoop gameLoop;
     private final Score score;
-    public String name;
 
 
-    public FlappyBirdControllerImpl(Stage primaryStage, String name) throws IOException {
+
+    public FlappyBirdControllerImpl(final Stage primaryStage) throws IOException {
         score = new ScoreImpl();
         tubeController = new TubeControllerImpl(this);
         flappyController = new FlappyControllerImpl();
         gameLoop = new GameLoopImpl(this, primaryStage);
-        view = new FlappyBirdViewImpl(primaryStage,this);
+        view = new FlappyBirdViewImpl(primaryStage, this);
         view.start();
-        this.name=name;
     }
 
 
@@ -57,16 +56,16 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
     @Override
     public void checkCollision() throws IOException {
-        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
 
+        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
             gameLoop.findCollision();
-            //this.view.saveScore(score.getScore(), this.name);
             this.view.endGame(score.getScore());
+            this.flappyController.getFlappyModel().setFlappyInstance();
         }
-        if(tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())){
+        if (tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())) {
             gameLoop.findCollision();
-            //this.view.saveScore(score.getScore(), this.name);
             this.view.endGame(score.getScore());
+            this.flappyController.getFlappyModel().setFlappyInstance();
         }
     }
 
@@ -77,7 +76,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     }
 
     @Override
-    public void removeNode(Node n) {
+    public void removeNode(final Node n) {
         this.view.removeChildren(n);
     }
 

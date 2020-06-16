@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.scene.shape.Rectangle;
+import model.flappy.Flappy;
 import view.FlappyView;
 
 public interface FlappyController {
@@ -12,4 +13,6 @@ public interface FlappyController {
     boolean floorCollision(Rectangle r);
 
     FlappyView getFlappyView();
+
+    Flappy getFlappyModel();
 }

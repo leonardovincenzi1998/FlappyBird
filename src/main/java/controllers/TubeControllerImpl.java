@@ -27,8 +27,7 @@ public class TubeControllerImpl implements TubeController{
     @Override
     public Pair createTubePair(){
 
-        /*Rectangle r = new Rectangle();
-        Rectangle r2 = new Rectangle();*/
+
 
         TubeUp tubeUpCopy = tubeUp.copy();
         TubeDown tubeDownCopy = tubeDown.copy();
@@ -46,19 +45,6 @@ public class TubeControllerImpl implements TubeController{
         tubeView.seTubeUpImage(tubeUp.getTubeImagePath());
         tubeView.seTubeDownImage(tubeDown.getTubeImagePath());
 
-        /*r.setWidth(tubeUpCopy.getWidth());
-        r.setHeight(tubeUpCopy.getHeight());
-        r2.setWidth(tubeDownCopy.getWidth());
-        r2.setHeight(tubeDownCopy.getHeight());*/
-
-        /*r.setX(tubeUpCopy.getPosX());
-        r.setY(tubeUpCopy.getPosY() - r.getHeight());
-        r.setFill(new ImagePattern(new Image(tubeUp.getTubeImagePath())));
-        //r.setStroke(Color.BLACK);
-        r2.setX(tubeDownCopy.getPosX());
-        r2.setY(tubeDownCopy.getPosY());
-        r2.setFill(new ImagePattern(new Image(tubeDown.getTubeImagePath())));
-        //r2.setStroke(Color.BLACK);*/
         return tubeView.getRectangles();
     }
 

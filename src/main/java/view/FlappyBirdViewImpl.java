@@ -29,20 +29,19 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private Pane root;
     private FlappyGameViewObserver observer;
 
-    final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) throws IOException {
         this.primaryStage = primaryStage;
         this.observer = observer;
-        //this.scores = new IOScores();
     }
 
     @Override
     public void start() {
         screenSize.setSize(WIDTH, HEIGHT);
         this.primaryStage.setTitle(TITLE);
-        this.primaryStage.centerOnScreen(); //BOH
+        this.primaryStage.centerOnScreen();
         /*this.primaryStage.setMaximized(false);
         this.primaryStage.setFullScreen(false);*/
         /*this.primaryStage.setMinHeight(HEIGHT);
@@ -74,43 +73,42 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         });
     }
 
-
     @Override
-    public void endGame(int userScore) throws IOException {
+    public void endGame(final int userScore) throws IOException {
         EndGameMenuImpl endGameMenu = new EndGameMenuImpl(this, userScore);
         this.root.getChildren().add(endGameMenu.quitBtn);
         endGameMenu.quitBtn();
     }
 
     @Override
-    public void setScore(int score) {
+    public void setScore(final int score) {
         this.score.setText("Score: " + score);
     }
 
     @Override
-    public void setObserver(FlappyGameViewObserver observer) {
+    public void setObserver(final FlappyGameViewObserver observer) {
         this.observer = observer;
     }
 
     @Override
-    public void addChildren(Node n) {
+    public void addChildren(final Node n) {
         this.root.getChildren().add(n);
     }
 
     @Override
-    public void removeChildren(Node n) {
+    public void removeChildren(final Node n) {
         this.root.getChildren().remove(n);
     }
 
-    public Pane getRoot(){
+    public final Pane getRoot(){
         return this.root;
     }
 
-    public double getHeight() {
+    public final double getHeight() {
         return HEIGHT;
     }
 
-    public double getWidth() {
+    public final double getWidth() {
         return WIDTH;
     }
 }

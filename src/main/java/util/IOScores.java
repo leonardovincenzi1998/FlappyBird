@@ -8,7 +8,7 @@ public class IOScores {
 
     private static final String FILE_NAME = "src/main/resources/input-output/Scores.txt";
 
-    public void writeScore(int score) throws IOException {
+    public void writeScore(int score) {
         try {
             FileWriter fw = new FileWriter(FILE_NAME, true);
             BufferedWriter bw = new BufferedWriter(fw);

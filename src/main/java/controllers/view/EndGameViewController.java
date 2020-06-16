@@ -20,13 +20,13 @@ public class EndGameViewController {
         ioName = new IOName();
     }
 
-    String name = "user";
+    private String name = "user";
 
     @FXML
     private TextArea nameArea;
 
     @FXML
-    public void saveName(ActionEvent event) throws Exception{
+    public final void saveName(final ActionEvent event) throws Exception{
         name = nameArea.getText();
         //System.out.println(name);
 
@@ -43,7 +43,7 @@ public class EndGameViewController {
 
     }
 
-    public void printUserName(String name) throws IOException {
+    public final void printUserName(final String name) throws IOException {
         ioName.writeName(name);
     }
 

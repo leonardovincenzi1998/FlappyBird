@@ -4,14 +4,17 @@ import javafx.scene.shape.Rectangle;
 
 public final class FlappyImpl implements Flappy {
 
+    static final double INITIAL_POSITION = 50.0;
+    static final int HEIGHT_BIRD = 45;
+
     private final double posX;
     private double posY;
     private final String flappyImagePath;
     private static FlappyImpl flappyInstance = null;
 
     private FlappyImpl() {
-        this.posY = 50.0;
-        this.posX = 50.0;
+        this.posY = INITIAL_POSITION;
+        this.posX = INITIAL_POSITION;
         flappyImagePath = ("bird.png");
     }
 
@@ -34,7 +37,7 @@ public final class FlappyImpl implements Flappy {
 
     @Override
     public int getWidthBird() {
-        return 45;
+        return HEIGHT_BIRD;
     }
 
     @Override
@@ -53,5 +56,10 @@ public final class FlappyImpl implements Flappy {
     @Override
     public void setPosY(final double posY) {
         this.posY = posY;
+    }
+
+    @Override
+    public void setFlappyInstance() {
+        flappyInstance = null;
     }
 }

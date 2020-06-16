@@ -7,14 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class FlappyImplTest {
 
     @Test
-    void testFlappyUpdate() {
-        double n = 10;
+    public void testFlappyUpdate() {
+        final double n = 10;
+        final double x = 60;
         double expected;
 
         FlappyImpl flappy = FlappyImpl.getInstance();
-        flappy.setPosY(50);
+        flappy.setPosY(x);
         expected = flappy.getPosY() + n;
         flappy.setPosY(expected);
-        assertEquals(expected , flappy.getPosY());
+        assertEquals(expected, flappy.getPosY());
     }
 }

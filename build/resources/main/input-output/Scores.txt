@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 0
 Leo
 0
@@ -18,3 +19,19 @@ Ciandro
 prova
 0
  ciao
+1
+ciaociao
+0
+ciao
+0
+ciao2
+0
+ciao
+0
+=======
+>>>>>>> bc1769437bba274cbf286fd64dfffd440119e96a
+0
+ciao
+0
+prova
+0

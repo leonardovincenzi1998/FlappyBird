@@ -2,13 +2,13 @@ package model;
 
 public class ScoreImpl implements Score{
 
-    int score;
+    private int score;
 
-    public ScoreImpl (){
+    public ScoreImpl() {
         score = 0;
     }
     @Override
-    public void setScore(int n) {
+    public void setScore(final int n) {
         score = n;
     }
 
