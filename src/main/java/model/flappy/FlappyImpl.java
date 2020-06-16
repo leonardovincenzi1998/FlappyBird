@@ -2,7 +2,7 @@ package model.flappy;
 
 import javafx.scene.shape.Rectangle;
 
-public class FlappyImpl implements Flappy{
+public final class FlappyImpl implements Flappy {
 
     private final double posX;
     private double posY;
@@ -15,7 +15,7 @@ public class FlappyImpl implements Flappy{
         flappyImagePath = ("bird.png");
     }
 
-    public static FlappyImpl getInstance(){
+    public static FlappyImpl getInstance() {
         if (flappyInstance == null) {
             flappyInstance = new FlappyImpl();
         }
@@ -23,8 +23,8 @@ public class FlappyImpl implements Flappy{
     }
 
     @Override
-    public void flappyUpdate(Rectangle r, double n) {
-        setPosY(getPosY()+n);
+    public void flappyUpdate(final Rectangle r, final double n) {
+        setPosY(getPosY() + n);
     }
 
     @Override
@@ -51,8 +51,7 @@ public class FlappyImpl implements Flappy{
         return posX; }
 
     @Override
-    public void setPosY(double posY) {
+    public void setPosY(final double posY) {
         this.posY = posY;
     }
-
 }

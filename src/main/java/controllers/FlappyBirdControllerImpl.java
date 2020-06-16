@@ -67,7 +67,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
             gameLoop.findCollision();
             //this.view.saveScore(score.getScore(), this.name);
             this.view.endGame(score.getScore());
-
         }
     }
 

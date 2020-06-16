@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class EndGameMenuImpl implements EndGameMenu {
 
-    private FlappyBirdViewImpl view=null;
+    private FlappyBirdViewImpl view = null;
     Button quitBtn = new Button("QUIT");
     private final static double FX_OBJECT_WIDTH = 250;
     private final static double FX_OBJECT_HEIGHT = 50;

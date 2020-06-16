@@ -39,4 +39,5 @@ public class FlappyControllerImpl implements FlappyController {
     public FlappyView getFlappyView() {
         return this.flappyView;
     }
+
 }

@@ -13,8 +13,8 @@ class FlappyImplTest {
 
         FlappyImpl flappy = FlappyImpl.getInstance();
         flappy.setPosY(50);
-        expected = flappy.getPosY()+n;
+        expected = flappy.getPosY() + n;
         flappy.setPosY(expected);
-        assertEquals(expected ,flappy.getPosY());
+        assertEquals(expected , flappy.getPosY());
     }
 }
