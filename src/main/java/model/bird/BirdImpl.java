@@ -11,7 +11,7 @@ public final class BirdImpl implements Bird {
     private final double posX;
     private double posY;
     private final String birdImagePath;
-    private static BirdImpl birdIstance = null;
+    private static BirdImpl birdInstance = null;
 
     private BirdImpl() {
         this.posY = INITIAL_POSITION;
@@ -20,10 +20,10 @@ public final class BirdImpl implements Bird {
     }
 
     public static BirdImpl getInstance() {
-        if (birdIstance == null) {
-            birdIstance = new BirdImpl();
+        if (birdInstance == null) {
+            birdInstance = new BirdImpl();
         }
-        return birdIstance;
+        return birdInstance;
     }
 
     @Override
@@ -60,7 +60,7 @@ public final class BirdImpl implements Bird {
     }
 
     @Override
-    public void setBirdIstance() {
-        birdIstance = null;
+    public void setBirdInstance() {
+        birdInstance = null;
     }
 }

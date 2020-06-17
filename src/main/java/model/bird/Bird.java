@@ -18,6 +18,6 @@ public interface Bird {
 
     void setPosY(double posY);
 
-    void setBirdIstance();
+    void setBirdInstance();
 
 }

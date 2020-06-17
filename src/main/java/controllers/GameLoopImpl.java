@@ -69,13 +69,13 @@ public class GameLoopImpl extends Application implements GameLoop{
     @Override
     public void birdUpdateDown() {
         final double n = 2.75;
-        this.controller.getFlappyController().birdMovement(n);
+        this.controller.getBirdController().birdMovement(n);
     }
 
     @Override
     public void birdUpdateUp() {
         final double n = -2.75;
-        this.controller.getFlappyController().birdMovement(n);
+        this.controller.getBirdController().birdMovement(n);
     }
 
     @Override
