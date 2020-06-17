@@ -8,6 +8,9 @@ public class BirdViewImpl implements BirdView {
 
     private final Rectangle r;
 
+    /**
+     * This is the constructor method that initialize the rectangle.
+     */
     public BirdViewImpl() {
         r = new Rectangle();
     }
@@ -38,5 +41,4 @@ public class BirdViewImpl implements BirdView {
     public Rectangle getBird() {
         return this.r;
     }
-
 }

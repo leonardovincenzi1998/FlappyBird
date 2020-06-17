@@ -8,40 +8,43 @@ import view.BirdViewImpl;
 
 public class BirdControllerImpl implements BirdController {
 
-    private final Bird flappy;
-    private final BirdView flappyView;
+    private final Bird bird;
+    private final BirdView birdView;
 
+    /**
+     * This is the constructor method that initialize all classes of bird and set the bird view.
+     */
     public BirdControllerImpl() {
-        flappy = BirdImpl.getInstance();
-        flappyView = new BirdViewImpl();
+        bird = BirdImpl.getInstance();
+        birdView = new BirdViewImpl();
         this.setBirdView();
     }
 
     @Override
     public void setBirdView() {
-        flappyView.setPosition(flappy.getPosX(), flappy.getPosY());
-        flappyView.setWidthHeight(flappy.getHeightBird(), flappy.getWidthBird());
-        flappyView.setImage(flappy.getBirdImagePath());
+        birdView.setPosition(bird.getPosX(), bird.getPosY());
+        birdView.setWidthHeight(bird.getHeightBird(), bird.getWidthBird());
+        birdView.setImage(bird.getBirdImagePath());
     }
 
     @Override
     public void birdMovement(final double n) {
-        flappy.birdUpdate(flappyView.getBird(), n);
-        flappyView.updatePosition(flappy.getPosY());
+        bird.birdUpdate(birdView.getBird(), n);
+        birdView.updatePosition(bird.getPosY());
     }
 
     @Override
     public boolean floorCollision(final Rectangle r) {
-        return r.getY() == (335 - flappy.getHeightBird());
+        return r.getY() == (335 - bird.getHeightBird());
     }
 
     @Override
     public BirdView getBirdView() {
-        return this.flappyView;
+        return this.birdView;
     }
 
     @Override
     public Bird getBirdModel(){
-        return this.flappy;
+        return this.bird;
     }
 }

@@ -12,6 +12,7 @@ import view.FlappyGameViewObserver;
 /**
  * This is the principal controller of the game
  */
+
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
@@ -43,8 +44,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     public BirdController getBirdController(){
         return birdController;
     }
-
-
 
     @Override
     public void startGame() {

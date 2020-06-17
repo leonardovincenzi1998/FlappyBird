@@ -19,6 +19,10 @@ public final class BirdImpl implements Bird {
         birdImagePath = ("bird.png");
     }
 
+    /**
+     * Create an instance of BirdImpl using Singleton Pattern.
+     * @return bird instance
+     */
     public static BirdImpl getInstance() {
         if (birdInstance == null) {
             birdInstance = new BirdImpl();

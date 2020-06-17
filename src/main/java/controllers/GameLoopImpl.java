@@ -12,6 +12,7 @@ import java.io.IOException;
  */
 public class GameLoopImpl extends Application implements GameLoop{
 
+    static final double PIXEL_MOVEMENT = 2.75;
     private final FlappyBirdController controller;
     private AnimationTimer gravityTimer;
     private int cont = 0;
@@ -68,18 +69,18 @@ public class GameLoopImpl extends Application implements GameLoop{
 
     @Override
     public void birdUpdateDown() {
-        final double n = 2.75;
+        final double n = PIXEL_MOVEMENT;
         this.controller.getBirdController().birdMovement(n);
     }
 
     @Override
     public void birdUpdateUp() {
-        final double n = -2.75;
+        final double n = -PIXEL_MOVEMENT;
         this.controller.getBirdController().birdMovement(n);
     }
 
     @Override
-    public void checkCollision() throws IOException {
+    public void checkCollision() {
         controller.checkCollision();
     }
 

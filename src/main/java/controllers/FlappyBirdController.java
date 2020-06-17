@@ -14,7 +14,7 @@ public interface FlappyBirdController {
 
     /**
      *
-     * @return FlappyController
+     * @return BirdController
      */
     BirdController getBirdController();
 
@@ -22,7 +22,6 @@ public interface FlappyBirdController {
      * Check collisions between Bird and floor and between Bird and Tubes
      */
     void checkCollision();
-
 
     /**
      * Call {@link Score#incrementScore()} to update score
