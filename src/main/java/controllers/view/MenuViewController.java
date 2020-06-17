@@ -18,61 +18,51 @@ import javafx.stage.Stage;
  */
 public final class  MenuViewController {
 
-    //funzione che associa al click del bottone "contactBtn" un evento
+    /**
+     * When user click the Contacts button the scene switch to contacts.fxml
+     * @param event Action event of the button
+     * @throws IOException IO exception
+     */
     @FXML
     public void clickContacts(ActionEvent event) throws IOException {
 
         final Parent contacts = FXMLLoader.load(ClassLoader.getSystemResource("layouts/contacts.fxml"));
         final Scene contactsScene = new Scene(contacts);
-
-        //Prendo le informazioni dello Stage
         final Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        //Cambio scena con .setScene e mostro window
         window.setScene(contactsScene);
         window.show();
 
     }
 
-    //funzione che associa al click del bottone "leaderboardBtn" un evento
+    /**
+     * When user click the Leaderboard button the scene switch to leaderboard.fxml
+     * @param event Action event of the button
+     * @throws IOException IO exception
+     */
     public void clickLeaderboard(ActionEvent event) throws IOException {
 
         final Parent leaderboard = FXMLLoader.load(ClassLoader.getSystemResource("layouts/leaderboard.fxml"));
         final Scene leaderboardScene = new Scene(leaderboard);
-
-        //Prendo le informazioni dello Stage
         final Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        //Cambio scena con .setScene e mostro window
         window.setScene(leaderboardScene);
         window.show();
 
     }
 
-    //funzione che associa al click del bottone "contactBtn" un evento
+    /**
+     * When user click the Play button the game start
+     * @param event Action event of the button
+     */
     @FXML
-    public void clickPlay(ActionEvent event) throws Exception {
+    public void clickPlay(ActionEvent event) {
 
-
-
-        //Prendo le informazioni dello Stage
         final Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         new FlappyBirdControllerImpl(primaryStage);
-        //Cambio scena con .setScene e mostro primaryStage
-        //primaryStage.setScene(gameScene);
-        //primaryStage.show();
-
     }
 }
 
-
-    /*public Button getPlayBtn() {
-        return playBtn;
-    }
-
-    public void setPlayBtn(Button playBtn) {
-        this.playBtn = playBtn;
-    }*/
 
 
 

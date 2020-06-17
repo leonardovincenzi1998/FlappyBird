@@ -1,13 +1,17 @@
 package controllers;
 
-
 import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Score;
 import model.ScoreImpl;
 import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
+
+/**
+ * This is the principal controller of the game
+ */
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
@@ -17,7 +21,10 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final GameLoop gameLoop;
     private final Score score;
 
-
+    /**
+     * This is the constructor method that initializes the game
+     * @param primaryStage primaryStage is the window
+     */
     public FlappyBirdControllerImpl(final Stage primaryStage) {
         score = new ScoreImpl();
         tubeController = new TubeControllerImpl(this);
@@ -36,9 +43,8 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     @Override
     public BirdController getBirdController(){
         return birdController;
+
     }
-
-
 
     @Override
     public void startGame() {
@@ -70,6 +76,11 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     public void updateScore() {
         score.incrementScore();
         view.setScore(score.getScore());
+    }
+
+    @Override
+    public Pane getRoot() {
+        return view.getRoot();
     }
 
     @Override

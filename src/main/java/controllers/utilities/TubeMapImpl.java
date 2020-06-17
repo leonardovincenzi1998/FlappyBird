@@ -9,6 +9,9 @@ import util.Pair;
 import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * This class manage all the operations about the treeMap that contains the tubes' rectangles that view show
+ */
 public class TubeMapImpl implements TubeMap{
 
     private final TreeMap<Integer, Pair> tubeMap;
@@ -17,6 +20,10 @@ public class TubeMapImpl implements TubeMap{
     private static final int WINDOW_END = -60;
     private static final int PIXEL_SCROLL = 2;
 
+    /**
+     * Initialize the TreeMap<int,Pair<Rectangle,Rectangle>> and the controller which is used to add to the view new node
+     * @param controller FlappyBirdController
+     */
     public TubeMapImpl(FlappyBirdController controller){
         tubeMap = new TreeMap<>();
         this.controller = controller;
@@ -54,19 +61,19 @@ public class TubeMapImpl implements TubeMap{
         }
     }
 
-    public boolean checkCollision(Rectangle flappy){
+    public boolean checkCollision(Rectangle bird){
         AtomicInteger flag = new AtomicInteger(0);
         tubeMap.forEach((key, value) -> {
-            Shape intersect = Shape.intersect(flappy, ((Rectangle)value.getX()));
+            Shape intersect = Shape.intersect(bird, ((Rectangle)value.getX()));
             if(intersect.getBoundsInLocal().getWidth() != -1){
                 flag.set(1);
             }
-            Shape intersect2 = Shape.intersect(flappy, ((Rectangle)value.getY()));
+            Shape intersect2 = Shape.intersect(bird, ((Rectangle)value.getY()));
             if(intersect2.getBoundsInLocal().getWidth() != -1){
                 flag.set(1);
             }
 
-            if((flappy.getY() < 0 && ((Rectangle) value.getX()).getX() == flappy.getX())){
+            if((bird.getY() < 0 && ((Rectangle) value.getX()).getX() == bird.getX())){
                 flag.set(1);
             }
         });
