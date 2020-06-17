@@ -1,9 +1,9 @@
 package view;
 
-import java.io.IOException;
-
 public interface EndGameMenu {
 
-
-    void quitBtn() throws IOException;
+    /**
+     * Create and show the quit button that send the user to the FXML endgame menu
+     */
+    void quitBtn();
 }

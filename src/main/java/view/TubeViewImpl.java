@@ -7,11 +7,16 @@ import util.Pair;
 
 public class TubeViewImpl implements TubeView{
 
-    Rectangle r;
-    Rectangle r2;
+    private Rectangle r;
+    private Rectangle r2;
 
-    public TubeViewImpl(){ }
-
+    /**
+     * This is the constructor method that initialize the first pair of rectangle
+     */
+    public TubeViewImpl() {
+        r = new Rectangle();
+        r2 = new Rectangle();
+    }
 
     @Override
     public void createRectangles() {
@@ -21,41 +26,41 @@ public class TubeViewImpl implements TubeView{
     }
 
     @Override
-    public void setTubeUpPosition(double x, double y) {
+    public void setTubeUpPosition(final double x, final double y) {
         r.setX(x);
         r.setY(y);
     }
 
     @Override
-    public void setTubeUpDimension(double width, double height) {
+    public void setTubeUpDimension(final double width, final double height) {
         r.setWidth(width);
         r.setHeight(height);
     }
 
     @Override
-    public void setTubeDownPosition(double x, double y) {
+    public void setTubeDownPosition(final double x, final double y) {
         r2.setX(x);
         r2.setY(y);
     }
 
     @Override
-    public void setTubeDownDimension(double width, double height) {
+    public void setTubeDownDimension(final double width, final double height) {
         r2.setWidth(width);
         r2.setHeight(height);
     }
 
     @Override
-    public void seTubeUpImage(String image) {
+    public void seTubeUpImage(final String image) {
         r.setFill(new ImagePattern(new Image(image)));
     }
 
     @Override
-    public void seTubeDownImage(String image) {
+    public void seTubeDownImage(final String image) {
         r2.setFill(new ImagePattern(new Image(image)));
     }
 
     @Override
-    public Pair getRectangles() {
-        return new Pair<>(r,r2);
+    public final Pair getRectangles() {
+        return new Pair<>(r, r2);
     }
 }

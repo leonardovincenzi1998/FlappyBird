@@ -7,15 +7,25 @@ import java.io.IOException;
 
 public interface FlappyBirdView {
 
-
+    /**
+     * Set screen size and call private method that set the game background
+     */
     void start();
 
-    void endGame(int score) throws IOException;
+    /**
+     * Call end game class and show quit button
+     * @param score User's score to save
+     */
+    void endGame(int score);
 
+    /**
+     * Set view observer
+     * @param observer A class that implement {@link FlappyGameViewObserver}
+     */
     void setObserver(FlappyGameViewObserver observer);
 
     /**
-     * Sets new score in game view "score" label.
+     * Set score in game view "score" label.
      * @param n New score.
      */
     void setScore(int n);
@@ -27,19 +37,27 @@ public interface FlappyBirdView {
     Pane getRoot();
 
     /**
-     * Adds children node to root node.
-     * @param e node to be added
+     * Add children node to root node.
+     * @param n Node to be added
      */
-    void addChildren(Node e);
+    void addChildren(Node n);
 
     /**
-     * Removes children node e from root node.
-     * @param e node to be removed
+     * Remove children node n from root node.
+     * @param n node to be removed
      */
-    void removeChildren(Node e);
+    void removeChildren(Node n);
 
+    /**
+     * Returns screen's height
+     * @return screenSize height
+     */
     double getHeight();
 
+    /**
+     * Returns screen's width
+     * @return screenSize width
+     */
     double getWidth();
 
 

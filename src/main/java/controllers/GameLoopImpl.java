@@ -13,21 +13,21 @@ public class GameLoopImpl extends Application implements GameLoop{
     private final FlappyBirdController controller;
     private AnimationTimer timer;
 
-    private int cont2=0;
-    final Timer timer2 = new Timer(200, (elem) ->  gravity=true);
+    private int cont2 = 0;
+    private final Timer timer2 = new Timer(200, (elem) ->  gravity = true);
 
     private boolean gravity = true;
 
-    public GameLoopImpl(FlappyBirdControllerImpl controller, Stage primaryStage) {
+    public GameLoopImpl(final FlappyBirdControllerImpl controller, final Stage primaryStage) {
         this.controller = controller;
         this.start(primaryStage);
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(final Stage primaryStage) {
         timer = new AnimationTimer() {
             @Override
-            public void handle(long now) {
+            public void handle(final long now) {
                 try {
                     checkCollision();
                 } catch (Exception e) {
@@ -63,20 +63,19 @@ public class GameLoopImpl extends Application implements GameLoop{
 
     @Override
     public void birdUpdateDown() {
-        double n = 2.75;
+        final double n = 2.75;
         this.controller.getFlappyController().flappyMovement(n);
     }
 
     @Override
     public void birdUpdateUp() {
-        double n = -2.75;
+        final double n = -2.75;
         this.controller.getFlappyController().flappyMovement(n);
     }
 
     @Override
     public void checkCollision() throws IOException {
         controller.checkCollision();
-
     }
 
     @Override

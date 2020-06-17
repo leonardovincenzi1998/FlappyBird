@@ -15,7 +15,9 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 
-
+/**
+ * This class manage the view of the game when it starts
+ */
 public class FlappyBirdViewImpl implements FlappyBirdView {
 
     private static final String TITLE = "Flappy Bird";
@@ -26,22 +28,23 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private final Stage primaryStage;
     private Pane root;
     private FlappyGameViewObserver observer;
+    private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
-
+    /**
+     *This is the constructor method, which initializes the Stage and the Observer
+     * @param primaryStage PrimaryStage is the window
+     * @param observer FlappyGameViewObserver
+     */
     public FlappyBirdViewImpl(final Stage primaryStage, final FlappyGameViewObserver observer) {
         this.primaryStage = primaryStage;
-        //System.out.print(this.primaryStage.getWidth());
         this.observer = observer;
-        //this.scores = new IOScores();
     }
 
     @Override
     public void start() {
         screenSize.setSize(WIDTH, HEIGHT);
         this.primaryStage.setTitle(TITLE);
-        this.primaryStage.centerOnScreen(); //BOH
+        this.primaryStage.centerOnScreen();
         /*this.primaryStage.setMaximized(false);
         this.primaryStage.setFullScreen(false);*/
         /*this.primaryStage.setMinHeight(HEIGHT);
@@ -73,31 +76,30 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
         });
     }
 
-
     @Override
-    public void endGame(int userScore) throws IOException {
+    public void endGame(final int userScore) {
         EndGameMenuImpl endGameMenu = new EndGameMenuImpl(this, userScore);
         this.root.getChildren().add(endGameMenu.quitBtn);
         endGameMenu.quitBtn();
     }
 
     @Override
-    public void setScore(int score) {
+    public void setScore(final int score) {
         this.score.setText("Score: " + score);
     }
 
     @Override
-    public void setObserver(FlappyGameViewObserver observer) {
+    public void setObserver(final FlappyGameViewObserver observer) {
         this.observer = observer;
     }
 
     @Override
-    public void addChildren(Node n) {
+    public void addChildren(final Node n) {
         this.root.getChildren().add(n);
     }
 
     @Override
-    public void removeChildren(Node n) {
+    public void removeChildren(final Node n) {
         this.root.getChildren().remove(n);
     }
 
@@ -108,13 +110,11 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     @Override
     public double getHeight() {
-        return HEIGHT;
+        return screenSize.getHeight();
     }
 
     @Override
-    public double getWidth() {
-        return WIDTH;
-    }
+    public double getWidth() { return screenSize.getWidth(); }
 }
 
 

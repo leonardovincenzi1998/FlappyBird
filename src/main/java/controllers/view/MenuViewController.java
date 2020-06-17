@@ -9,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 
@@ -18,10 +17,6 @@ import javafx.stage.Stage;
  *
  */
 public final class  MenuViewController {
-
-    private String name;
-
-
 
     //funzione che associa al click del bottone "contactBtn" un evento
     @FXML

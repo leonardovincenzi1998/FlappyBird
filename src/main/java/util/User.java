@@ -9,6 +9,11 @@ public class User {
     private String name;
     private String score;
 
+    /**
+     * This is the constructor method that initializes the name and the score of the user
+     * @param name Username
+     * @param score UserScore
+     */
     public User(String name, String score){
         this.name = name;
         this.score = score;
@@ -45,9 +50,5 @@ public class User {
     public void setScore(String score) {
         this.score = score;
     }
-
-
-
-
 
 }

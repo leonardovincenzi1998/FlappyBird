@@ -8,13 +8,14 @@ class FlappyImplTest {
 
     @Test
     public void testFlappyUpdate() {
-        double n = 10;
+        final double n = 10;
+        final double x = 60;
         double expected;
 
         FlappyImpl flappy = FlappyImpl.getInstance();
-        flappy.setPosY(50);
-        expected = flappy.getPosY()+n;
+        flappy.setPosY(x);
+        expected = flappy.getPosY() + n;
         flappy.setPosY(expected);
-        assertEquals(expected ,flappy.getPosY());
+        assertEquals(expected, flappy.getPosY());
     }
 }

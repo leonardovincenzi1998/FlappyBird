@@ -2,7 +2,11 @@ package model.flappy;
 
 import javafx.scene.shape.Rectangle;
 
-public class FlappyImpl implements Flappy{
+public final class FlappyImpl implements Flappy {
+
+    static final double INITIAL_POSITION = 50.0;
+    static final int WIDTH_BIRD = 45;
+    static final int HEIGHT_BIRD = 32;
 
     private final double posX;
     private double posY;
@@ -10,12 +14,12 @@ public class FlappyImpl implements Flappy{
     private static FlappyImpl flappyInstance = null;
 
     private FlappyImpl() {
-        this.posY = 50.0;
-        this.posX = 50.0;
+        this.posY = INITIAL_POSITION;
+        this.posX = INITIAL_POSITION;
         flappyImagePath = ("bird.png");
     }
 
-    public static FlappyImpl getInstance(){
+    public static FlappyImpl getInstance() {
         if (flappyInstance == null) {
             flappyInstance = new FlappyImpl();
         }
@@ -23,8 +27,8 @@ public class FlappyImpl implements Flappy{
     }
 
     @Override
-    public void flappyUpdate(Rectangle r, double n) {
-        setPosY(getPosY()+n);
+    public void flappyUpdate(final Rectangle r, final double n) {
+        setPosY(getPosY() + n);
     }
 
     @Override
@@ -34,12 +38,12 @@ public class FlappyImpl implements Flappy{
 
     @Override
     public int getWidthBird() {
-        return 45;
+        return WIDTH_BIRD;
     }
 
     @Override
     public int getHeightBird() {
-        return 32;
+        return HEIGHT_BIRD;
     }
 
     @Override
@@ -51,13 +55,12 @@ public class FlappyImpl implements Flappy{
         return posX; }
 
     @Override
-    public void setPosY(double posY) {
+    public void setPosY(final double posY) {
         this.posY = posY;
     }
 
     @Override
-    public void setFlappyInstance(){
-        flappyInstance=null;
+    public void setFlappyInstance() {
+        flappyInstance = null;
     }
-
 }

@@ -1,19 +1,23 @@
 package util;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This is the class that print on a text file the username
+ */
 public class IOName {
 
     public static final String FILE_NAME = "src/main/resources/input-output/Scores.txt";
-    FileWriter fw;
 
-
+    /**
+     * Print the user name in a text file
+     * @param name UserName
+     */
     public void writeName(String name) {
         try {
-            fw = new FileWriter(FILE_NAME, true);
+            FileWriter fw = new FileWriter(FILE_NAME, true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(name);
             bw.newLine();

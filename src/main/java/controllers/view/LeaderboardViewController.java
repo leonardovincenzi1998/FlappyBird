@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,14 +36,15 @@ import java.util.ResourceBundle;
 public class LeaderboardViewController implements Initializable {
 
 
+    private Button goBack;
     private int line = 0;
-    private int line2=0;
+    private int line2 = 0;
     private final File file = new File("src/main/resources/input-output/Scores.txt");
     private final Path filePath = Paths.get(String.valueOf(file));
     private final List<User> list = new ArrayList<>();
 
     private final Path path = Paths.get(String.valueOf(filePath));
-    long lineCount = Files.lines(path).count();
+    private long lineCount = Files.lines(path).count();
 
     @FXML
     private TableView<User> table;
@@ -52,14 +54,14 @@ public class LeaderboardViewController implements Initializable {
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(final URL location, final ResourceBundle resources) {
         TableColumn<User, String> name = new TableColumn<>("UserName");
         TableColumn<User, String> score = new TableColumn<>("Score");
 
-        table.getColumns().addAll(name,score);
+        table.getColumns().addAll(name, score);
 
-        for(int i = 0; i < lineCount/2; i++){
-            list.add(new User(readName(),readScore()));
+        for (int i = 0; i < lineCount / 2; i++) {
+            list.add(new User(readName(), readScore()));
         }
 
         ObservableList<User> data = FXCollections.observableArrayList(list);
@@ -76,7 +78,7 @@ public class LeaderboardViewController implements Initializable {
         try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
             String readLine;
 
-            for(int i = 0; i < lineCount; i++)  {
+            for (int i = 0; i < lineCount; i++)  {
                 readLine = bf.readLine();
                 if (i == line) {
                     if (line % 2 != 0) {
@@ -89,7 +91,7 @@ public class LeaderboardViewController implements Initializable {
                 }
             }
 
-        }catch(IOException e){
+        } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return "No more player";
@@ -121,7 +123,7 @@ public class LeaderboardViewController implements Initializable {
 
 
     //Quando questo metodo viene chiamato ritorno al mainMenu
-    public void returnHome(ActionEvent event) throws IOException {
+    public final void returnHome(final ActionEvent event) throws IOException {
         final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/main.fxml"));
         final Scene scene = new Scene(root);
 

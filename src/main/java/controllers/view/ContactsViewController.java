@@ -18,10 +18,10 @@ import javafx.stage.Stage;
 public class ContactsViewController {
 
     @FXML
-    public Button goBack;
+    private Button goBack;
 
     //Quando questo metodo viene chiamato ritorno al mainMenu
-    public void returnHome(ActionEvent event) throws IOException {
+    public final void returnHome(final ActionEvent event) throws IOException {
         final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/main.fxml"));
         final Scene scene = new Scene(root);
 

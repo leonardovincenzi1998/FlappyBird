@@ -13,7 +13,6 @@ public class FlappyControllerImpl implements FlappyController {
 
     public FlappyControllerImpl() {
         flappy = FlappyImpl.getInstance();
-        //flappy = new FlappyImpl();
         flappyView = new FlappyViewImpl();
         this.setFlappyView();
     }
@@ -26,13 +25,13 @@ public class FlappyControllerImpl implements FlappyController {
     }
 
     @Override
-    public void flappyMovement(double n) {
+    public void flappyMovement(final double n) {
         flappy.flappyUpdate(flappyView.getFlappy(), n);
         flappyView.updatePosition(flappy.getPosY());
     }
 
     @Override
-    public boolean floorCollision(Rectangle r) {
+    public boolean floorCollision(final Rectangle r) {
         return r.getY() == (335 - flappy.getHeightBird());
     }
 

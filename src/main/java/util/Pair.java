@@ -3,7 +3,6 @@ package util;
 /*
  * A standard generic Pair<X,Y>, with getters, hashCode, equals, and toString well implemented.
  */
-
 public class Pair<X,Y> {
 
     private final X x;
@@ -48,11 +47,8 @@ public class Pair<X,Y> {
         } else if (!x.equals(other.x))
             return false;
         if (y == null) {
-            if (other.y != null)
-                return false;
-        } else if (!y.equals(other.y))
-            return false;
-        return true;
+            return other.y == null;
+        } else return y.equals(other.y);
     }
 
     @Override
