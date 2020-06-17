@@ -4,9 +4,9 @@ import javafx.scene.shape.Rectangle;
 
 public final class BirdImpl implements Bird {
 
-    static final double INITIAL_POSITION = 50.0;
-    static final int WIDTH_BIRD = 45;
-    static final int HEIGHT_BIRD = 32;
+    private static final double INITIAL_POSITION = 50.0;
+    private static final int WIDTH_BIRD = 45;
+    private static final int HEIGHT_BIRD = 32;
 
     private final double posX;
     private double posY;
@@ -16,7 +16,7 @@ public final class BirdImpl implements Bird {
     private BirdImpl() {
         this.posY = INITIAL_POSITION;
         this.posX = INITIAL_POSITION;
-        birdImagePath = ("bird.png");
+        birdImagePath = "bird.png";
     }
 
     /**

@@ -61,14 +61,14 @@ public class GameLoopImpl extends Application implements GameLoop{
     }
 
     @Override
-    public void userAction() {
+    public final void userAction() {
         jumpTimer.stop();
-        gravity=false;
+        gravity = false;
         jumpTimer.start();
     }
 
     @Override
-    public void birdUpdateDown() {
+    public final void birdUpdateDown() {
         final double n = PIXEL_MOVEMENT;
         this.controller.getBirdController().birdMovement(n);
     }

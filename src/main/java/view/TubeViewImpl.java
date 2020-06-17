@@ -5,13 +5,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import util.Pair;
 
-public class TubeViewImpl implements TubeView{
+public class TubeViewImpl implements TubeView {
 
     private Rectangle r;
     private Rectangle r2;
 
     /**
-     * This is the constructor method that initialize the first pair of rectangle
+     * This is the constructor method that initialize the first pair of rectangle.
      */
     public TubeViewImpl() {
         r = new Rectangle();
@@ -60,7 +60,7 @@ public class TubeViewImpl implements TubeView{
     }
 
     @Override
-    public final Pair getRectangles() {
+    public final Pair<Rectangle, Rectangle> getRectangles() {
         return new Pair<>(r, r2);
     }
 }
