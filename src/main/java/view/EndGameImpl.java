@@ -11,12 +11,13 @@ import util.IOScores;
 
 import java.io.IOException;
 
-public class EndGameMenuImpl implements EndGameMenu {
+public class EndGameImpl implements EndGame {
 
     private final FlappyBirdViewImpl view;
     Button quitBtn = new Button("QUIT");
     private static final double FX_OBJECT_WIDTH = 250;
     private static final double FX_OBJECT_HEIGHT = 50;
+    private static final int HALF = 2;
     private final int userScore;
     private final IOScores ioScores = new IOScores();
 
@@ -25,15 +26,15 @@ public class EndGameMenuImpl implements EndGameMenu {
      * @param view FlappyBirdViewImpl, the principal view
      * @param userScore The score of the user
      */
-    public EndGameMenuImpl(final FlappyBirdViewImpl view, final int userScore) {
+    public EndGameImpl(final FlappyBirdViewImpl view, final int userScore) {
         this.view = view;
         this.userScore = userScore;
     }
 
     public final void quitBtn() {
         quitBtn.setPrefSize(FX_OBJECT_WIDTH, FX_OBJECT_HEIGHT);
-        quitBtn.setLayoutX((view.getWidth() / 2) - (FX_OBJECT_WIDTH  / 2));
-        quitBtn.setLayoutY(view.getHeight() / 2);
+        quitBtn.setLayoutX((view.getWidth() / HALF) - (FX_OBJECT_WIDTH  / HALF));
+        quitBtn.setLayoutY(view.getHeight() / HALF);
         quitBtn.setAlignment(Pos.CENTER);
 
         quitBtn.setOnAction(actionEvent -> {

@@ -6,13 +6,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0"
-      xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controllers.view.LeaderboardViewController">
+<Pane maxHeight="335.0" maxWidth="600.0" minHeight="335.0" minWidth="600.0" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.view.LeaderboardViewController">
     <ImageView fitHeight="335.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../backgroundMenu.png"/>
+        <Image url="@../backgroundMenu.png" />
     </ImageView>
-    <Button fx:id="goBack" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="289.0"
-            mnemonicParsing="false" onAction="#returnHome" text="Torna al menu principale"/>
-    <TableView fx:id="table" layoutX="227.0" layoutY="104.0" prefHeight="176.0" prefWidth="147.0"/>
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="276.0" layoutY="287.0" mnemonicParsing="false" onAction="#returnHome" text="Home" />
+    <TableView fx:id="table" layoutX="227.0" layoutY="104.0" prefHeight="176.0" prefWidth="147.0" />
 </Pane>

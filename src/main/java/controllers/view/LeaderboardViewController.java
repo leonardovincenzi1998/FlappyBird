@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,8 +34,6 @@ import java.util.ResourceBundle;
  */
 public class LeaderboardViewController implements Initializable {
 
-
-    private Button goBack;
     private int line = 0;
     private int line2 = 0;
     private final File file = new File("src/main/resources/input-output/Scores.txt");
@@ -44,7 +41,7 @@ public class LeaderboardViewController implements Initializable {
     private final List<User> list = new ArrayList<>();
 
     private final Path path = Paths.get(String.valueOf(filePath));
-    private long lineCount = Files.lines(path).count();
+    private final long lineCount = Files.lines(path).count();
 
     @FXML
     private TableView<User> table;
@@ -73,6 +70,10 @@ public class LeaderboardViewController implements Initializable {
         table.setItems(data);
     }
 
+    /**
+     *
+     * @return the string with the name of the user read on the text file
+     */
     private String readName() {
 
         try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
@@ -82,8 +83,6 @@ public class LeaderboardViewController implements Initializable {
                 readLine = bf.readLine();
                 if (i == line) {
                     if (line % 2 != 0) {
-                        //System.out.println("line: " + line);
-                        //System.out.println(readLine);
                         line++;
                         return readLine;
                     }
@@ -97,7 +96,10 @@ public class LeaderboardViewController implements Initializable {
                 return "No more player";
     }
 
-
+    /**
+     *
+     * @return the string with the user's score read on the text file
+     */
     private String readScore() {
         try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
             String readLine;
@@ -106,14 +108,11 @@ public class LeaderboardViewController implements Initializable {
                 readLine = bf.readLine();
                 if (i == line2) {
                     if (line2 % 2 == 0) {
-                        //System.out.println("line: " + line2);
-                        //System.out.println(readLine);
                         line2++;
                         return readLine;
                     }
                     line2++;
                 }
-                //}
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -122,18 +121,17 @@ public class LeaderboardViewController implements Initializable {
     }
 
 
-    //Quando questo metodo viene chiamato ritorno al mainMenu
+    /**
+     * When user click the Return to the home button the scene switch to main.fxml
+     * @param event Action event of the button
+     * @throws IOException IO exception
+     */
     public final void returnHome(final ActionEvent event) throws IOException {
         final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/main.fxml"));
         final Scene scene = new Scene(root);
-
-        //Prendo le informazioni dello Stage
         final Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        //Cambio scena con .setScene e mostro window
         window.setScene(scene);
         window.show();
     }
-
-
 }

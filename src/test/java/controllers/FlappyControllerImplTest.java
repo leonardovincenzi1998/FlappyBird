@@ -1,7 +1,7 @@
 package controllers;
 
 import javafx.scene.shape.Rectangle;
-import model.flappy.FlappyImpl;
+import model.bird.BirdImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +13,7 @@ class FlappyControllerImplTest {
     void floorCollision() {
         int num;
         Rectangle flappyRectangle = new Rectangle();
-        FlappyImpl flappy = FlappyImpl.getInstance();
+        BirdImpl flappy = BirdImpl.getInstance();
 
         num = HEIGHT_WINDOWS - flappy.getHeightBird();
         flappyRectangle.setY(num);

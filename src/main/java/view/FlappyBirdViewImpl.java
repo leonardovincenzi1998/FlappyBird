@@ -13,7 +13,6 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.awt.*;
-import java.io.IOException;
 
 /**
  * This class manage the view of the game when it starts
@@ -78,7 +77,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     @Override
     public void endGame(final int userScore) {
-        EndGameMenuImpl endGameMenu = new EndGameMenuImpl(this, userScore);
+        EndGameImpl endGameMenu = new EndGameImpl(this, userScore);
         this.root.getChildren().add(endGameMenu.quitBtn);
         endGameMenu.quitBtn();
     }

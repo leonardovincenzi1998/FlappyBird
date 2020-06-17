@@ -1,12 +1,12 @@
-package model.flappy;
+package model.bird;
 
 import javafx.scene.shape.Rectangle;
 
-public interface Flappy {
+public interface Bird {
 
-    void flappyUpdate(Rectangle r, double n);
+    void birdUpdate(Rectangle r, double n);
 
-    String getFlappyImagePath();
+    String getBirdImagePath();
 
     int getWidthBird();
 
@@ -18,6 +18,6 @@ public interface Flappy {
 
     void setPosY(double posY);
 
-    void setFlappyInstance();
+    void setBirdIstance();
 
 }

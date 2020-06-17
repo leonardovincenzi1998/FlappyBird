@@ -1,4 +1,4 @@
-package model.flappy;
+package model.bird;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class FlappyImplTest {
         final double x = 60;
         double expected;
 
-        FlappyImpl flappy = FlappyImpl.getInstance();
+        BirdImpl flappy = BirdImpl.getInstance();
         flappy.setPosY(x);
         expected = flappy.getPosY() + n;
         flappy.setPosY(expected);

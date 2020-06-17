@@ -35,7 +35,7 @@
    </VBox>
    <Button fx:id="goBack" alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="274.0"
            mnemonicParsing="false" onAction="#returnHome" prefHeight="33.0" prefWidth="168.0"
-           text="Torna al menu principale" textAlignment="CENTER" textOverrun="CLIP">
+           text="Home" textAlignment="CENTER" textOverrun="CLIP">
       <effect>
          <Blend mode="GREEN"/>
       </effect>

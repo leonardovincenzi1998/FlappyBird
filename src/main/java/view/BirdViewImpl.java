@@ -4,11 +4,11 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-public class FlappyViewImpl implements FlappyView {
+public class BirdViewImpl implements BirdView {
 
     private final Rectangle r;
 
-    public FlappyViewImpl() {
+    public BirdViewImpl() {
         r = new Rectangle();
     }
 
@@ -35,7 +35,7 @@ public class FlappyViewImpl implements FlappyView {
     }
 
     @Override
-    public Rectangle getFlappy() {
+    public Rectangle getBird() {
         return this.r;
     }
 

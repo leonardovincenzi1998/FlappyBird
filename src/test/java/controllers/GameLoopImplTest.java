@@ -1,6 +1,6 @@
 package controllers;
 
-import model.flappy.FlappyImpl;
+import model.bird.BirdImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +12,7 @@ class GameLoopImplTest {
     @Test
     void birdUpdateDown() {
         double expected;
-        FlappyImpl flappy = FlappyImpl.getInstance();
+        BirdImpl flappy = BirdImpl.getInstance();
         expected = (flappy.getPosY() + n);
         flappy.setPosY(50 + n);
         assertEquals(flappy.getPosY(),expected);
@@ -21,7 +21,7 @@ class GameLoopImplTest {
     @Test
     void birdUpdateUp() {
         double expected;
-        FlappyImpl flappy = FlappyImpl.getInstance();
+        BirdImpl flappy = BirdImpl.getInstance();
         expected = (flappy.getPosY() - n);
         flappy.setPosY(50 - n);
         assertEquals(flappy.getPosY(),expected);

@@ -1,24 +1,32 @@
 package controllers;
 
 import javafx.scene.Node;
-
-import java.io.IOException;
+import javafx.scene.layout.Pane;
+import model.Score;
 
 public interface FlappyBirdController {
 
+    /**
+     *
+     * @return TubeController
+     */
     TubeController getTubeController();
 
-    FlappyController getFlappyController();
-
-    void checkCollision() throws IOException;
-
     /**
-     * Quits the game.
+     *
+     * @return FlappyController
      */
-    //void quit();
+    BirdController getFlappyController();
 
     /**
-     * Updates score via model and pass it to view to be displayed.
+     * Check collisions between Bird and floor and between Bird and Tubes
+     */
+    void checkCollision();
+
+
+    /**
+     * Call {@link Score#incrementScore()} to update score
+     * and call {@link view.FlappyBirdView#setScore(int)} to print score in the view
      */
     void updateScore();
 
@@ -26,13 +34,13 @@ public interface FlappyBirdController {
      * Return main view node from view.
      * @return view's root node
      */
-    //Pane getRoot();
+    Pane getRoot();
 
     /**
      * Removes node from view's root node.
-     * @param e node to be removed
+     * @param n node to be removed
      */
-    void removeNode(Node e);
+    void removeNode(Node n);
 
     /**
      * Adds node to view's root node.

@@ -2,7 +2,7 @@ package view;
 
 import javafx.scene.shape.Rectangle;
 
-public interface FlappyView {
+public interface BirdView {
 
     void setPosition(double x, double y);
 
@@ -12,7 +12,7 @@ public interface FlappyView {
 
     void updatePosition(double y);
 
-    Rectangle getFlappy();
+    Rectangle getBird();
 
 
 

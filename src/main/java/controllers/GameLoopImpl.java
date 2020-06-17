@@ -7,17 +7,22 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
 
-
+/**
+ * This class implement a GameLoop that moves all the view's objects
+ */
 public class GameLoopImpl extends Application implements GameLoop{
 
     private final FlappyBirdController controller;
     private AnimationTimer gravityTimer;
-
     private int cont = 0;
     private final Timer jumpTimer = new Timer(200, (elem) ->  gravity = true);
-
     private boolean gravity = true;
 
+    /**
+     * This is constructor method that initialized the controller and give to the method {@link GameLoopImpl#start(Stage)} the primaryStage
+     * @param controller FlappyBirdController
+     * @param primaryStage primaryStage is the window
+     */
     public GameLoopImpl(final FlappyBirdControllerImpl controller, final Stage primaryStage) {
         this.controller = controller;
         this.start(primaryStage);
@@ -64,13 +69,13 @@ public class GameLoopImpl extends Application implements GameLoop{
     @Override
     public void birdUpdateDown() {
         final double n = 2.75;
-        this.controller.getFlappyController().flappyMovement(n);
+        this.controller.getFlappyController().birdMovement(n);
     }
 
     @Override
     public void birdUpdateUp() {
         final double n = -2.75;
-        this.controller.getFlappyController().flappyMovement(n);
+        this.controller.getFlappyController().birdMovement(n);
     }
 
     @Override
