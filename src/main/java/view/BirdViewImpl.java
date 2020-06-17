@@ -8,12 +8,9 @@ public class BirdViewImpl implements BirdView {
 
     private final Rectangle r;
 
-<<<<<<< HEAD:src/main/java/view/BirdViewImpl.java
     /**
      * This is the constructor method that initialize the rectangle.
      */
-=======
->>>>>>> 307ef70f46473b59b90ea7dc29a83c4933cfa6e2:src/main/java/view/FlappyViewImpl.java
     public BirdViewImpl() {
         r = new Rectangle();
     }

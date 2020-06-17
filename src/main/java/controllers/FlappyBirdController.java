@@ -14,9 +14,9 @@ public interface FlappyBirdController {
 
     /**
      *
-     * @return FlappyController
+     * @return BirdController
      */
-    BirdController getFlappyController();
+    BirdController getBirdController();
 
     /**
      * Check collisions between Bird and floor and between Bird and Tubes
