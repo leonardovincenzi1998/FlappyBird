@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  * The Controller related to the main.fxml GUI.
  *
  */
-public final class MenuViewController {
+public final class  MenuViewController {
 
     private String name;
 

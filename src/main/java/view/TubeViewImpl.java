@@ -56,6 +56,6 @@ public class TubeViewImpl implements TubeView{
 
     @Override
     public Pair getRectangles() {
-        return new Pair(r,r2);
+        return new Pair<>(r,r2);
     }
 }

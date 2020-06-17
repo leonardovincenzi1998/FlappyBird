@@ -1,6 +1,7 @@
 package view;
 
 import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
@@ -23,7 +24,7 @@ public interface FlappyBirdView {
      * Returns main view node.
      * @return view's root node
      */
-   // Pane getRoot();
+    Pane getRoot();
 
     /**
      * Adds children node to root node.
@@ -37,6 +38,9 @@ public interface FlappyBirdView {
      */
     void removeChildren(Node e);
 
+    double getHeight();
+
+    double getWidth();
 
 
 }
