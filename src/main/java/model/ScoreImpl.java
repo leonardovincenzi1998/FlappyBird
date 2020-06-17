@@ -1,14 +1,14 @@
 package model;
 
 /**
- * Class that manage the score of user
+ * Class that manage the score of user.
  */
-public class ScoreImpl implements Score{
+public class ScoreImpl implements Score {
 
     private int score;
 
     /**
-     * This is the constructor method that initializes the score to 0
+     * This is the constructor method that initializes the score to 0.
      */
     public ScoreImpl() {
         score = 0;

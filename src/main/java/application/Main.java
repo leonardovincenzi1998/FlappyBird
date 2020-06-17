@@ -25,13 +25,13 @@ public final class Main extends Application  {
     public void start(final Stage stage) throws Exception {
         final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/main.fxml"));
         final Scene scene = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
-        
+
         // Stage configuration
         stage.setTitle("Flappy Bird");
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-        
+
     }
 
 

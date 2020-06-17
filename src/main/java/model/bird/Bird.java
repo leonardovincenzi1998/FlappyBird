@@ -3,11 +3,11 @@ package model.bird;
 import javafx.scene.shape.Rectangle;
 
 /**
- * Bird's Model Interface
+ * Bird's Model Interface.
  */
 public interface Bird {
     /**
-     * Set the new bird position adding a constant "n"
+     * Set the new bird position adding a constant "n".
      * @param r Rectangle defined in {@link view.BirdViewImpl} constructor
      * @param n Constant defined in {@link controllers.GameLoopImpl}, which is the number of pixels that must be added at the current Y coordinates each loop
      */
@@ -44,13 +44,13 @@ public interface Bird {
     double getPosY();
 
     /**
-     * Set Y coordinate of bird
+     * Set Y coordinate of bird.
      * @param posY current Y coordinate
      */
     void setPosY(double posY);
 
     /**
-     * Set birdInstance null for create new bird Object when game restart
+     * Set birdInstance null for create new bird Object when game restart.
      */
     void setBirdInstance();
 

@@ -3,7 +3,6 @@ package controllers;
 import javafx.scene.shape.Rectangle;
 import model.bird.Bird;
 import view.BirdView;
-import view.BirdViewImpl;
 
 /**
  * This interfaces initializes and controls the Rectangle of the bird's view.

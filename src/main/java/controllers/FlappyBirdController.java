@@ -2,7 +2,6 @@ package controllers;
 
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
-import model.Score;
 
 public interface FlappyBirdController {
 
@@ -19,13 +18,13 @@ public interface FlappyBirdController {
     BirdController getBirdController();
 
     /**
-     * Check collisions between Bird and floor and between Bird and Tubes
+     * Check collisions between Bird and floor and between Bird and Tubes.
      */
     void checkCollision();
 
     /**
      * Call {@link Score#incrementScore()} to update score
-     * and call {@link view.FlappyBirdView#setScore(int)} to print score in the view
+     * and call {@link view.FlappyBirdView#setScore(int)} to print score in the view.
      */
     void updateScore();
 

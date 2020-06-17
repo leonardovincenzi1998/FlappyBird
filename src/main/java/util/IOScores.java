@@ -5,17 +5,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * This is the class that print on a text file the final user score
+ * This is the class that print on a text file the final user score.
  */
 public class IOScores {
 
     private static final String FILE_NAME = "src/main/resources/input-output/Scores.txt";
 
     /**
-     * Print the user score in a text file
+     * Print the user score in a text file.
      * @param score Final UserScore
      */
-    public void writeScore(int score) {
+    public void writeScore(final int score) {
         try {
             FileWriter fw = new FileWriter(FILE_NAME, true);
             BufferedWriter bw = new BufferedWriter(fw);

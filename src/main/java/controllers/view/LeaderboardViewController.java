@@ -50,8 +50,9 @@ public class LeaderboardViewController implements Initializable {
     }
 
 
+    @SuppressWarnings("unchecked")
     @Override
-    public void initialize(final URL location, final ResourceBundle resources) {
+    public final void initialize(final URL location, final ResourceBundle resources) {
         TableColumn<User, String> name = new TableColumn<>("UserName");
         TableColumn<User, String> score = new TableColumn<>("Score");
 
@@ -122,7 +123,7 @@ public class LeaderboardViewController implements Initializable {
 
 
     /**
-     * When user click the Return to the home button the scene switch to main.fxml
+     * When user click the Return to the home button the scene switch to main.fxml.
      * @param event Action event of the button
      * @throws IOException IO exception
      */

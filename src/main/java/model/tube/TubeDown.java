@@ -1,13 +1,13 @@
 package model.tube;
 
-public class TubeDown extends AbstractTube{
+public class TubeDown extends AbstractTube {
     /**
-     * This is the distance between the two tubes
+     * This is the distance between the two tubes.
      */
-    private final static int DISTANCE = 105;
+    private static final int DISTANCE = 105;
 
 
-    public TubeDown(String tubeImagePath) {
+    public TubeDown(final String tubeImagePath) {
         super(tubeImagePath);
     }
 
@@ -17,11 +17,11 @@ public class TubeDown extends AbstractTube{
     }
 
     /**
-     * Set the coordinateY of the bottom tube related to the top tube's coordinate Y
+     * Set the coordinateY of the bottom tube related to the top tube's coordinate Y.
      * @param y top tube's coordinateY
      */
-    public void setY(double y){
-        setPosY(y+DISTANCE);
+    public void setY(final double y) {
+        setPosY(y + DISTANCE);
 
     }
 

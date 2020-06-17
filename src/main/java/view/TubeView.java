@@ -3,24 +3,24 @@ package view;
 import util.Pair;
 
 /**
- * Interface for the view of tube
+ * Interface for the view of tube.
  */
 public interface TubeView {
 
     /**
-     * Initializes new pair of javafx.scene.shape.Rectangle
+     * Initializes new pair of javafx.scene.shape.Rectangle.
      */
     void createRectangles();
 
     /**
-     * Set top rectangle's position
+     * Set top rectangle's position.
      * @param x coordinate X
      * @param y coordinate Y
      */
     void setTubeUpPosition(double x, double y);
 
     /**
-     * Set top rectangle's size
+     * Set top rectangle's size.
      * @param width Top rectangle's width
      * @param height Top rectangle's height
      */
@@ -34,26 +34,26 @@ public interface TubeView {
     void setTubeDownPosition(double x, double y);
 
     /**
-     * Set bottom rectangle's size
+     * Set bottom rectangle's size.
      * @param width Bottom rectangle's width
      * @param height Bottom rectangle's height
      */
     void setTubeDownDimension(double width, double height);
 
     /**
-     * Set the top rectangle's image
+     * Set the top rectangle's image.
      * @param image
      */
     void seTubeUpImage(String image);
 
     /**
-     * Set the bottom rectangle's image
+     * Set the bottom rectangle's image.
      * @param image
      */
     void seTubeDownImage(String image);
 
     /**
-     * Return the pair of rectangle
+     * Return the pair of rectangle.
      * @return Rectangle's pair
      */
     Pair getRectangles();

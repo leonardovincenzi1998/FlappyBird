@@ -16,7 +16,7 @@ import java.io.IOException;
 public class ContactsViewController {
 
     /**
-     * When user click the Home button the scene switch to main.fxml
+     * When user click the Home button the scene switch to main.fxml.
      * @param event Action event of the button
      * @throws IOException IO exception
      */

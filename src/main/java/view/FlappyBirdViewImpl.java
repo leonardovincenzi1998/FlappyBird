@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.awt.*;
 
 /**
- * This class manage the view of the game when it starts
+ * This class manage the view of the game when it starts.
  */
 public class FlappyBirdViewImpl implements FlappyBirdView {
 
@@ -30,7 +30,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     /**
-     *This is the constructor method, which initializes the Stage and the Observer
+     *This is the constructor method, which initializes the Stage and the Observer.
      * @param primaryStage PrimaryStage is the window
      * @param observer FlappyGameViewObserver
      */

@@ -13,7 +13,7 @@ import util.IOName;
 import java.io.IOException;
 
 /**
- * Class that control endgamemenu.fxml
+ * Class that control endgamemenu.fxml.
  */
 public class EndGameViewController {
 
@@ -27,7 +27,7 @@ public class EndGameViewController {
     private TextArea nameArea;
 
     /**
-     * When user click the Submit button, the name insert by the user is saved and the scene switch to main.fxml
+     * When user click the Submit button, the name insert by the user is saved and the scene switch to main.fxml.
      * @param event Action event of the button
      * @throws Exception Exception
      */
@@ -45,7 +45,7 @@ public class EndGameViewController {
     }
 
     /**
-     * Call {@link IOName#writeName(String)}
+     * Call {@link IOName#writeName(String)}.
      * @param name The user's name
      */
     public final void printUserName(final String name) {

@@ -18,10 +18,10 @@ class TubeMapImplTest {
     //FlappyBirdController controller = new FlappyBirdControllerImpl(primaryStage);
     //TubeController tubeController = new TubeControllerImpl(controller);
     //TubeMap map = new TubeMapImpl(controller);
-    TreeMap<Integer, Pair<Rectangle,Rectangle>> tubeMap;
-    Rectangle r = new Rectangle();
-    Rectangle r2 = new Rectangle();
-    Pair<Rectangle, Rectangle> pair = new Pair<>(r,r2);
+    private TreeMap<Integer, Pair<Rectangle, Rectangle>> tubeMap;
+    private Rectangle r = new Rectangle();
+    private Rectangle r2 = new Rectangle();
+    private Pair<Rectangle, Rectangle> pair = new Pair<>(r, r2);
 
 
     TubeMapImplTest() {
@@ -31,28 +31,28 @@ class TubeMapImplTest {
 
     @Test
     public void testAddToMap() {
-        assertNotSame(tubeMap, tubeMap.put(1,pair));
+        assertNotSame(tubeMap, tubeMap.put(1, pair));
     }
 
     @Test
     public void testGetLastValue() {
         Pair<Rectangle, Rectangle> expected = pair;
-        tubeMap.put(1,pair);
-        assertEquals(expected,tubeMap.lastEntry().getValue());
+        tubeMap.put(1, pair);
+        assertEquals(expected, tubeMap.lastEntry().getValue());
     }
 
     @Test
     public void testScrollTubePair() {
         int n = 2;
-        tubeMap.put(1,pair);
+        tubeMap.put(1, pair);
         Pair<Rectangle, Rectangle> expected = pair;
 
         tubeMap.forEach((key, value) -> {
-            value.getX().setX(value.getX().getX()-n);
-            value.getY().setX(value.getY().getX()-n);
+            value.getX().setX(value.getX().getX() - n);
+            value.getY().setX(value.getY().getX() - n);
         });
 
-        expected.getX().setX(r.getX()-n);
+        expected.getX().setX(r.getX() - n);
         assertEquals((expected.getX()).getX(), tubeMap.lastEntry().getValue().getX().getX());
 
     }
@@ -69,10 +69,10 @@ class TubeMapImplTest {
         r.setX(600);
         r2.setX(600);
         r.setY(90);
-        r2.setY(r.getY()+105);
+        r2.setY(r.getY() + 105);
 
 
-        tubeMap.put(1,pair);
+        tubeMap.put(1, pair);
 
         for(int i = 0; i < 300; i++) {
             tubeMap.forEach((key, value) -> {
@@ -82,20 +82,20 @@ class TubeMapImplTest {
 
             tubeMap.forEach((key, value) -> {
                 Shape intersect = Shape.intersect(flappy, value.getX());
-                if(intersect.getBoundsInLocal().getWidth() != -1){
+                if (intersect.getBoundsInLocal().getWidth() != -1){
                     flag.set(1);
 
                 }
                 Shape intersect2 = Shape.intersect(flappy, value.getY());
-                if(intersect2.getBoundsInLocal().getWidth() != -1){
+                if (intersect2.getBoundsInLocal().getWidth() != -1){
                     flag.set(1);
                 }
 
-                if((flappy.getY() < 0 && value.getX().getX() == flappy.getX())){
+                if ((flappy.getY() < 0 && value.getX().getX() == flappy.getX())) {
                     flag.set(1);
                 }
-                if(flag.get() == 1){
-                    assertEquals(1,flag.get());
+                if (flag.get() == 1) {
+                    assertEquals(1, flag.get());
                 }
             });
         }

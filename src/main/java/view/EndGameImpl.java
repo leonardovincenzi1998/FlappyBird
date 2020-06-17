@@ -22,7 +22,7 @@ public class EndGameImpl implements EndGame {
     private final IOScores ioScores = new IOScores();
 
     /**
-     * This is the method constructor, which initiates the view, that is used for set the size of Quit button, and the score that has to be saved
+     * This is the method constructor, which initiates the view, that is used for set the size of Quit button, and the score that has to be saved.
      * @param view FlappyBirdViewImpl, the principal view
      * @param userScore The score of the user
      */
