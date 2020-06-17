@@ -9,13 +9,11 @@ import view.FlappyBirdView;
 import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
-import java.io.IOException;
-
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
 
     private final FlappyBirdView view;
     private final TubeController tubeController;
-    private final FlappyController flappyController;
+    private final BirdController birdController;
     private final GameLoop gameLoop;
     private final Score score;
 
@@ -23,7 +21,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     public FlappyBirdControllerImpl(final Stage primaryStage) {
         score = new ScoreImpl();
         tubeController = new TubeControllerImpl(this);
-        flappyController = new FlappyControllerImpl();
+        birdController = new BirdControllerImpl();
         gameLoop = new GameLoopImpl(this, primaryStage);
         view = new FlappyBirdViewImpl(primaryStage, this);
         view.start();
@@ -36,15 +34,15 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     }
 
     @Override
-    public FlappyController getFlappyController(){
-        return flappyController;
+    public BirdController getBirdController(){
+        return birdController;
     }
 
 
 
     @Override
     public void startGame() {
-        this.addNode(flappyController.getFlappyView().getFlappy());
+        this.addNode(birdController.getBirdView().getBird());
         tubeController.getTubeMap().printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
@@ -56,15 +54,15 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     @Override
     public void checkCollision() {
 
-        if (this.flappyController.floorCollision(this.flappyController.getFlappyView().getFlappy())) {
+        if (this.birdController.floorCollision(this.birdController.getBirdView().getBird())) {
             gameLoop.findCollision();
             this.view.endGame(score.getScore());
-            this.flappyController.getFlappyModel().setFlappyInstance();
+            this.birdController.getBirdModel().setBirdInstance();
         }
-        if (tubeController.getTubeMap().checkCollision(flappyController.getFlappyView().getFlappy())) {
+        if (tubeController.getTubeMap().checkCollision(birdController.getBirdView().getBird())) {
             gameLoop.findCollision();
             this.view.endGame(score.getScore());
-            this.flappyController.getFlappyModel().setFlappyInstance();
+            this.birdController.getBirdModel().setBirdInstance();
         }
     }
 

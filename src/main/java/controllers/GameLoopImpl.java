@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class GameLoopImpl extends Application implements GameLoop{
 
+    static final double PIXEL_MOVEMENT = 2.75;
     private final FlappyBirdController controller;
     private AnimationTimer gravityTimer;
 
@@ -63,14 +64,14 @@ public class GameLoopImpl extends Application implements GameLoop{
 
     @Override
     public void birdUpdateDown() {
-        final double n = 2.75;
-        this.controller.getFlappyController().flappyMovement(n);
+        final double n = PIXEL_MOVEMENT;
+        this.controller.getBirdController().birdMovement(n);
     }
 
     @Override
     public void birdUpdateUp() {
-        final double n = -2.75;
-        this.controller.getFlappyController().flappyMovement(n);
+        final double n = -(PIXEL_MOVEMENT);
+        this.controller.getBirdController().birdMovement(n);
     }
 
     @Override

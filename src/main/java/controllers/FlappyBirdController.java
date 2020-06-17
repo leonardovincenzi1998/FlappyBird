@@ -8,7 +8,7 @@ public interface FlappyBirdController {
 
     TubeController getTubeController();
 
-    FlappyController getFlappyController();
+    BirdController getBirdController();
 
     void checkCollision() throws IOException;
 
