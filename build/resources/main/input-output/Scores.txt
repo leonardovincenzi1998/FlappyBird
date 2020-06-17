@@ -35,3 +35,10 @@ ciao
 0
 prova
 0
+2
+ciao
+0
+ciao
+2
+davide
+

@@ -5,7 +5,8 @@ import javafx.scene.shape.Rectangle;
 public final class FlappyImpl implements Flappy {
 
     static final double INITIAL_POSITION = 50.0;
-    static final int HEIGHT_BIRD = 45;
+    static final int WIDTH_BIRD = 45;
+    static final int HEIGHT_BIRD = 32;
 
     private final double posX;
     private double posY;
@@ -37,12 +38,12 @@ public final class FlappyImpl implements Flappy {
 
     @Override
     public int getWidthBird() {
-        return HEIGHT_BIRD;
+        return WIDTH_BIRD;
     }
 
     @Override
     public int getHeightBird() {
-        return 32;
+        return HEIGHT_BIRD;
     }
 
     @Override
