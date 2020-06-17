@@ -2,8 +2,13 @@ package controllers;
 
 import java.io.IOException;
 
+/**
+ * Interface of the game loop
+ */
 public interface GameLoop {
-
+    /**
+     *
+     */
     void userAction();
 
     void birdUpdateDown();

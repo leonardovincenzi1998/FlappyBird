@@ -12,7 +12,7 @@ import view.TubeView;
 import view.TubeViewImpl;
 
 /**
- * This class manage all about the tubes
+ * Tube controller implementation
  */
 public class TubeControllerImpl implements TubeController{
 
@@ -22,7 +22,7 @@ public class TubeControllerImpl implements TubeController{
     private final TubeView tubeView;
 
     /**
-     * This is the constructor method that initializes all classes of tubes, model,view and controller and create and add the first pair of tubes' rectangles to the treeMap
+     * This is the constructor method that initializes all classes of tubes, create and add the first pair of tubes' rectangles to the treeMap
      * @param controller FlappyBirdController
      */
     public TubeControllerImpl(FlappyBirdController controller) {
@@ -33,12 +33,6 @@ public class TubeControllerImpl implements TubeController{
         tubeMap.addToMap(createTubePair());
     }
 
-
-    /**
-     * Create the copies of {@link model.tube.TubeUp} and {@link model.tube.TubeDown} by using Prototype Pattern and give to
-     * the {@link view.TubeView} methods only the information of the copies that they requires to set a new Pair of rectangles
-     * @return new Pair of rectangles
-     */
     private Pair createTubePair(){
 
         TubeUp tubeUpCopy = tubeUp.copy();

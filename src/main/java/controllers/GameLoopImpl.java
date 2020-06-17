@@ -11,10 +11,10 @@ import java.io.IOException;
 public class GameLoopImpl extends Application implements GameLoop{
 
     private final FlappyBirdController controller;
-    private AnimationTimer timer;
+    private AnimationTimer gravityTimer;
 
-    private int cont2 = 0;
-    private final Timer timer2 = new Timer(200, (elem) ->  gravity = true);
+    private int cont = 0;
+    private final Timer jumpTimer = new Timer(200, (elem) ->  gravity = true);
 
     private boolean gravity = true;
 
@@ -25,7 +25,7 @@ public class GameLoopImpl extends Application implements GameLoop{
 
     @Override
     public void start(final Stage primaryStage) {
-        timer = new AnimationTimer() {
+        gravityTimer = new AnimationTimer() {
             @Override
             public void handle(final long now) {
                 try {
@@ -39,9 +39,9 @@ public class GameLoopImpl extends Application implements GameLoop{
                     birdUpdateUp();
                 }
                 controller.getTubeController().scrollTubes();
-                cont2++;
-                if (cont2 == 125) {
-                    cont2 = 0;
+                cont++;
+                if (cont == 125) {
+                    cont = 0;
                     try {
                         controller.getTubeController().addTube();
                     } catch (Exception e) {
@@ -51,14 +51,14 @@ public class GameLoopImpl extends Application implements GameLoop{
 
             }
         };
-        timer.start();
+        gravityTimer.start();
     }
 
     @Override
     public void userAction() {
-        timer2.stop();
+        jumpTimer.stop();
         gravity=false;
-        timer2.start();
+        jumpTimer.start();
     }
 
     @Override
@@ -80,7 +80,7 @@ public class GameLoopImpl extends Application implements GameLoop{
 
     @Override
     public void findCollision() {
-            timer.stop();
+            gravityTimer.stop();
     }
 }
 
