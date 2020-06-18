@@ -43,7 +43,6 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     @Override
     public BirdController getBirdController() {
         return birdController;
-
     }
 
     @Override

@@ -79,7 +79,7 @@ public class GameLoopImpl extends Application implements GameLoop {
     }
 
     @Override
-    public void checkCollision() throws IOException {
+    public void checkCollision() {
         controller.checkCollision();
     }
 
