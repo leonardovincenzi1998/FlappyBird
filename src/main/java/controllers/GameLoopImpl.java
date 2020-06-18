@@ -1,12 +1,13 @@
 package controllers;
 
 import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.stage.Stage;
-
+import javafx.util.Duration;
 import java.io.IOException;
-
-import javax.swing.Timer;
 
 /**
  * This class implement a GameLoop that moves all the view's objects.
@@ -18,7 +19,7 @@ public class GameLoopImpl extends Application implements GameLoop {
     private final FlappyBirdController controller;
     private AnimationTimer gravityTimer;
     private int cont;
-    private final Timer jumpTimer = new Timer(200, (elem) ->  gravity = true);
+    private final Timeline timer = new Timeline(new KeyFrame(Duration.millis(200), (ActionEvent event) -> gravity = true));
     private boolean gravity = true;
 
     /**
@@ -63,9 +64,9 @@ public class GameLoopImpl extends Application implements GameLoop {
 
     @Override
     public final void userAction() {
-        jumpTimer.stop();
+        timer.stop();
         gravity = false;
-        jumpTimer.start();
+        timer.play();
     }
 
     @Override
