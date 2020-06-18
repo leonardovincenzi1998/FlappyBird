@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.IOException;
 
 /**
  * Interface of the game loop.
@@ -24,7 +25,7 @@ public interface GameLoop {
      * Call {@link FlappyBirdController#checkCollision()} to check and intercept collisions.
      * @throws IOException IO exception
      */
-    void checkCollision();
+    void checkCollision() throws IOException;
 
     /**
      * Stop the loop because the game is over.

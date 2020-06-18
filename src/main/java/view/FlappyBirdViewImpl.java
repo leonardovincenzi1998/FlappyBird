@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -43,7 +44,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
     @Override
-    public void start() {
+    public final void start() {
         screenSize.setSize(WIDTH, HEIGHT);
         this.primaryStage.setTitle(TITLE);
         this.primaryStage.centerOnScreen();
@@ -56,7 +57,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     private void setGameBackground(final Dimension screenSize) {
         this.root = new Pane();
-        final Scene scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
+        final Scene scene = new Scene(this.root, screenSize.getWidth(), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
         this.root.getChildren().add(background);
 
@@ -72,51 +73,51 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         primaryStage.setScene(scene);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-            if ((event.getCode() == KeyCode.SPACE)) {
+            if (event.getCode() == KeyCode.SPACE) {
                 this.observer.pressSpace();
             }
         });
     }
 
     @Override
-    public void endGame(final int userScore) {
-        EndGameImpl endGame = new EndGameImpl(this, userScore);
+    public final void endGame(final int userScore) throws IOException {
+        final EndGameImpl endGame = new EndGameImpl(this, userScore);
         this.root.getChildren().add(endGame.getButton());
         endGame.quitBtn();
     }
 
     @Override
-    public void setScore(final int score) {
+    public final void setScore(final int score) {
         this.score.setText("Score: " + score);
     }
 
     @Override
-    public void setObserver(final FlappyGameViewObserver observer) {
+    public final void setObserver(final FlappyGameViewObserver observer) {
         this.observer = observer;
     }
 
     @Override
-    public void addChildren(final Node n) {
+    public final void addChildren(final Node n) {
         this.root.getChildren().add(n);
     }
 
     @Override
-    public void removeChildren(final Node n) {
+    public final void removeChildren(final Node n) {
         this.root.getChildren().remove(n);
     }
 
     @Override
-    public Pane getRoot() {
+    public final Pane getRoot() {
         return this.root;
     }
 
     @Override
-    public double getHeight() {
+    public final double getHeight() {
         return screenSize.getHeight();
     }
 
     @Override
-    public double getWidth() {
+    public final double getWidth() {
         return screenSize.getWidth();
         }
 }

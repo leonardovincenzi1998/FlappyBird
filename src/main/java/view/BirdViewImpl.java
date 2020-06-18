@@ -16,29 +16,29 @@ public class BirdViewImpl implements BirdView {
     }
 
     @Override
-    public void setPosition(final double x, final double y) {
+    public final void setPosition(final double x, final double y) {
         r.setX(x);
         r.setY(y);
     }
 
     @Override
-    public void setWidthHeight(final int height, final int width) {
+    public final void setWidthHeight(final int height, final int width) {
         r.setHeight(height);
         r.setWidth(width);
     }
 
     @Override
-    public void setImage(final String image) {
+    public final void setImage(final String image) {
         r.setFill(new ImagePattern(new Image(image)));
     }
 
     @Override
-    public void updatePosition(final double y) {
+    public final void updatePosition(final double y) {
         r.setY(y);
     }
 
     @Override
-    public Rectangle getBird() {
+    public final Rectangle getBird() {
         return this.r;
     }
 }

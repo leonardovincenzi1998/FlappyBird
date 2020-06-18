@@ -12,7 +12,7 @@ public class TubeDown extends AbstractTube {
     }
 
     @Override
-    public TubeDown copy() {
+    public final TubeDown copy() {
         return new TubeDown(this.getTubeImagePath());
     }
 

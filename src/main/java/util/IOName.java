@@ -16,18 +16,23 @@ public class IOName {
     /**
      * Print the user name in a text file.
      * @param name UserName
+     * @throws IOException  IO exception
      */
-    public void writeName(final String name) {
+    public void writeName(final String name) throws IOException {
+        BufferedWriter bw = null;
         try {
-            final FileWriter fw = new FileWriter(FILE_NAME, true);
-            final BufferedWriter bw = new BufferedWriter(fw);
+            bw = new BufferedWriter(new FileWriter(FILE_NAME, true));
             bw.write(name);
             bw.newLine();
-            bw.close();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        } finally {
+            if (bw != null) {
+            bw.close();
+            }
         }
+
     }
 
 }

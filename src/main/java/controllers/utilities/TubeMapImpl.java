@@ -16,7 +16,7 @@ public class TubeMapImpl implements TubeMap {
 
     private final TreeMap<Integer, Pair<?, ?>> tubeMap;
     private int cont;
-    private FlappyBirdController controller;
+    private final FlappyBirdController controller;
     private static final int WINDOW_END = -60;
     private static final int PIXEL_SCROLL = 2;
 
@@ -30,7 +30,7 @@ public class TubeMapImpl implements TubeMap {
     }
 
     @Override
-    public void addToMap(final Pair<?, ?> tubePair) {
+    public final void addToMap(final Pair<?, ?> tubePair) {
         cont++;
         tubeMap.put(cont, tubePair);
     }
@@ -66,18 +66,18 @@ public class TubeMapImpl implements TubeMap {
 
     @Override
     public final boolean checkCollision(final Rectangle bird) {
-        AtomicInteger flag = new AtomicInteger(0);
+        final AtomicInteger flag = new AtomicInteger(0);
         tubeMap.forEach((key, value) -> {
-            final Shape intersect = Shape.intersect(bird, ((Rectangle) value.getX()));
+            final Shape intersect = Shape.intersect(bird, (Rectangle) value.getX());
             if (intersect.getBoundsInLocal().getWidth() != -1) {
                 flag.set(1);
             }
-            final Shape intersect2 = Shape.intersect(bird, ((Rectangle) value.getY()));
+            final Shape intersect2 = Shape.intersect(bird, (Rectangle) value.getY());
             if (intersect2.getBoundsInLocal().getWidth() != -1) {
                 flag.set(1);
             }
 
-            if ((bird.getY() < 0 && ((Rectangle) value.getX()).getX() == bird.getX())) {
+            if (bird.getY() < 0 && ((Rectangle) value.getX()).getX() == bird.getX()) {
                 flag.set(1);
             }
         });

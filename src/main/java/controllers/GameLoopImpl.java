@@ -3,6 +3,9 @@ package controllers;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+
 import javax.swing.Timer;
 
 /**
@@ -10,8 +13,8 @@ import javax.swing.Timer;
  */
 public class GameLoopImpl extends Application implements GameLoop {
 
-    static final double PIXEL_MOVEMENT = 2.75;
-    static final double SPAWN_FLAG = 125; 
+    private static final double PIXEL_MOVEMENT = 2.75;
+    private static final double SPAWN_FLAG = 125; 
     private final FlappyBirdController controller;
     private AnimationTimer gravityTimer;
     private int cont;
@@ -72,18 +75,18 @@ public class GameLoopImpl extends Application implements GameLoop {
     }
 
     @Override
-    public void birdUpdateUp() {
+    public final void birdUpdateUp() {
         final double n = -PIXEL_MOVEMENT;
         this.controller.getBirdController().birdMovement(n);
     }
 
     @Override
-    public void checkCollision() {
+    public final void checkCollision() throws IOException {
         controller.checkCollision();
     }
 
     @Override
-    public void findCollision() {
+    public final void findCollision() {
             gravityTimer.stop();
     }
 }

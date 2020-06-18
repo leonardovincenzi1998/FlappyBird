@@ -11,23 +11,31 @@ public final class BirdImpl implements Bird {
     private final double posX;
     private double posY;
     private final String birdImagePath;
-    private static BirdImpl birdInstance;
+    //private static BirdImpl birdInstance;
 
-    private BirdImpl() {
+    //Singleton implementation
+    /*private BirdImpl() {
         this.posY = INITIAL_POSITION;
         this.posX = INITIAL_POSITION;
         birdImagePath = "bird.png"; 
-        }
+        }*/
 
     /**
      * Create an instance of BirdImpl using Singleton Pattern.
      * @return bird instance
      */
-    public static BirdImpl getInstance() {
+    //Singleton implementation
+    /*public static BirdImpl getInstance() {
         if (birdInstance == null) {
             birdInstance = new BirdImpl();
         }
         return birdInstance;
+    }*/
+
+    public BirdImpl() {
+        this.posY = INITIAL_POSITION;
+        this.posX = INITIAL_POSITION;
+        birdImagePath = "bird.png"; 
     }
 
     @Override
@@ -64,8 +72,9 @@ public final class BirdImpl implements Bird {
         this.posY = posY;
     }
 
-    @Override
+
+    /*@Override
     public void setBirdInstance() {
-        birdInstance = null;
-    }
+        birdInstance = new BirdImpl();
+    }*/
 }

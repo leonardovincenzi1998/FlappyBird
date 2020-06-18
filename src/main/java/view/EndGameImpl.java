@@ -32,9 +32,9 @@ public class EndGameImpl implements EndGame {
     }
 
     @Override
-    public void quitBtn() {
+    public final void quitBtn() throws IOException {
         quitBtn.setPrefSize(FX_OBJECT_WIDTH, FX_OBJECT_HEIGHT);
-        quitBtn.setLayoutX((view.getWidth() / HALF) - (FX_OBJECT_WIDTH  / HALF));
+        quitBtn.setLayoutX(view.getWidth() / HALF - FX_OBJECT_WIDTH  / HALF);
         quitBtn.setLayoutY(view.getHeight() / HALF);
         quitBtn.setAlignment(Pos.CENTER);
 
@@ -56,11 +56,11 @@ public class EndGameImpl implements EndGame {
     }
 
     @Override
-    public Button getButton() {
+    public final Button getButton() {
         return quitBtn;
     }
 
-    private void sendScore() {
+    private void sendScore() throws IOException {
         ioScores.writeScore(this.userScore);
     }
 

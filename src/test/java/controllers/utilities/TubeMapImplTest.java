@@ -22,10 +22,10 @@ class TubeMapImplTest {
     private static final int RECT_INIT_POS = 600;
     private static final int SPACE_BTW_RECT = 105;
     private static final int FLAG = 300;
-    private TreeMap<Integer, Pair<Rectangle, Rectangle>> tubeMap;
-    private Rectangle r = new Rectangle();
-    private Rectangle r2 = new Rectangle();
-    private Pair<Rectangle, Rectangle> pair = new Pair<>(r, r2);
+    private final TreeMap<Integer, Pair<Rectangle, Rectangle>> tubeMap;
+    private final Rectangle r = new Rectangle();
+    private final Rectangle r2 = new Rectangle();
+    private final Pair<Rectangle, Rectangle> pair = new Pair<>(r, r2);
 
 
     TubeMapImplTest() {
@@ -40,7 +40,7 @@ class TubeMapImplTest {
 
     @Test
     public void testGetLastValue() {
-        Pair<Rectangle, Rectangle> expected = pair;
+        final Pair<Rectangle, Rectangle> expected = pair;
         tubeMap.put(1, pair);
         assertEquals(expected, tubeMap.lastEntry().getValue());
     }
@@ -49,7 +49,7 @@ class TubeMapImplTest {
     public void testScrollTubePair() {
         final int n = 2;
         tubeMap.put(1, pair);
-        Pair<Rectangle, Rectangle> expected = pair;
+        final Pair<Rectangle, Rectangle> expected = pair;
 
         tubeMap.forEach((key, value) -> {
             value.getX().setX(value.getX().getX() - n);
@@ -57,16 +57,16 @@ class TubeMapImplTest {
         });
 
         expected.getX().setX(r.getX() - n);
-        assertEquals((expected.getX()).getX(), tubeMap.lastEntry().getValue().getX().getX());
+        assertEquals(expected.getX().getX(), tubeMap.lastEntry().getValue().getX().getX());
 
     }
 
 
     @Test
     public void testCheckCollision() {
-        Rectangle flappy = new Rectangle();
-        int n = 2;
-        AtomicInteger flag = new AtomicInteger(0);
+        final Rectangle flappy = new Rectangle();
+        final int n = 2;
+        final AtomicInteger flag = new AtomicInteger(0);
 
         flappy.setX(BIRD_INIT_POS);
         flappy.setY(BIRD_INIT_POS);
@@ -95,7 +95,7 @@ class TubeMapImplTest {
                     flag.set(1);
                 }
 
-                if ((flappy.getY() < 0 && value.getX().getX() == flappy.getX())) {
+                if (flappy.getY() < 0 && value.getX().getX() == flappy.getX()) {
                     flag.set(1);
                 }
                 if (flag.get() == 1) {

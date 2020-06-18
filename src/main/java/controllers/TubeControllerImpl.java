@@ -52,19 +52,19 @@ public class TubeControllerImpl implements TubeController {
     }
 
     @Override
-    public void addTube() {
+    public final void addTube() {
         tubeMap.addToMap(createTubePair());
         tubeMap.printPairTube(tubeMap.getLastValue());
     }
 
     @Override
-    public void scrollTubes() {
+    public final void scrollTubes() {
         this.tubeMap.scrollTubePair();
         this.tubeMap.checkWindowEnd();
     }
 
     @Override
-    public TubeMap getTubeMap() {
+    public final TubeMap getTubeMap() {
         return this.tubeMap;
     }
 

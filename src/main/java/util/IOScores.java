@@ -14,11 +14,12 @@ public class IOScores {
     /**
      * Print the user score in a text file.
      * @param score Final UserScore
+     * @throws IOException IO exception
      */
-    public void writeScore(final int score) {
+    public void writeScore(final int score) throws IOException {
+        BufferedWriter bw = null;
         try {
-            final FileWriter fw = new FileWriter(FILE_NAME, true);
-            final BufferedWriter bw = new BufferedWriter(fw);
+            bw = new BufferedWriter(new FileWriter(FILE_NAME, true));
             bw.write(Integer.toString(score));
             bw.newLine();
             bw.close();
@@ -26,6 +27,10 @@ public class IOScores {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        } finally {
+            if (bw != null) {
+                bw.close();
+            }
         }
 
     }

@@ -12,7 +12,7 @@ class FlappyImplTest {
         final double x = 60;
         double expected;
 
-        BirdImpl flappy = BirdImpl.getInstance();
+        final Bird flappy = new BirdImpl();
         flappy.setPosY(x);
         expected = flappy.getPosY() + n;
         flappy.setPosY(expected);

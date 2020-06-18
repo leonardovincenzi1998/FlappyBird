@@ -20,36 +20,39 @@ public class BirdControllerImpl implements BirdController {
      * This is the constructor method that initialize all classes of bird and set the bird view.
      */
     public BirdControllerImpl() {
-        bird = BirdImpl.getInstance();
+        //Singleton implementation
+        //bird = BirdImpl.getInstance();
+
+        bird = new BirdImpl();
         birdView = new BirdViewImpl();
         this.setBirdView();
     }
 
     @Override
-    public void setBirdView() {
+    public final void setBirdView() {
         birdView.setPosition(bird.getPosX(), bird.getPosY());
         birdView.setWidthHeight(bird.getHeightBird(), bird.getWidthBird());
         birdView.setImage(bird.getBirdImagePath());
     }
 
     @Override
-    public void birdMovement(final double n) {
+    public final void birdMovement(final double n) {
         bird.birdUpdate(birdView.getBird(), n);
         birdView.updatePosition(bird.getPosY());
     }
 
     @Override
-    public boolean floorCollision(final Rectangle r) {
-        return r.getY() == (SCREEN_HEIGHT - bird.getHeightBird());
+    public final boolean floorCollision(final Rectangle r) {
+        return r.getY() == SCREEN_HEIGHT - bird.getHeightBird();
     }
 
     @Override
-    public BirdView getBirdView() {
+    public final BirdView getBirdView() {
         return this.birdView;
     }
 
     @Override
-    public Bird getBirdModel() {
+    public final Bird getBirdModel() {
         return this.bird;
     }
 }

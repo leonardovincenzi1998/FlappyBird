@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.IOException;
+
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
@@ -19,8 +21,9 @@ public interface FlappyBirdController {
 
     /**
      * Check collisions between Bird and floor and between Bird and Tubes.
+     * @throws IOException 
      */
-    void checkCollision();
+    void checkCollision() throws IOException;
 
     /**
      * Call {@link Score#incrementScore()} to update score

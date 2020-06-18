@@ -19,42 +19,42 @@ public class TubeViewImpl implements TubeView {
     }
 
     @Override
-    public void createRectangles() {
+    public final void createRectangles() {
         r = new Rectangle();
         r2 = new Rectangle();
     }
 
     @Override
-    public void setTubeUpPosition(final double x, final double y) {
+    public final void setTubeUpPosition(final double x, final double y) {
         r.setX(x);
         r.setY(y);
     }
 
     @Override
-    public void setTubeUpDimension(final double width, final double height) {
+    public final void setTubeUpDimension(final double width, final double height) {
         r.setWidth(width);
         r.setHeight(height);
     }
 
     @Override
-    public void setTubeDownPosition(final double x, final double y) {
+    public final void setTubeDownPosition(final double x, final double y) {
         r2.setX(x);
         r2.setY(y);
     }
 
     @Override
-    public void setTubeDownDimension(final double width, final double height) {
+    public final void setTubeDownDimension(final double width, final double height) {
         r2.setWidth(width);
         r2.setHeight(height);
     }
 
     @Override
-    public void seTubeUpImage(final String image) {
+    public final void seTubeUpImage(final String image) {
         r.setFill(new ImagePattern(new Image(image)));
     }
 
     @Override
-    public void seTubeDownImage(final String image) {
+    public final void seTubeDownImage(final String image) {
         r2.setFill(new ImagePattern(new Image(image)));
     }
 

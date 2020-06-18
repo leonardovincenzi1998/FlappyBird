@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.IOException;
+
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -36,59 +38,59 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
 
     @Override
-    public TubeController getTubeController() {
+    public final TubeController getTubeController() {
         return tubeController;
     }
 
     @Override
-    public BirdController getBirdController() {
+    public final BirdController getBirdController() {
         return birdController;
     }
 
     @Override
-    public void startGame() {
+    public final void startGame() {
         this.addNode(birdController.getBirdView().getBird());
         tubeController.getTubeMap().printPairTube(tubeController.getTubeMap().getLastValue());
     }
 
     @Override
-    public void pressSpace() {
+    public final void pressSpace() {
         gameLoop.userAction();
     }
 
     @Override
-    public void checkCollision() {
+    public final void checkCollision() throws IOException {
 
         if (this.birdController.floorCollision(this.birdController.getBirdView().getBird())) {
             gameLoop.findCollision();
             this.view.endGame(score.getScore());
-            this.birdController.getBirdModel().setBirdInstance();
+            //this.birdController.getBirdModel().setBirdInstance();
         }
         if (tubeController.getTubeMap().checkCollision(birdController.getBirdView().getBird())) {
             gameLoop.findCollision();
             this.view.endGame(score.getScore());
-            this.birdController.getBirdModel().setBirdInstance();
+            //this.birdController.getBirdModel().setBirdInstance();
         }
     }
 
     @Override
-    public void updateScore() {
+    public final void updateScore() {
         score.incrementScore();
         view.setScore(score.getScore());
     }
 
     @Override
-    public Pane getRoot() {
+    public final Pane getRoot() {
         return view.getRoot();
     }
 
     @Override
-    public void removeNode(final Node n) {
+    public final void removeNode(final Node n) {
         this.view.removeChildren(n);
     }
 
     @Override
-    public void addNode(final Node n) {
+    public final void addNode(final Node n) {
         this.view.addChildren(n);
     }
 }

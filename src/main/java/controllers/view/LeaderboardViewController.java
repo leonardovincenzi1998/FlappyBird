@@ -37,10 +37,7 @@ public class LeaderboardViewController implements Initializable {
     private int oddLine;
     private int evenLine;
     private final File file;
-    private final Path filePath;
     private final List<User> list = new ArrayList<>();
-
-    private final Path path;
     private final long lineCount;
 
     @FXML
@@ -52,8 +49,8 @@ public class LeaderboardViewController implements Initializable {
      */
     public LeaderboardViewController() throws IOException {
         file = new File("src/main/resources/input-output/Scores.txt");
-        filePath = Paths.get(String.valueOf(file));
-        path = Paths.get(String.valueOf(filePath));
+        final Path filePath = Paths.get(String.valueOf(file));
+        final Path path = Paths.get(String.valueOf(filePath));
         lineCount = Files.lines(path).count();
 
     }
@@ -71,7 +68,7 @@ public class LeaderboardViewController implements Initializable {
             list.add(new User(readName(), readScore()));
         }
 
-        ObservableList<User> data = FXCollections.observableArrayList(list);
+        final ObservableList<User> data = FXCollections.observableArrayList(list);
 
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         score.setCellValueFactory(new PropertyValueFactory<>("score"));

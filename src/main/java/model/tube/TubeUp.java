@@ -11,7 +11,7 @@ public class TubeUp extends AbstractTube {
 
 
     @Override
-    public TubeUp copy() {
+    public final TubeUp copy() {
 
         return new TubeUp(this.getTubeImagePath());
     }

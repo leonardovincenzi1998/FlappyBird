@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.scene.shape.Rectangle;
+import model.bird.Bird;
 import model.bird.BirdImpl;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ class BirdControllerImplTest {
     void floorCollision() {
         int num;
         final Rectangle rectangle = new Rectangle();
-        final BirdImpl bird = BirdImpl.getInstance();
+        final Bird bird = new BirdImpl();
 
         num = HEIGHT_WINDOWS - bird.getHeightBird();
         rectangle.setY(num);

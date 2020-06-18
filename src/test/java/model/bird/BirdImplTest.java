@@ -12,7 +12,7 @@ class BirdImplTest {
         final double x = 60;
         double expected;
 
-        BirdImpl bird = BirdImpl.getInstance();
+        final Bird bird = new BirdImpl();
         bird.setPosY(x);
         expected = bird.getPosY() + n;
         bird.setPosY(expected);

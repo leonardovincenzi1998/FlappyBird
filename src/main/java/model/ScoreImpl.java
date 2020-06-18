@@ -14,17 +14,17 @@ public class ScoreImpl implements Score {
         score = 0;
     }
     @Override
-    public void setScore(final int n) {
+    public final void setScore(final int n) {
         score = n;
     }
 
     @Override
-    public void incrementScore() {
+    public final void incrementScore() {
         score++;
     }
 
     @Override
-    public int getScore() {
+    public final int getScore() {
         return score;
     }
 }

@@ -1,29 +1,30 @@
 package controllers;
 
+import model.bird.Bird;
 import model.bird.BirdImpl;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class GameLoopImplTest {
 
-    private final double n = 2.75;
-    private final double test = 50;
+    private static final double N = 2.75;
+    private static final double TEST = 50;
 
     @Test
     void birdUpdateDown() {
         double expected;
-        BirdImpl flappy = BirdImpl.getInstance();
-        expected = (flappy.getPosY() + n);
-        flappy.setPosY(test);
+        final Bird flappy = new BirdImpl();
+        expected = flappy.getPosY() + N;
+        flappy.setPosY(TEST);
         assertEquals(flappy.getPosY(), expected);
     }
 
     @Test
     void birdUpdateUp() {
         double expected;
-        BirdImpl flappy = BirdImpl.getInstance();
-        expected = (flappy.getPosY() - n);
-        flappy.setPosY(test - n);
+        final Bird flappy = new BirdImpl();
+        expected = flappy.getPosY() - N;
+        flappy.setPosY(TEST - N);
         assertEquals(flappy.getPosY(), expected);
     }
 }

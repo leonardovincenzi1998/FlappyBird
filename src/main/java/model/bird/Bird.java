@@ -52,6 +52,6 @@ public interface Bird {
     /**
      * Set birdInstance null for create new bird Object when game restart.
      */
-    void setBirdInstance();
+    //void setBirdInstance();
 
 }
