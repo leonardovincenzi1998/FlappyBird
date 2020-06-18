@@ -10,7 +10,7 @@ import view.FlappyBirdViewImpl;
 import view.FlappyGameViewObserver;
 
 /**
- * This is the principal controller of the game
+ * This is the principal controller of the game.
  */
 
 public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGameViewObserver {
@@ -22,7 +22,7 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
     private final Score score;
 
     /**
-     * This is the constructor method that initializes the game
+     * This is the constructor method that initializes the game.
      * @param primaryStage primaryStage is the window
      */
     public FlappyBirdControllerImpl(final Stage primaryStage) {
@@ -36,12 +36,12 @@ public class FlappyBirdControllerImpl implements FlappyBirdController, FlappyGam
 
 
     @Override
-    public TubeController getTubeController(){
+    public TubeController getTubeController() {
         return tubeController;
     }
 
     @Override
-    public BirdController getBirdController(){
+    public BirdController getBirdController() {
         return birdController;
     }
 

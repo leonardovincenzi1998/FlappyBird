@@ -34,26 +34,36 @@ import java.util.ResourceBundle;
  */
 public class LeaderboardViewController implements Initializable {
 
-    private int line = 0;
-    private int line2 = 0;
-    private final File file = new File("src/main/resources/input-output/Scores.txt");
-    private final Path filePath = Paths.get(String.valueOf(file));
+    private int oddLine;
+    private int evenLine;
+    private final File file;
+    private final Path filePath;
     private final List<User> list = new ArrayList<>();
 
-    private final Path path = Paths.get(String.valueOf(filePath));
-    private final long lineCount = Files.lines(path).count();
+    private final Path path;
+    private final long lineCount;
 
     @FXML
     private TableView<User> table;
 
+    /**
+     * This is the constructor method that initialized all useful variables.
+     * @throws IOException  Input Output exception
+     */
     public LeaderboardViewController() throws IOException {
+        file = new File("src/main/resources/input-output/Scores.txt");
+        filePath = Paths.get(String.valueOf(file));
+        path = Paths.get(String.valueOf(filePath));
+        lineCount = Files.lines(path).count();
+
     }
 
 
+    @SuppressWarnings("unchecked")
     @Override
-    public void initialize(final URL location, final ResourceBundle resources) {
-        TableColumn<User, String> name = new TableColumn<>("UserName");
-        TableColumn<User, String> score = new TableColumn<>("Score");
+    public final void initialize(final URL location, final ResourceBundle resources) {
+        final TableColumn<User, String> name = new TableColumn<>("UserName");
+        final TableColumn<User, String> score = new TableColumn<>("Score");
 
         table.getColumns().addAll(name, score);
 
@@ -81,12 +91,12 @@ public class LeaderboardViewController implements Initializable {
 
             for (int i = 0; i < lineCount; i++)  {
                 readLine = bf.readLine();
-                if (i == line) {
-                    if (line % 2 != 0) {
-                        line++;
+                if (i == oddLine) {
+                    if (oddLine % 2 != 0) {
+                        oddLine++;
                         return readLine;
                     }
-                    line++;
+                    oddLine++;
                 }
             }
 
@@ -106,12 +116,12 @@ public class LeaderboardViewController implements Initializable {
             //
             for (int i = 0; i < lineCount; i++) {
                 readLine = bf.readLine();
-                if (i == line2) {
-                    if (line2 % 2 == 0) {
-                        line2++;
+                if (i == evenLine) {
+                    if (evenLine % 2 == 0) {
+                        evenLine++;
                         return readLine;
                     }
-                    line2++;
+                    evenLine++;
                 }
             }
         } catch (IOException e) {
@@ -122,7 +132,7 @@ public class LeaderboardViewController implements Initializable {
 
 
     /**
-     * When user click the Return to the home button the scene switch to main.fxml
+     * When user click the Return to the home button the scene switch to main.fxml.
      * @param event Action event of the button
      * @throws IOException IO exception
      */

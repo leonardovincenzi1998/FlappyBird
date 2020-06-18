@@ -20,7 +20,6 @@ public class TubeViewImpl implements TubeView {
 
     @Override
     public void createRectangles() {
-
         r = new Rectangle();
         r2 = new Rectangle();
     }

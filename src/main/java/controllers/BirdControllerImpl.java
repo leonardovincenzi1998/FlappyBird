@@ -8,6 +8,11 @@ import view.BirdViewImpl;
 
 public class BirdControllerImpl implements BirdController {
 
+    /**
+     * Screen height.
+     */
+    public static final int SCREEN_HEIGHT = 335;
+
     private final Bird bird;
     private final BirdView birdView;
 
@@ -35,7 +40,7 @@ public class BirdControllerImpl implements BirdController {
 
     @Override
     public boolean floorCollision(final Rectangle r) {
-        return r.getY() == (335 - bird.getHeightBird());
+        return r.getY() == (SCREEN_HEIGHT - bird.getHeightBird());
     }
 
     @Override
@@ -44,7 +49,7 @@ public class BirdControllerImpl implements BirdController {
     }
 
     @Override
-    public Bird getBirdModel(){
+    public Bird getBirdModel() {
         return this.bird;
     }
 }

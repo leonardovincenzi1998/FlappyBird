@@ -1,5 +1,8 @@
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,7 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import java.awt.*;
+
 
 /**
  * This class manage the view of the game when it starts.
@@ -53,7 +56,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     private void setGameBackground(final Dimension screenSize) {
         this.root = new Pane();
-        Scene scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
+        final Scene scene = new Scene(this.root, (screenSize.getWidth()), screenSize.getHeight());
         final ImageView background = new ImageView(new Image(ClassLoader.getSystemResource("background.jpeg").toString()));
         this.root.getChildren().add(background);
 
@@ -77,9 +80,9 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
     @Override
     public void endGame(final int userScore) {
-        EndGameImpl endGameMenu = new EndGameImpl(this, userScore);
-        this.root.getChildren().add(endGameMenu.quitBtn);
-        endGameMenu.quitBtn();
+        EndGameImpl endGame = new EndGameImpl(this, userScore);
+        this.root.getChildren().add(endGame.getButton());
+        endGame.quitBtn();
     }
 
     @Override

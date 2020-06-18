@@ -14,7 +14,7 @@ import java.io.IOException;
 public class EndGameImpl implements EndGame {
 
     private final FlappyBirdViewImpl view;
-    private Button quitBtn = new Button("QUIT");
+    private final Button quitBtn = new Button("QUIT");
     private static final double FX_OBJECT_WIDTH = 250;
     private static final double FX_OBJECT_HEIGHT = 50;
     private static final int HALF = 2;
@@ -31,7 +31,8 @@ public class EndGameImpl implements EndGame {
         this.userScore = userScore;
     }
 
-    public final void quitBtn() {
+    @Override
+    public void quitBtn() {
         quitBtn.setPrefSize(FX_OBJECT_WIDTH, FX_OBJECT_HEIGHT);
         quitBtn.setLayoutX((view.getWidth() / HALF) - (FX_OBJECT_WIDTH  / HALF));
         quitBtn.setLayoutY(view.getHeight() / HALF);
@@ -52,6 +53,11 @@ public class EndGameImpl implements EndGame {
 
         });
         sendScore();
+    }
+
+    @Override
+    public Button getButton() {
+        return quitBtn;
     }
 
     private void sendScore() {

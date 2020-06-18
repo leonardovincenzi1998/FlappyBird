@@ -19,12 +19,12 @@ import javafx.stage.Stage;
 public final class  MenuViewController {
 
     /**
-     * When user click the Contacts button the scene switch to contacts.fxml
+     * When user click the Contacts button the scene switch to contacts.fxml.
      * @param event Action event of the button
      * @throws IOException IO exception
      */
     @FXML
-    public void clickContacts(ActionEvent event) throws IOException {
+    public void clickContacts(final ActionEvent event) throws IOException {
 
         final Parent contacts = FXMLLoader.load(ClassLoader.getSystemResource("layouts/contacts.fxml"));
         final Scene contactsScene = new Scene(contacts);
@@ -36,11 +36,11 @@ public final class  MenuViewController {
     }
 
     /**
-     * When user click the Leaderboard button the scene switch to leaderboard.fxml
+     * When user click the Leaderboard button the scene switch to leaderboard.fxml.
      * @param event Action event of the button
      * @throws IOException IO exception
      */
-    public void clickLeaderboard(ActionEvent event) throws IOException {
+    public void clickLeaderboard(final ActionEvent event) throws IOException {
 
         final Parent leaderboard = FXMLLoader.load(ClassLoader.getSystemResource("layouts/leaderboard.fxml"));
         final Scene leaderboardScene = new Scene(leaderboard);
@@ -52,11 +52,11 @@ public final class  MenuViewController {
     }
 
     /**
-     * When user click the Play button the game start
+     * When user click the Play button the game start.
      * @param event Action event of the button
      */
     @FXML
-    public void clickPlay(ActionEvent event) {
+    public void clickPlay(final ActionEvent event) {
 
         final Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         new FlappyBirdControllerImpl(primaryStage);

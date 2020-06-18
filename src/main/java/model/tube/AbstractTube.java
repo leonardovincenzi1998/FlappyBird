@@ -1,27 +1,27 @@
 package model.tube;
 
 /**
- * This is the abstract class of the tubes that manage the same methods and variables they share
- * This class was created to implement the Prototype Pattern
+ * This is the abstract class of the tubes that manage the same methods and variables they share.
+ * This class was created to implement the Prototype Pattern.
  */
 public abstract class AbstractTube {
 
-    private final static double HEIGHT = 175;
-    private final static double WIDTH = 55;
+    private static final double HEIGHT = 175;
+    private static final double WIDTH = 55;
+    private static final double POS_X = 600;
     private final String tubeImagePath;
-    private final static double POS_X = 600;
-    private double PosY;
+    private double posY;
 
     /**
-     * This is the method constructor which initialize the image path of the object
+     * This is the method constructor which initialize the image path of the object.
      * @param tubeImagePath Image Path of the tube
      */
-    public AbstractTube(String tubeImagePath) {
+    public AbstractTube(final String tubeImagePath) {
         this.tubeImagePath = tubeImagePath;
     }
 
     /**
-     * Method created to implement the Prototype Pattern
+     * Method created to implement the Prototype Pattern.
      * @return a new Object which is only a copy of the first object created
      */
     public abstract AbstractTube copy();
@@ -39,7 +39,7 @@ public abstract class AbstractTube {
      * @return the initial coordinateY of the tube
      */
     public double getPosY() {
-        return this.PosY;
+        return posY;
     }
 
     /**
@@ -62,19 +62,15 @@ public abstract class AbstractTube {
      *
      * @return the image path of the tube
      */
-    public String getTubeImagePath(){
+    public String getTubeImagePath() {
         return tubeImagePath;
     }
 
     /**
-     * Set the new coordinateY
+     * Set the new coordinate Y.
      * @param y Y coordinate
      */
-    public void setPosY(double y){
-        PosY = y;
+    public void setPosY(final double y) {
+        posY = y;
     }
-
-
-
-
 }

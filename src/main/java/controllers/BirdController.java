@@ -9,6 +9,7 @@ import view.BirdViewImpl;
  * This interfaces initializes and controls the Rectangle of the bird's view.
  */
 public interface BirdController {
+
     /**
      * Call {@link BirdView} method and set the view of bird.
      */
@@ -22,7 +23,7 @@ public interface BirdController {
 
     /**
      * Boolean method that return true if the bird touch the floor.
-     * @param r Rectangle initialize in {@link BirdViewImpl#BirdViewImpl()} constructor.
+     * @param r Rectangle initialize in {@link BirdView} constructor
      * @return true
      */
     boolean floorCollision(Rectangle r);

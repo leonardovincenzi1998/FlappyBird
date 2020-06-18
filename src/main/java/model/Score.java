@@ -3,13 +3,13 @@ package model;
 public interface Score {
 
     /**
-     * Set score
+     * Set score.
      * @param n New score
      */
     void setScore(int n);
 
     /**
-     * Increase by one the score
+     * Increase by one the score.
      */
     void incrementScore();
 

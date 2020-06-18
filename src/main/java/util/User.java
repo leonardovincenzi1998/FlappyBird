@@ -1,20 +1,16 @@
 package util;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class User {
 
     private String name;
     private String score;
 
     /**
-     * This is the constructor method that initializes the name and the score of the user
+     * This is the constructor method that initializes the name and the score of the user.
      * @param name Username
      * @param score UserScore
      */
-    public User(String name, String score){
+    public User(final String name, final String score) {
         this.name = name;
         this.score = score;
     }
@@ -30,7 +26,7 @@ public class User {
     /**
      * @param name the name to set
      */
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -47,7 +43,7 @@ public class User {
     /**
      * @param score the score to set
      */
-    public void setScore(String score) {
+    public void setScore(final String score) {
         this.score = score;
     }
 
