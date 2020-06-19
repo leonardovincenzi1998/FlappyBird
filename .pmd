@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd>
     <useProjectRuleSet>true</useProjectRuleSet>
-    <ruleSetFile>C:\Users\OPeratore\Desktop\flappy_bird\config\pmd\pmd.xml</ruleSetFile>
+    <ruleSetFile>/config/pmd/pmd.xml</ruleSetFile>
     <includeDerivedFiles>false</includeDerivedFiles>
     <violationsAsErrors>false</violationsAsErrors>
     <fullBuildEnabled>true</fullBuildEnabled>
