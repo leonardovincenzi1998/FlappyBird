@@ -37,7 +37,7 @@ public class BirdControllerImpl implements BirdController {
 
     @Override
     public final void birdMovement(final double n) {
-        bird.birdUpdate(birdView.getBird(), n);
+        bird.birdUpdate(n);
         birdView.updatePosition(bird.getPosY());
     }
 

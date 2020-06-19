@@ -39,7 +39,7 @@ public final class BirdImpl implements Bird {
     }
 
     @Override
-    public void birdUpdate(final Rectangle r, final double n) {
+    public void birdUpdate(final double n) {
         setPosY(getPosY() + n);
     }
 
