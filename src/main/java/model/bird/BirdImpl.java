@@ -1,5 +1,7 @@
 package model.bird;
 
+import javafx.scene.shape.Rectangle;
+
 public final class BirdImpl implements Bird {
 
     private static final double INITIAL_POSITION = 50.0;
