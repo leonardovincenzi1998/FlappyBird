@@ -12,7 +12,7 @@ public interface BirdController {
     /**
      * Call {@link BirdView} method and set the view of bird.
      */
-    void setBirdView();
+    void initBirdView();
 
     /**
      * Call {@link Bird#birdUpdate(Rectangle, double)} and {@link BirdView#updatePosition(double)} for define bird movement.

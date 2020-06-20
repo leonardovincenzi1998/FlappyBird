@@ -7,7 +7,7 @@ public class User {
 
     /**
      * This is the constructor method that initializes the name and the score of the user.
-     * @param name Username
+     * @param name User name
      * @param score UserScore
      */
     public User(final String name, final String score) {

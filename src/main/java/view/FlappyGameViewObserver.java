@@ -6,7 +6,7 @@ package view;
 public interface FlappyGameViewObserver {
 
     /**
-     * Add to view the flappy and the first pair of tube.
+     * Add to view the bird and the first pair of tube.
      */
     void startGame();
 

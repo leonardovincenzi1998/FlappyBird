@@ -3,8 +3,8 @@ package util;
 /**
  * A standard generic Pair<X,Y>, with getters, hashCode, equals, and toString well implemented.
  *
- * @param <X> First param
- * @param <Y> Second param
+ * @param <X> First parameter
+ * @param <Y> Second parameter
  */
 public class Pair<X, Y> {
 

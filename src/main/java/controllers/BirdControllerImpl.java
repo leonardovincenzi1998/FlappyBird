@@ -25,11 +25,11 @@ public class BirdControllerImpl implements BirdController {
 
         bird = new BirdImpl();
         birdView = new BirdViewImpl();
-        this.setBirdView();
+        this.initBirdView();
     }
 
     @Override
-    public final void setBirdView() {
+    public final void initBirdView() {
         birdView.setPosition(bird.getPosX(), bird.getPosY());
         birdView.setWidthHeight(bird.getHeightBird(), bird.getWidthBird());
         birdView.setImage(bird.getBirdImagePath());

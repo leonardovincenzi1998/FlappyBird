@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * This is the class that print on a text file the username.
+ * This is the class that print on a text file the user name.
  */
 public class IOName {
     /**

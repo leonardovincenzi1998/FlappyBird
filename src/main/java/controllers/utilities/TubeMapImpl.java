@@ -14,11 +14,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class TubeMapImpl implements TubeMap {
 
+    private static final int WINDOW_END = -60;
+    private static final int PIXEL_SCROLL = 2;
     private final TreeMap<Integer, Pair<?, ?>> tubeMap;
     private int cont;
     private final FlappyBirdController controller;
-    private static final int WINDOW_END = -60;
-    private static final int PIXEL_SCROLL = 2;
+
 
     /**
      * Initialize the TreeMap<int,Pair<Rectangle,Rectangle>> and the controller which is used to add to the view new node.

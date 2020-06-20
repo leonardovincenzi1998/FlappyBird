@@ -13,11 +13,11 @@ import java.io.IOException;
 
 public class EndGameImpl implements EndGame {
 
-    private final FlappyBirdViewImpl view;
-    private final Button quitBtn = new Button("QUIT");
     private static final double FX_OBJECT_WIDTH = 250;
     private static final double FX_OBJECT_HEIGHT = 50;
     private static final int HALF = 2;
+    private final FlappyBirdViewImpl view;
+    private final Button quitBtn = new Button("QUIT");
     private final int userScore;
     private final IOScores ioScores = new IOScores();
 
