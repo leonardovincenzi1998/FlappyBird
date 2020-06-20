@@ -1,8 +1,4 @@
-.gradle/
-.idea/
-build/
-bin/
-doc/
-.classpath
-
-
+/.gradle/
+/build/
+/bin/
+/doc/
