@@ -14,17 +14,17 @@ class GameLoopImplTest {
     void birdUpdateDown() {
         double expected;
         final Bird flappy = new BirdImpl();
-        expected = flappy.getPosY() + N;
-        flappy.setPosY(TEST);
-        assertEquals(flappy.getPosY(), expected);
+        expected = (flappy.getPosY() + N);
+        flappy.setPosY(TEST + N);
+        assertEquals(expected, flappy.getPosY());
     }
 
     @Test
     void birdUpdateUp() {
         double expected;
         final Bird flappy = new BirdImpl();
-        expected = flappy.getPosY() - N;
+        expected = (flappy.getPosY() - N);
         flappy.setPosY(TEST - N);
-        assertEquals(flappy.getPosY(), expected);
+        assertEquals(expected, flappy.getPosY());
     }
 }
