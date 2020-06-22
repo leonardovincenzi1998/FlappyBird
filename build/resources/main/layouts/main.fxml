@@ -17,7 +17,7 @@
          </opaqueInsets>
          <Button mnemonicParsing="false" onAction="#clickPlay" prefHeight="26.0" prefWidth="72.0"
                  text="PLAY"/>
-         <Button mnemonicParsing="false" onAction="#clickLeaderboard" text="LEADERBOARD"/>
+         <Button mnemonicParsing="false" onAction="#clickLeaderboard" text="SCOREBOARD"/>
          <Button mnemonicParsing="false" onAction="#clickContacts" text="CONTACTS"/>
       </VBox>
 </Pane>

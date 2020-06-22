@@ -36,13 +36,13 @@ public final class  MenuViewController {
     }
 
     /**
-     * When user click the Leaderboard button the scene switch to leaderboard.fxml.
+     * When user click the Leaderboard button the scene switch to scoreboard.fxml.
      * @param event Action event of the button
      * @throws IOException IO exception
      */
     public void clickLeaderboard(final ActionEvent event) throws IOException {
 
-        final Parent leaderboard = FXMLLoader.load(ClassLoader.getSystemResource("layouts/leaderboard.fxml"));
+        final Parent leaderboard = FXMLLoader.load(ClassLoader.getSystemResource("layouts/scoreboard.fxml"));
         final Scene leaderboardScene = new Scene(leaderboard);
         final Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

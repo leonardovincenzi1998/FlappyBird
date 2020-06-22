@@ -29,10 +29,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * The Controller related to the leaderboard.fxml GUI.
+ * The Controller related to the scoreboard.fxml GUI.
  *
  */
-public class LeaderboardViewController implements Initializable {
+public class ScoreBoardViewController implements Initializable {
 
     private int oddLine;
     private int evenLine;
@@ -47,7 +47,7 @@ public class LeaderboardViewController implements Initializable {
      * This is the constructor method that initialized all useful variables.
      * @throws IOException  Input Output exception
      */
-    public LeaderboardViewController() throws IOException {
+    public ScoreBoardViewController() throws IOException {
         file = new File("src/main/resources/input-output/Scores.txt");
         final Path filePath = Paths.get(String.valueOf(file));
         final Path path = Paths.get(String.valueOf(filePath));
