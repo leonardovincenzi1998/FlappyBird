@@ -10,6 +10,7 @@ import java.io.IOException;
 public class IOScores {
 
     private static final String FILE_NAME = "src/main/resources/input-output/Scores.txt";
+    //private static final String FILE_NAME = ClassLoader.getSystemResource("input-output/Scores.txt").toString();
 
     /**
      * Print the user score in a text file.

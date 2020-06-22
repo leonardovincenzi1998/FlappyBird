@@ -15,18 +15,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import util.User;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * The Controller related to the scoreboard.fxml GUI.
@@ -34,9 +25,9 @@ import java.util.ResourceBundle;
  */
 public class ScoreBoardViewController implements Initializable {
 
+    private static  final String FILE_NAME = "input-output/Scores.txt";
     private int oddLine;
     private int evenLine;
-    private final File file;
     private final List<User> list = new ArrayList<>();
     private final long lineCount;
 
@@ -45,16 +36,10 @@ public class ScoreBoardViewController implements Initializable {
 
     /**
      * This is the constructor method that initialized all useful variables.
-     * @throws IOException  Input Output exception
      */
-    public ScoreBoardViewController() throws IOException {
-        file = new File("src/main/resources/input-output/Scores.txt");
-        final Path filePath = Paths.get(String.valueOf(file));
-        final Path path = Paths.get(String.valueOf(filePath));
-        lineCount = Files.lines(path).count();
-
+    public ScoreBoardViewController() {
+        lineCount = getCountLine();
     }
-
 
     @SuppressWarnings("unchecked")
     @Override
@@ -77,17 +62,13 @@ public class ScoreBoardViewController implements Initializable {
         table.setItems(data);
     }
 
-    /**
-     *
-     * @return the string with the name of the user read on the text file
-     */
     private String readName() {
 
-        try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
+        InputStreamReader in = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(FILE_NAME)));
+        try (BufferedReader bf = new BufferedReader(in)) {
             String readLine;
-
-            for (int i = 0; i < lineCount; i++)  {
-                readLine = bf.readLine();
+            int i = 0;
+            while((readLine = bf.readLine()) != null){
                 if (i == oddLine) {
                     if (oddLine % 2 != 0) {
                         oddLine++;
@@ -95,24 +76,21 @@ public class ScoreBoardViewController implements Initializable {
                     }
                     oddLine++;
                 }
+                i++;
             }
-
         } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return "No more player";
     }
 
-    /**
-     *
-     * @return the string with the user's score read on the text file
-     */
+
     private String readScore() {
-        try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
+        InputStreamReader in = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(FILE_NAME)));
+        try (BufferedReader bf = new BufferedReader(in)) {
             String readLine;
-            //
-            for (int i = 0; i < lineCount; i++) {
-                readLine = bf.readLine();
+            int i = 0;
+            while((readLine = bf.readLine()) != null){
                 if (i == evenLine) {
                     if (evenLine % 2 == 0) {
                         evenLine++;
@@ -120,11 +98,27 @@ public class ScoreBoardViewController implements Initializable {
                     }
                     evenLine++;
                 }
+                i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         return "0";
+    }
+
+    private int getCountLine(){
+        int i = 0;
+        InputStreamReader in = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(FILE_NAME)));
+        try (BufferedReader bf = new BufferedReader(in)) {
+
+            while(bf.readLine() != null){
+                i++;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return i;
     }
 
 

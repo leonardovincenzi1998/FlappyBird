@@ -1,9 +1,7 @@
 package controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
-
 import javafx.scene.shape.Rectangle;
 import model.bird.Bird;
 import model.bird.BirdImpl;

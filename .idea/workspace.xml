@@ -25,7 +25,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afd39c18-9cc9-40dd-927c-71faa68ea9ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/flappy_bird_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.bin" afterDir="false" />
@@ -36,80 +35,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/flappy_bird_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/input-output/Scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/input-output/Scores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/layouts/leaderboard.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/layouts/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/layouts/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allpackages-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/BirdController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/BirdControllerImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/class-use/BirdController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/class-use/BirdControllerImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/controllers/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/element-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-3.3.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jszip/dist/jszip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/member-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/member-search-index.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-search-index.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/resources/glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/resources/x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/type-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/type-search-index.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/TubeView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/TubeViewImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/class-use/TubeView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/class-use/TubeViewImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/view/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/LeaderboardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/MenuViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/MenuViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/IOName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/IOScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOScores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/FlappyBirdViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/FlappyBirdViewImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/input-output/Scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/input-output/Scores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/leaderboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/scoreboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/BirdControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/BirdControllerImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +65,28 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="flappy_bird" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="flappy_bird" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="flappy_bird" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -152,11 +111,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3862069" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\OPeratore\Desktop\flappy_bird\src\main\java" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -210,50 +175,70 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TubeMapImplTest.testCheckCollision" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="flappy_bird [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;controllers.utilities.TubeMapImplTest.testCheckCollision&quot;" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
+            <option value="buildDependents" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TubeMapImplTest.testScrollTubePair" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="flappy_bird [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;controllers.utilities.TubeMapImplTest.testScrollTubePair&quot;" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="flappy_bird [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.flappy_bird [build]" />
+        <item itemvalue="Gradle.flappy_bird [buildDependents]" />
+        <item itemvalue="Gradle.flappy_bird [jar]" />
         <item itemvalue="Gradle.BirdImplTest.testFlappyUpdate" />
         <item itemvalue="Gradle.FlappyImplTest.testFlappyUpdate" />
-        <item itemvalue="Gradle.TubeMapImplTest.testCheckCollision" />
-        <item itemvalue="Gradle.TubeMapImplTest.testScrollTubePair" />
       </list>
     </recent_temporary>
   </component>
@@ -299,42 +284,42 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1592753388943" />
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1586347464886">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1592834874274">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1586347464886" />
-    <state x="499" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592752846528">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1592834874274" />
+    <state x="499" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592829067307">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1592752846528" />
+    <state x="499" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1592829067307" />
     <state x="473" y="116" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1586874235003">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="473" y="116" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1536.864@0.0.1536.864" timestamp="1586874235003" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1592752900871">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1592828718425">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592752900871" />
-    <state width="746" height="168" key="GridCell.Tab.0.bottom" timestamp="1592753399143">
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592828718425" />
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1592838459662">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592753399143" />
-    <state width="746" height="168" key="GridCell.Tab.0.center" timestamp="1592753399143">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592838459662" />
+    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1592838459661">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592753399143" />
-    <state width="746" height="168" key="GridCell.Tab.0.left" timestamp="1592753399143">
+    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592838459661" />
+    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1592838459661">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592753399143" />
-    <state width="746" height="168" key="GridCell.Tab.0.right" timestamp="1592753399143">
+    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592838459661" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1592838459661">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592753399143" />
-    <state x="249" y="6" key="SettingsEditor" timestamp="1592753267782">
+    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592838459661" />
+    <state x="249" y="6" key="SettingsEditor" timestamp="1592829375068">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="249" y="6" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1592753267782" />
+    <state x="249" y="6" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1592829375068" />
     <state x="573" y="300" key="classpath-attribute-editor" timestamp="1592753254324">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

@@ -68,7 +68,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
 
         background.fitWidthProperty().bind(root.widthProperty());
         background.fitHeightProperty().bind(root.heightProperty());
-
+        //System.out.println(ClassLoader.getSystemResource("background.jpeg").toString());
         this.observer.startGame();
 
         primaryStage.setScene(scene);
