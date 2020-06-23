@@ -46,12 +46,7 @@ public class EndGameViewController {
 
     }
 
-    /**
-     * Call {@link IOName#writeName(String)}.
-     * @param name The user's name
-     * @throws IOException 
-     */
-    public final void printUserName(final String name) throws IOException {
+    private void printUserName(final String name) throws IOException {
         ioName.writeName(name);
     }
 

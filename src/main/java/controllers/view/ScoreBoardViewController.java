@@ -114,22 +114,25 @@ public class ScoreBoardViewController implements Initializable {
     }
 
     private int getCountLine() throws IOException {
-        int i = 0;
-        String readline;
-        tempFile = new File(System.getProperty("user.home"), "myTempFile.txt");
-        final BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile, false));
-        try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
-            while ((readline = bf.readLine()) != null) {
-                if (checkLine(readline, writer)) {
-                    i++;
+        if (file.exists()) {
+            int i = 0;
+            String readline;
+            tempFile = new File(System.getProperty("user.home"), "myTempFile.txt");
+            final BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile, false));
+            try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
+                while ((readline = bf.readLine()) != null) {
+                    if (checkLine(readline, writer)) {
+                        i++;
+                    }
                 }
+                tempFile.deleteOnExit();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            tempFile.deleteOnExit();
-        } catch (IOException e) {
-            e.printStackTrace();
+            writer.close();
+            return i;
         }
-        writer.close();
-        return i;
+        return 0;
     }
 
     private boolean checkLine(final String readline, final BufferedWriter writer) throws IOException {
