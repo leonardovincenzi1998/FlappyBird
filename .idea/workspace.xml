@@ -31,16 +31,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/input-output/Scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java.io.BufferedInputStream@45b02999" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/MenuViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/MenuViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/IOName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/IOScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOScores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/input-output/Scores.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +112,7 @@
       <recent name="C:\Users\OPeratore\Desktop\flappy_bird\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Gradle.flappy_bird [build]">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="application.Launcher" />
       <module name="flappy_bird.main" />
@@ -293,22 +289,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592828718425" />
-    <state width="1493" height="277" key="GridCell.Tab.0.bottom" timestamp="1592916183995">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1592917038884">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
-    <state width="1493" height="277" key="GridCell.Tab.0.center" timestamp="1592916183995">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592917038884" />
+    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1592917038883">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
-    <state width="1493" height="277" key="GridCell.Tab.0.left" timestamp="1592916183995">
+    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592917038883" />
+    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1592917038883">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
-    <state width="1493" height="277" key="GridCell.Tab.0.right" timestamp="1592916183995">
+    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592917038883" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1592917038883">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592917038883" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1592916183996">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
