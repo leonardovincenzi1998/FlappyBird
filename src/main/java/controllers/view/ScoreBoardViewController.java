@@ -15,9 +15,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import util.User;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.ResourceBundle;
+
 
 /**
  * The Controller related to the scoreboard.fxml GUI.
@@ -25,19 +34,21 @@ import java.util.*;
  */
 public class ScoreBoardViewController implements Initializable {
 
-    private static  final String FILE_NAME = "input-output/Scores.txt";
     private int oddLine;
     private int evenLine;
     private final List<User> list = new ArrayList<>();
     private final long lineCount;
+    private final File file = new File(System.getProperty("user.home"), "FlappyBirdScores.txt");
+    private File tempFile;
 
     @FXML
     private TableView<User> table;
 
+
     /**
      * This is the constructor method that initialized all useful variables.
      */
-    public ScoreBoardViewController() {
+    public ScoreBoardViewController() throws IOException {
         lineCount = getCountLine();
     }
 
@@ -64,11 +75,10 @@ public class ScoreBoardViewController implements Initializable {
 
     private String readName() {
 
-        InputStreamReader in = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(FILE_NAME)));
-        try (BufferedReader bf = new BufferedReader(in)) {
+        try (BufferedReader bf = new BufferedReader(new FileReader(tempFile))) {
             String readLine;
-            int i = 0;
-            while((readLine = bf.readLine()) != null){
+            for (int i = 0; i < lineCount; i++)  {
+                readLine = bf.readLine();
                 if (i == oddLine) {
                     if (oddLine % 2 != 0) {
                         oddLine++;
@@ -76,21 +86,19 @@ public class ScoreBoardViewController implements Initializable {
                     }
                     oddLine++;
                 }
-                i++;
             }
+
         } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return "No more player";
+            e.printStackTrace();
+        }
+        return "No more player";
     }
 
-
     private String readScore() {
-        InputStreamReader in = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(FILE_NAME)));
-        try (BufferedReader bf = new BufferedReader(in)) {
+        try (BufferedReader bf = new BufferedReader(new FileReader(tempFile))) {
             String readLine;
-            int i = 0;
-            while((readLine = bf.readLine()) != null){
+            for (int i = 0; i < lineCount; i++) {
+                readLine = bf.readLine();
                 if (i == evenLine) {
                     if (evenLine % 2 == 0) {
                         evenLine++;
@@ -98,7 +106,6 @@ public class ScoreBoardViewController implements Initializable {
                     }
                     evenLine++;
                 }
-                i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -106,19 +113,39 @@ public class ScoreBoardViewController implements Initializable {
         return "0";
     }
 
-    private int getCountLine(){
+    private int getCountLine() throws IOException {
         int i = 0;
-        InputStreamReader in = new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(FILE_NAME)));
-        try (BufferedReader bf = new BufferedReader(in)) {
-
-            while(bf.readLine() != null){
-                i++;
+        String readline;
+        tempFile = new File(System.getProperty("user.home"), "myTempFile.txt");
+        final BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile, false));
+        try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
+            while ((readline = bf.readLine()) != null) {
+                if (checkLine(readline, writer)) {
+                    i++;
+                }
             }
-
+            tempFile.deleteOnExit();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        writer.close();
         return i;
+    }
+
+    private boolean checkLine(final String readline, final BufferedWriter writer) throws IOException {
+        final String lineToRemove = "";
+        if (readline != null) {
+            if (!(readline.equals(lineToRemove))) {
+                writer.write(readline);
+                writer.newLine();
+               // writer.close();
+                return true;
+            } else {
+               // writer.close();
+                return false;
+            }
+        }
+        return false;
     }
 
 
@@ -135,4 +162,5 @@ public class ScoreBoardViewController implements Initializable {
         window.setScene(scene);
         window.show();
     }
+
 }

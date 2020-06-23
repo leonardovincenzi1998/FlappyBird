@@ -1,6 +1,7 @@
 package util;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -9,18 +10,16 @@ import java.io.IOException;
  */
 public class IOScores {
 
-    private static final String FILE_NAME = "src/main/resources/input-output/Scores.txt";
-    //private static final String FILE_NAME = ClassLoader.getSystemResource("input-output/Scores.txt").toString();
-
     /**
      * Print the user score in a text file.
      * @param score Final UserScore
      * @throws IOException IO exception
      */
     public void writeScore(final int score) throws IOException {
+        final File folder = new File(System.getProperty("user.home"), "FlappyBirdScores.txt");
         BufferedWriter bw = null;
         try {
-            bw = new BufferedWriter(new FileWriter(FILE_NAME, true));
+            bw = new BufferedWriter(new FileWriter(folder, true));
             bw.write(Integer.toString(score));
             bw.newLine();
             bw.close();
@@ -35,6 +34,7 @@ public class IOScores {
         }
 
     }
+
 
 
 

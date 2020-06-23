@@ -43,7 +43,6 @@ public final class  MenuViewController {
     public void clickLeaderboard(final ActionEvent event) throws IOException {
 
         final Parent leaderboard = FXMLLoader.load(ClassLoader.getSystemResource("layouts/scoreboard.fxml"));
-        System.out.println(ClassLoader.getSystemResource("layouts/scoreboard.fxml"));
         final Scene leaderboardScene = new Scene(leaderboard);
         final Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

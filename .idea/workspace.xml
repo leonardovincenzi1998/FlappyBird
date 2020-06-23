@@ -31,23 +31,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/flappy_bird_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/input-output/Scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/input-output/Scores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/input-output/Scores.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java.io.BufferedInputStream@45b02999" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/MenuViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/MenuViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/view/ScoreBoardViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/IOName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/IOScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOScores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/FlappyBirdViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/FlappyBirdViewImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/input-output/Scores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/input-output/Scores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controllers/BirdControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controllers/BirdControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/input-output/Scores.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,10 +277,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1592753388943" />
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1592834874274">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1592914471327">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1592834874274" />
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1592914471327" />
     <state x="499" y="221" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592829067307">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -300,22 +293,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592828718425" />
-    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1592838459662">
+    <state width="1493" height="277" key="GridCell.Tab.0.bottom" timestamp="1592916183995">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592838459662" />
-    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1592838459661">
+    <state width="1493" height="277" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="277" key="GridCell.Tab.0.center" timestamp="1592916183995">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592838459661" />
-    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1592838459661">
+    <state width="1493" height="277" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="277" key="GridCell.Tab.0.left" timestamp="1592916183995">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592838459661" />
-    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1592838459661">
+    <state width="1493" height="277" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="277" key="GridCell.Tab.0.right" timestamp="1592916183995">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592838459661" />
+    <state width="1493" height="277" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1592916183996">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592916183996" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1592916183995">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1592916183995">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1592916183995" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1592916183996">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1592916183996" />
     <state x="249" y="6" key="SettingsEditor" timestamp="1592829375068">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -332,9 +341,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.0.1536.864@0.0.1536.864" timestamp="1586605998613" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1588253729869">
+    <state x="425" y="197" key="run.anything.popup" timestamp="1592908422744">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1588253729869" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1592908422744" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1592916026080">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1592916026080" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/flappy_bird$Launcher.ic" NAME="Launcher Coverage Results" MODIFIED="1592909756547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>application.*</FILTER>
+    </SUITE>
   </component>
 </project>
