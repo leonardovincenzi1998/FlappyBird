@@ -1,7 +1,5 @@
 package view;
 
-import java.io.IOException;
-
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
@@ -15,9 +13,8 @@ public interface FlappyBirdView {
     /**
      * Call end game class and show quit button.
      * @param score User's score to save
-     * @throws IOException 
      */
-    void endGame(int score) throws IOException;
+    void endGame(int score);
 
     /**
      * Set view observer.

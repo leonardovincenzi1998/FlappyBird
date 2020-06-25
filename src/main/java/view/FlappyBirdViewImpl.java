@@ -2,7 +2,6 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.IOException;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -80,7 +79,7 @@ public class FlappyBirdViewImpl implements FlappyBirdView {
     }
 
     @Override
-    public final void endGame(final int userScore) throws IOException {
+    public final void endGame(final int userScore) {
         final EndGameImpl endGame = new EndGameImpl(this, userScore);
         this.root.getChildren().add(endGame.getButton());
         endGame.quitBtn();

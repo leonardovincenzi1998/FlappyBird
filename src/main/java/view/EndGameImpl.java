@@ -32,7 +32,7 @@ public class EndGameImpl implements EndGame {
     }
 
     @Override
-    public final void quitBtn() throws IOException {
+    public final void quitBtn() {
         quitBtn.setPrefSize(FX_OBJECT_WIDTH, FX_OBJECT_HEIGHT);
         quitBtn.setLayoutX(view.getWidth() / HALF - FX_OBJECT_WIDTH  / HALF);
         quitBtn.setLayoutY(view.getHeight() / HALF);
@@ -60,7 +60,7 @@ public class EndGameImpl implements EndGame {
         return quitBtn;
     }
 
-    private void sendScore() throws IOException {
+    private void sendScore() {
         ioScores.writeScore(this.userScore);
     }
 

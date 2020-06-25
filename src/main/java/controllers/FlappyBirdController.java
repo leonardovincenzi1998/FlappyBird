@@ -21,12 +21,12 @@ public interface FlappyBirdController {
 
     /**
      * Check collisions between Bird and floor and between Bird and Tubes.
-     * @throws IOException 
+     * @throws IOException IoException
      */
     void checkCollision() throws IOException;
 
     /**
-     * Call {@link Score#incrementScore()} to update score
+     * Call {@link model.Score#incrementScore()} to update score
      * and call {@link view.FlappyBirdView#setScore(int)} to print score in the view.
      */
     void updateScore();

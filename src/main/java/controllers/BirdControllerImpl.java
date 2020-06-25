@@ -6,7 +6,7 @@ import model.bird.BirdImpl;
 import view.BirdView;
 import view.BirdViewImpl;
 
-public class BirdControllerImpl implements BirdController {
+public class  BirdControllerImpl implements BirdController {
 
     /**
      * Screen height.

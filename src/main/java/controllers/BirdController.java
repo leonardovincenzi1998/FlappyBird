@@ -15,7 +15,7 @@ public interface BirdController {
     void initBirdView();
 
     /**
-     * Call {@link Bird#birdUpdate(Rectangle, double)} and {@link BirdView#updatePosition(double)} for define bird movement.
+     * Call {@link Bird#birdUpdate(double)} and {@link BirdView#updatePosition(double)} for define bird movement.
      * @param n Constant defined in {@link controllers.GameLoopImpl}, set the increase of pixel at each loop.
      */
     void birdMovement(double n);

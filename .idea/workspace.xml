@@ -25,25 +25,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afd39c18-9cc9-40dd-927c-71faa68ea9ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/flappy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BirdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BirdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BirdControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BirdControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/FlappyBirdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/FlappyBirdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GameLoopImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GameLoopImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/TubeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/TubeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/IOName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/IOScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/IOScores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/EndGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/EndGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/EndGameImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/EndGameImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/FlappyBirdView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/FlappyBirdView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/FlappyBirdViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/FlappyBirdViewImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,22 +290,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592828718425" />
-    <state width="725" height="168" key="GridCell.Tab.0.bottom" timestamp="1592985644073">
+    <state width="1493" height="169" key="GridCell.Tab.0.bottom" timestamp="1593080541247">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="725" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592985644073" />
-    <state width="725" height="168" key="GridCell.Tab.0.center" timestamp="1592985644072">
+    <state width="1493" height="169" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1593080541247" />
+    <state width="1493" height="169" key="GridCell.Tab.0.center" timestamp="1593080541247">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="725" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592985644072" />
-    <state width="725" height="168" key="GridCell.Tab.0.left" timestamp="1592985644072">
+    <state width="1493" height="169" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1593080541247" />
+    <state width="1493" height="169" key="GridCell.Tab.0.left" timestamp="1593080541247">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="725" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592985644072" />
-    <state width="725" height="168" key="GridCell.Tab.0.right" timestamp="1592985644073">
+    <state width="1493" height="169" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1593080541247" />
+    <state width="1493" height="169" key="GridCell.Tab.0.right" timestamp="1593080541247">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="725" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592985644073" />
+    <state width="1493" height="169" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1593080541247" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1592916183996">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
